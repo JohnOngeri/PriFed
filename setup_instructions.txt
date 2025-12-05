@@ -1,0 +1,385 @@
+PrivFed: Privacy-Preserving Federated Learning for Fraud Detection
+==================================================================
+Complete Setup and Installation Instructions
+
+SYSTEM REQUIREMENTS
+==================
+- Python 3.10 or higher
+- Flutter 3.10 or higher  
+- Git 2.30 or higher
+- 8GB+ RAM (16GB recommended)
+- 50GB+ free disk space
+- CUDA-capable GPU (optional, for faster training)
+- Windows 10/11, macOS 10.15+, or Ubuntu 20.04+
+
+QUICK START GUIDE
+================
+
+1. CLONE THE REPOSITORY
+   git clone <repository-url>
+   cd PrivFed
+
+2. BACKEND SETUP
+   cd backend
+   python -m venv venv
+   
+   # Windows
+   venv\Scripts\activate
+   
+   # macOS/Linux  
+   source venv/bin/activate
+   
+   pip install -r requirements.txt
+
+3. CONFIGURE DATASET PATH
+   Edit backend/configs/config.yaml:
+   data:
+     dataset_path: "C:\\Users\\HP\\OneDrive\\Desktop\\PrivFed\\dataset"
+
+4. RUN BACKEND TESTS
+   pytest tests/ -v
+
+5. START API SERVER
+   uvicorn api.main:app --reload
+   # API will be available at http://localhost:8000
+
+6. FRONTEND SETUP
+   cd ../frontend/mobile_app
+   flutter pub get
+   flutter run
+   # Choose your target device (emulator/physical device)
+
+DETAILED SETUP INSTRUCTIONS
+===========================
+
+BACKEND SETUP (Python)
+----------------------
+
+1. Create Virtual Environment:
+   cd backend
+   python -m venv venv
+   
+   # Activate virtual environment
+   # Windows:
+   venv\Scripts\activate
+   
+   # macOS/Linux:
+   source venv/bin/activate
+
+2. Install Dependencies:
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   
+   # For GPU support (optional):
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+3. Verify Installation:
+   python -c "import torch; print(f'PyTorch: {torch.__version__}')"
+   python -c "import flwr; print(f'Flower: {flwr.__version__}')"
+   python -c "import fastapi; print(f'FastAPI: {fastapi.__version__}')"
+
+4. Configure Dataset:
+   # Ensure your dataset files are at:
+   C:\Users\HP\OneDrive\Desktop\PrivFed\dataset\train_transaction.csv
+   C:\Users\HP\OneDrive\Desktop\PrivFed\dataset\train_identity.csv
+   C:\Users\HP\OneDrive\Desktop\PrivFed\dataset\test_transaction.csv
+   C:\Users\HP\OneDrive\Desktop\PrivFed\dataset\test_identity.csv
+   
+   # Edit configs/config.yaml to match your paths if different
+
+5. Initialize Directories:
+   mkdir -p data models results logs experiments
+
+6. Run Tests:
+   pytest tests/ -v --cov=utils --cov=api
+
+7. Start Development Server:
+   uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
+
+FRONTEND SETUP (Flutter)
+------------------------
+
+1. Install Flutter:
+   # Download Flutter SDK from https://flutter.dev/docs/get-started/install
+   # Add Flutter to your PATH
+   
+   # Verify installation:
+   flutter doctor
+
+2. Setup Mobile Development:
+   # For Android:
+   # - Install Android Studio
+   # - Install Android SDK and emulator
+   # - Accept Android licenses: flutter doctor --android-licenses
+   
+   # For iOS (macOS only):
+   # - Install Xcode from App Store
+   # - Install iOS Simulator
+   # - Accept Xcode license: sudo xcodebuild -license
+
+3. Install Dependencies:
+   cd frontend/mobile_app
+   flutter pub get
+
+4. Configure API Endpoint:
+   # Edit lib/providers/api_service.dart
+   # Update baseUrl to match your backend:
+   static const String baseUrl = 'http://localhost:8000/api';
+   
+   # For physical device testing, use your computer's IP:
+   static const String baseUrl = 'http://192.168.1.100:8000/api';
+
+5. Run the App:
+   # List available devices:
+   flutter devices
+   
+   # Run on specific device:
+   flutter run -d <device-id>
+   
+   # Run in debug mode:
+   flutter run --debug
+   
+   # Run in release mode:
+   flutter run --release
+
+TRAINING PIPELINE SETUP
+=======================
+
+1. Run Centralized Baseline:
+   cd backend
+   python scripts/run_centralized_baseline.py
+   
+   # With custom parameters:
+   python scripts/run_centralized_baseline.py --epochs 20 --batch-size 256
+
+2. Run Federated Learning:
+   python scripts/run_federated_training.py
+   
+   # With custom rounds:
+   python scripts/run_federated_training.py --rounds 30
+
+3. Run Federated Learning with Differential Privacy:
+   python scripts/run_federated_dp_training.py --epsilon 8.0
+   
+   # Different privacy levels:
+   python scripts/run_federated_dp_training.py --epsilon 4.0
+   python scripts/run_federated_dp_training.py --epsilon 2.0
+
+4. View Results:
+   # Results will be saved in:
+   backend/results/
+   ├── centralized_baseline_results.json
+   ├── federated_results.json
+   ├── federated_dp_results.json
+   ├── training_history.csv
+   ├── confusion_matrix.png
+   ├── roc_curve.png
+   └── privacy_vs_accuracy.png
+
+DOCKER DEPLOYMENT (Optional)
+============================
+
+1. Build Backend Container:
+   cd backend
+   docker build -t privfed-backend .
+
+2. Run Backend Container:
+   docker run -p 8000:8000 -v $(pwd)/dataset:/app/dataset privfed-backend
+
+3. Docker Compose (Full Stack):
+   cd ..
+   docker-compose up -d
+   
+   # Services will be available at:
+   # Backend API: http://localhost:8000
+   # Database: localhost:5432 (if using PostgreSQL)
+
+PRODUCTION DEPLOYMENT
+====================
+
+BACKEND PRODUCTION:
+1. Set Environment Variables:
+   export ENVIRONMENT=production
+   export DATABASE_URL=postgresql://user:pass@localhost/privfed
+   export SECRET_KEY=your-secret-key-here
+
+2. Install Production Dependencies:
+   pip install gunicorn
+
+3. Run with Gunicorn:
+   gunicorn api.main:app -w 4 -k uvicorn.workers.UvicornWorker
+
+MOBILE APP PRODUCTION:
+1. Build Android APK:
+   cd frontend/mobile_app
+   flutter build apk --release
+   # APK will be at: build/app/outputs/flutter-apk/app-release.apk
+
+2. Build iOS App:
+   flutter build ios --release
+   # Open ios/Runner.xcworkspace in Xcode for App Store submission
+
+TROUBLESHOOTING
+===============
+
+COMMON ISSUES:
+
+1. "Dataset files not found":
+   - Verify dataset files exist at specified paths
+   - Check file permissions
+   - Update config.yaml with correct paths
+
+2. "CUDA out of memory":
+   - Reduce batch size in config.yaml
+   - Use CPU training: set device: "cpu" in config
+   - Close other GPU-intensive applications
+
+3. "Flutter doctor issues":
+   - Run: flutter doctor --verbose
+   - Follow specific instructions for your platform
+   - Ensure all licenses are accepted
+
+4. "API connection failed" (Mobile):
+   - Verify backend is running: curl http://localhost:8000/api/status
+   - Check firewall settings
+   - Use correct IP address for physical devices
+
+5. "Import errors" (Python):
+   - Verify virtual environment is activated
+   - Reinstall requirements: pip install -r requirements.txt --force-reinstall
+   - Check Python version: python --version
+
+6. "Permission denied" errors:
+   - Check file/directory permissions
+   - Run with appropriate user privileges
+   - Verify write access to results directories
+
+PERFORMANCE OPTIMIZATION:
+
+1. Backend Performance:
+   - Use GPU for training: CUDA_VISIBLE_DEVICES=0
+   - Increase worker processes for production
+   - Enable caching for API responses
+   - Use connection pooling for database
+
+2. Mobile Performance:
+   - Build in release mode for testing
+   - Enable R8/ProGuard for Android
+   - Optimize images and assets
+   - Use const constructors where possible
+
+3. Training Performance:
+   - Use mixed precision training
+   - Optimize batch sizes for your hardware
+   - Use data loading optimizations
+   - Profile code to identify bottlenecks
+
+DEVELOPMENT WORKFLOW
+===================
+
+1. Code Style:
+   # Python (Backend):
+   black . --line-length 100
+   flake8 . --max-line-length 100
+   isort .
+   
+   # Dart (Frontend):
+   dart format .
+   dart analyze
+
+2. Testing:
+   # Backend:
+   pytest tests/ -v --cov=utils --cov=api --cov-report=html
+   
+   # Frontend:
+   flutter test
+   flutter test integration_test/
+
+3. Git Workflow:
+   git checkout -b feature/your-feature-name
+   # Make changes
+   git add .
+   git commit -m "feat: add your feature description"
+   git push origin feature/your-feature-name
+   # Create pull request
+
+MONITORING AND LOGGING
+======================
+
+1. View Logs:
+   # Backend logs:
+   tail -f backend/logs/api.log
+   tail -f backend/logs/training.log
+   
+   # Training progress:
+   tail -f backend/logs/privacy_accounting.log
+
+2. Monitor Performance:
+   # API metrics:
+   curl http://localhost:8000/api/status
+   
+   # System resources:
+   htop  # Linux/macOS
+   # Task Manager (Windows)
+
+3. Database Monitoring:
+   # If using PostgreSQL:
+   psql -h localhost -U privfed -d privfed -c "SELECT * FROM training_metrics LIMIT 10;"
+
+SECURITY CONSIDERATIONS
+======================
+
+1. API Security:
+   - Use HTTPS in production
+   - Implement rate limiting
+   - Validate all inputs
+   - Use secure authentication
+
+2. Data Security:
+   - Encrypt sensitive data at rest
+   - Use secure communication channels
+   - Implement proper access controls
+   - Regular security audits
+
+3. Mobile Security:
+   - Use certificate pinning
+   - Implement secure storage
+   - Validate server certificates
+   - Use encrypted communications
+
+SUPPORT AND RESOURCES
+=====================
+
+1. Documentation:
+   - Technical documentation: docs/
+   - API documentation: http://localhost:8000/docs
+   - User guides: docs/user_guides/
+
+2. Community:
+   - GitHub Issues: Report bugs and feature requests
+   - Discussions: Technical questions and community support
+   - Wiki: Additional documentation and examples
+
+3. Professional Support:
+   - Enterprise support available
+   - Custom implementation services
+   - Training and consulting
+
+NEXT STEPS
+==========
+
+1. Complete the setup following these instructions
+2. Run the example training scripts to verify everything works
+3. Explore the mobile app interface
+4. Review the technical documentation
+5. Customize the configuration for your specific use case
+6. Consider production deployment options
+
+For additional help, please refer to:
+- README.md for project overview
+- docs/ directory for detailed documentation  
+- GitHub Issues for community support
+- Professional support for enterprise needs
+
+Happy coding with PrivFed!
+==========================

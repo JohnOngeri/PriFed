@@ -1,0 +1,81 @@
+# PrivFed Configuration File
+data:
+  dataset_path: "C:\\Users\\HP\\OneDrive\\Desktop\\PrivFed\\dataset"
+  train_transaction: "train_transaction.csv"
+  train_identity: "train_identity.csv"
+  test_transaction: "test_transaction.csv"
+  test_identity: "test_identity.csv"
+  
+  # Data preprocessing
+  test_size: 0.2
+  val_size: 0.2
+  random_state: 42
+  
+  # Non-IID partitioning strategy
+  partition_strategy: "time_based"  # Options: time_based, geographic, customer_segment
+  num_banks: 3
+  
+model:
+  # Neural network architecture
+  hidden_layers: [256, 128, 64]
+  dropout_rate: 0.3
+  activation: "relu"
+  batch_norm: true
+  
+  # Training hyperparameters
+  learning_rate: 0.001
+  batch_size: 512
+  local_epochs: 5
+  weight_decay: 1e-5
+  
+federated_learning:
+  # FL configuration
+  num_rounds: 50
+  clients_per_round: 3
+  min_fit_clients: 2
+  min_evaluate_clients: 2
+  min_available_clients: 3
+  
+  # Strategy
+  strategy: "FedAvg"  # Options: FedAvg, FedProx, FedOpt
+  fedprox_proximal_mu: 0.01
+  
+differential_privacy:
+  # DP-SGD parameters
+  enabled: false
+  noise_multiplier: 1.1
+  max_grad_norm: 1.0
+  target_epsilon: 8.0
+  target_delta: 1e-5
+  
+  # Privacy accounting
+  accountant_mode: "rdp"  # Options: rdp, gdp
+  
+experiment:
+  # Experiment settings
+  name: "privfed_fraud_detection"
+  seed: 42
+  device: "auto"  # Options: auto, cpu, cuda
+  
+  # Logging
+  log_level: "INFO"
+  save_checkpoints: true
+  checkpoint_frequency: 10
+  
+  # Output paths
+  results_dir: "results"
+  models_dir: "models"
+  logs_dir: "logs"
+  experiments_dir: "experiments"
+
+api:
+  # FastAPI configuration
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  
+  # CORS
+  allow_origins: ["*"]
+  allow_credentials: true
+  allow_methods: ["*"]
+  allow_headers: ["*"]
