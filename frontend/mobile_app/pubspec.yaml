@@ -25,14 +25,13 @@ dependencies:
   
   # Charts & Visualization
   fl_chart: ^0.64.0
-  syncfusion_flutter_charts: ^23.1.36
   
   # Animations
-  lottie: ^2.7.0
   animations: ^2.0.8
   
   # Video Player
-  video_player: ^2.7.2
+  video_player: ^2.8.2
+  video_player_web: ^2.1.0
   
   # Storage
   shared_preferences: ^2.2.2
