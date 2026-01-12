@@ -1,0 +1,355 @@
+// Prisma Schema for PrivFed Mobile Backend
+// PostgreSQL Database Schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// AUTHENTICATION & USER MANAGEMENT
+// ============================================
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  federationId  String    @unique @db.VarChar(5) // Auto-generated 5-character human-memorable ID
+  passwordHash  String    // bcrypt hashed password
+  role          UserRole  @default(PUBLIC)
+  bankId        String?   // Associated bank ID if user belongs to a bank
+  isActive      Boolean   @default(true)
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  refreshTokens RefreshToken[]
+  bank          Bank?     @relation(fields: [bankId], references: [id])
+  sessions      Session[]
+  notifications Notification[]
+
+  @@index([federationId])
+  @@index([email])
+  @@index([bankId])
+  @@map("users")
+}
+
+enum UserRole {
+  PUBLIC
+  ADMIN
+  BANK_ADMIN
+  BANK_USER
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  deviceId  String?  // For mobile device tracking
+  ipAddress String?
+  userAgent String?
+  expiresAt DateTime
+  revokedAt DateTime?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+  @@index([expiresAt])
+  @@map("refresh_tokens")
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  token     String   @unique
+  deviceId  String?
+  ipAddress String?
+  userAgent String?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+model PasswordResetToken {
+  id        String   @id @default(uuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([token])
+  @@index([expiresAt])
+  @@map("password_reset_tokens")
+}
+
+// ============================================
+// BANK MANAGEMENT & FEDERATION
+// ============================================
+
+model Bank {
+  id          String   @id @default(uuid())
+  bankId      String   @unique // Human-readable bank ID
+  name        String
+  subtitle    String?
+  color       String   @default("blue")
+  icon        String   @default("building_modern")
+  isActive    Boolean  @default(true)
+  joinedAt    DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  users       User[]
+  metrics     BankMetrics[]
+  trainingRounds BankTrainingRound[]
+  applications BankApplication?
+  votes       BankApplicationVote[]
+  transactions FraudTransaction[]
+
+  @@index([bankId])
+  @@index([isActive])
+  @@map("banks")
+}
+
+model BankApplication {
+  id            String              @id @default(uuid())
+  bankId        String              @unique // Proposed bank ID
+  bankName      String
+  licenseNumber String
+  contactEmail  String
+  contactPhone  String
+  address       String
+  status        BankApplicationStatus @default(PENDING)
+  submittedAt   DateTime            @default(now())
+  reviewedAt    DateTime?
+  approvedAt    DateTime?
+  rejectedAt    DateTime?
+  notes         String?
+
+  // Relations
+  votes         BankApplicationVote[]
+  bank          Bank?               @relation(fields: [bankId], references: [id])
+
+  @@index([status])
+  @@index([submittedAt])
+  @@map("bank_applications")
+}
+
+enum BankApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model BankApplicationVote {
+  id            String   @id @default(uuid())
+  applicationId String
+  bankId        String
+  vote          VoteType // APPROVE or REJECT
+  createdAt     DateTime @default(now())
+
+  application BankApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  bank        Bank           @relation(fields: [bankId], references: [id])
+
+  @@unique([applicationId, bankId])
+  @@index([applicationId])
+  @@index([bankId])
+  @@map("bank_application_votes")
+}
+
+enum VoteType {
+  APPROVE
+  REJECT
+}
+
+// ============================================
+// TRAINING & METRICS
+// ============================================
+
+model TrainingRound {
+  id              String   @id @default(uuid())
+  roundNumber     Int
+  status          TrainingStatus @default(RUNNING)
+  globalMetricsId String   @unique
+  privacyMetricsId String? @unique
+  duration        Float?   // Duration in seconds
+  startedAt       DateTime
+  completedAt     DateTime?
+  createdAt       DateTime @default(now())
+
+  // Relations
+  globalMetrics   ClassificationMetrics @relation(fields: [globalMetricsId], references: [id])
+  privacyMetrics  PrivacyMetrics?      @relation(fields: [privacyMetricsId], references: [id])
+  bankRounds      BankTrainingRound[]
+
+  @@unique([roundNumber])
+  @@index([roundNumber])
+  @@index([status])
+  @@index([startedAt])
+  @@map("training_rounds")
+}
+
+enum TrainingStatus {
+  NOT_STARTED
+  RUNNING
+  COMPLETED
+  FAILED
+  PAUSED
+}
+
+model BankTrainingRound {
+  id            String   @id @default(uuid())
+  roundId       String
+  bankId        String
+  metricsId     String   @unique
+  samples       Int
+  fraudRate     Float
+  createdAt     DateTime @default(now())
+
+  round   TrainingRound        @relation(fields: [roundId], references: [id], onDelete: Cascade)
+  bank    Bank                 @relation(fields: [bankId], references: [id])
+  metrics ClassificationMetrics @relation(fields: [metricsId], references: [id])
+
+  @@unique([roundId, bankId])
+  @@index([roundId])
+  @@index([bankId])
+  @@map("bank_training_rounds")
+}
+
+model ClassificationMetrics {
+  id        String   @id @default(uuid())
+  auc       Float
+  accuracy  Float
+  precision Float
+  recall    Float
+  f1        Float
+  loss      Float?   @default(0.0)
+  specificity Float? @default(0.0)
+  timestamp DateTime @default(now())
+
+  // Relations
+  trainingRound     TrainingRound?
+  bankTrainingRounds BankTrainingRound[]
+  bankMetrics       BankMetrics[]
+
+  @@map("classification_metrics")
+}
+
+model BankMetrics {
+  id          String   @id @default(uuid())
+  bankId      String
+  metricsId   String
+  roundNumber Int?
+  samples     Int?
+  fraudRate   Float?
+  timestamp   DateTime @default(now())
+
+  bank    Bank                 @relation(fields: [bankId], references: [id])
+  metrics ClassificationMetrics @relation(fields: [metricsId], references: [id])
+
+  @@index([bankId])
+  @@index([roundNumber])
+  @@index([timestamp])
+  @@map("bank_metrics")
+}
+
+model PrivacyMetrics {
+  id                  String   @id @default(uuid())
+  currentEpsilon      Float
+  targetEpsilon       Float
+  delta               Float
+  noiseMultiplier     Float
+  privacyStrength     String
+  budgetUsedPercentage Float
+  timestamp           DateTime @default(now())
+
+  trainingRound TrainingRound?
+
+  @@map("privacy_metrics")
+}
+
+// ============================================
+// FRAUD DETECTION
+// ============================================
+
+model FraudTransaction {
+  id              String   @id @default(uuid())
+  transactionId   String   @unique
+  bankId          String?
+  amount          Float
+  fraudProbability Float
+  riskLevel       RiskLevel
+  features        Json     // Store transaction features as JSON
+  riskFactors     String[] // Array of risk factor descriptions
+  bankPredictions Json?    // Store per-bank predictions as JSON
+  timestamp       DateTime @default(now())
+  createdAt       DateTime @default(now())
+
+  bank Bank? @relation(fields: [bankId], references: [id])
+
+  @@index([bankId])
+  @@index([riskLevel])
+  @@index([timestamp])
+  @@index([fraudProbability])
+  @@map("fraud_transactions")
+}
+
+enum RiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+// ============================================
+// SYSTEM & NOTIFICATIONS
+// ============================================
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String?
+  type      NotificationType
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  metadata  Json?    // Additional notification data
+  createdAt DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([isRead])
+  @@index([createdAt])
+  @@map("notifications")
+}
+
+enum NotificationType {
+  SYSTEM
+  BANK_APPLICATION
+  TRAINING_UPDATE
+  FRAUD_ALERT
+  SECURITY
+}
+
+model SystemConfig {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     Json
+  updatedAt DateTime @updatedAt
+  updatedBy String?
+
+  @@map("system_config")
+}
