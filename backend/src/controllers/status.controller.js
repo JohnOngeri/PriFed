@@ -23,7 +23,7 @@ export const getSystemStatus = async (req, res) => {
       // Set timeout for database queries (5 seconds max)
       const dbQueryPromise = Promise.all([
         prisma.trainingRound.findFirst({
-          orderBy: { roundNumber: 'desc' },
+      orderBy: { roundNumber: 'desc' },
           include: { globalMetrics: true }
         }),
         prisma.bank.count({ where: { isActive: true } }),
