@@ -17,12 +17,21 @@ from collections import OrderedDict
 import threading
 import time
 import os
+import warnings
 
 from .model_utils import build_model, get_device
 from .metrics_utils import compute_classification_metrics
 from .dp_utils import DPTrainer
 
 logger = logging.getLogger(__name__)
+
+# Optional SMOTE support for class imbalance handling
+try:
+    from imblearn.over_sampling import SMOTE
+    IMBLEARN_AVAILABLE = True
+except ImportError:
+    IMBLEARN_AVAILABLE = False
+    warnings.warn("imblearn not available. SMOTE will be skipped if enabled.")
 
 class FraudDetectionClient(fl.client.NumPyClient):
     """
@@ -52,6 +61,16 @@ class FraudDetectionClient(fl.client.NumPyClient):
         self.y_train = y_train
         self.X_val = X_val
         self.y_val = y_val
+
+        # Optional SMOTE on training split only (never on validation)
+        if config.get('model', {}).get('smote_enabled', False):
+            if IMBLEARN_AVAILABLE:
+                smote = SMOTE(random_state=config['data'].get('random_state', 42))
+                self.X_train, self.y_train = smote.fit_resample(self.X_train, self.y_train)
+                logger.info(f"Applied SMOTE for client {client_id}: "
+                            f"{len(X_train)} -> {len(self.X_train)} samples")
+            else:
+                logger.warning("SMOTE enabled but imblearn not available. Skipping SMOTE.")
         
         # Create data loaders
         from .data_utils import create_data_loaders
@@ -77,8 +96,15 @@ class FraudDetectionClient(fl.client.NumPyClient):
             weight_decay=config['model']['weight_decay']
         )
         
-        # Loss function
-        self.criterion = nn.BCEWithLogitsLoss()
+        # Loss function with optional class weighting
+        self.pos_weight_value = None
+        pos_weight = None
+        if config.get('model', {}).get('class_weight_enabled', False):
+            num_positive = float(np.sum(self.y_train == 1))
+            num_negative = float(np.sum(self.y_train == 0))
+            self.pos_weight_value = num_negative / max(num_positive, 1.0)
+            pos_weight = torch.tensor(self.pos_weight_value, device=self.device)
+        self.criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
         
         # Differential privacy trainer (if enabled)
         self.dp_trainer = None
@@ -211,7 +237,11 @@ class FraudDetectionClient(fl.client.NumPyClient):
             epoch_correct = 0
             epoch_samples = 0
             
-            for batch_X, batch_y in self.train_loader:
+            for batch in self.train_loader:
+                if len(batch) == 3:
+                    batch_X, batch_y, _ = batch
+                else:
+                    batch_X, batch_y = batch
                 batch_X, batch_y = batch_X.to(self.device), batch_y.to(self.device)
                 
                 # Forward pass
@@ -267,7 +297,11 @@ class FraudDetectionClient(fl.client.NumPyClient):
         all_labels = []
         
         with torch.no_grad():
-            for batch_X, batch_y in self.val_loader:
+            for batch in self.val_loader:
+                if len(batch) == 3:
+                    batch_X, batch_y, _ = batch
+                else:
+                    batch_X, batch_y = batch
                 batch_X, batch_y = batch_X.to(self.device), batch_y.to(self.device)
                 
                 outputs = self.model(batch_X).squeeze()
@@ -284,7 +318,7 @@ class FraudDetectionClient(fl.client.NumPyClient):
         
         # Compute comprehensive metrics
         metrics = compute_classification_metrics(
-            np.array(all_labels), 
+            np.array(all_labels),
             np.array(all_predictions)
         )
         metrics['loss'] = avg_loss
@@ -325,7 +359,8 @@ class FederatedTrainingServer:
     Custom server for federated training with enhanced logging and metrics.
     """
     
-    def __init__(self, config: Dict[str, Any], global_test_data: Optional[Tuple[np.ndarray, np.ndarray]] = None):
+    def __init__(self, config: Dict[str, Any], global_test_data: Optional[Tuple[np.ndarray, np.ndarray]] = None,
+                 bank_datasets: Optional[Dict[str, Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]]] = None):
         """
         Initialize the federated training server.
         
@@ -335,7 +370,9 @@ class FederatedTrainingServer:
         """
         self.config = config
         self.global_test_data = global_test_data
+        self.bank_datasets = bank_datasets
         self.device = get_device(config)
+        self.latest_parameters = None
         
         # Initialize global model for evaluation
         if global_test_data is not None:
@@ -415,6 +452,7 @@ class FederatedTrainingServer:
             params_dict = zip(self.global_model.state_dict().keys(), params_list)
             state_dict = OrderedDict({k: torch.tensor(v) for k, v in params_dict})
             self.global_model.load_state_dict(state_dict, strict=True)
+            self.latest_parameters = params_list
             
             # Evaluate on global test set
             X_test, y_test = self.global_test_data
@@ -431,7 +469,11 @@ class FederatedTrainingServer:
             criterion = nn.BCEWithLogitsLoss()
             
             with torch.no_grad():
-                for batch_X, batch_y in test_loader:
+                for batch in test_loader:
+                    if len(batch) == 3:
+                        batch_X, batch_y, _ = batch
+                    else:
+                        batch_X, batch_y = batch
                     batch_X, batch_y = batch_X.to(self.device), batch_y.to(self.device)
                     
                     outputs = self.global_model(batch_X).squeeze()
@@ -452,6 +494,40 @@ class FederatedTrainingServer:
             )
             metrics['loss'] = avg_loss
             metrics['round'] = round_num
+
+            # Per-bank metrics for fairness analysis (global model on each bank's val set)
+            per_bank_metrics = {}
+            if self.bank_datasets:
+                from .data_utils import create_data_loaders
+                for bank_name, (X_train, X_val, y_train, y_val) in self.bank_datasets.items():
+                    val_loader = create_data_loaders(
+                        X_val, y_val,
+                        batch_size=self.config['model']['batch_size'],
+                        shuffle=False
+                    )
+                    bank_loss = 0.0
+                    bank_predictions = []
+                    bank_labels = []
+                    with torch.no_grad():
+                        for batch in val_loader:
+                            if len(batch) == 3:
+                                batch_X, batch_y, _ = batch
+                            else:
+                                batch_X, batch_y = batch
+                            batch_X, batch_y = batch_X.to(self.device), batch_y.to(self.device)
+                            outputs = self.global_model(batch_X).squeeze()
+                            loss = nn.BCEWithLogitsLoss()(outputs, batch_y)
+                            bank_loss += loss.item()
+                            probabilities = torch.sigmoid(outputs).cpu().numpy()
+                            bank_predictions.extend(probabilities)
+                            bank_labels.extend(batch_y.cpu().numpy())
+                    bank_metrics = compute_classification_metrics(
+                        np.array(bank_labels),
+                        np.array(bank_predictions)
+                    )
+                    bank_metrics['loss'] = bank_loss / max(len(val_loader), 1)
+                    per_bank_metrics[bank_name] = bank_metrics
+                metrics['per_bank_metrics'] = per_bank_metrics
             
             # Store round metrics
             self.round_metrics.append(metrics)

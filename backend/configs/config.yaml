@@ -28,6 +28,15 @@ model:
   local_epochs: 5
   weight_decay: 1e-5
   
+  # Imbalance handling
+  class_weight_enabled: true
+  smote_enabled: false
+  
+  # Personalization (PrivFed)
+  personalization_enabled: false
+  personalization_epochs: 1
+  personalization_lr_factor: 10
+  
 federated_learning:
   # FL configuration
   num_rounds: 50
