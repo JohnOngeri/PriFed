@@ -13,6 +13,7 @@ Multiple banks worldwide want to collaborate to detect fraudulent transactions m
 **[View Demo](https://drive.google.com/file/d/1yrd_p3grg8ILx5N4GycSr1ZawXh-0fQb/view?usp=sharing)**
 
 ---
+GITHUB REPO:[ https://github.com/JohnOngeri/PriFed.git](url)
 
 ## Solution Architecture
 
