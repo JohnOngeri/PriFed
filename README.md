@@ -59,3 +59,40 @@ The model is evaluated using metrics critical for imbalanced fraud datasets:
 - **Configuration**: All hyperparameters and strategies managed via central `config.yaml`
 
 ---
+# 1. REPOSITORY AND WORKSPACE SETUP
+# Clone the source code into your working environment
+git clone https://github.com/JohnOngeri/PriFed.git
+cd PriFed/backend
+
+# Ensure your python path includes the backend directory to resolve internal modules
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+
+# 2. INSTALL CORE DEPENDENCIES
+# Install the specific scientific stack and deep learning frameworks
+pip install -q torch torchvision torchaudio numpy pandas scikit-learn pyyaml matplotlib seaborn
+
+# Install the Federated Learning framework with simulation capabilities
+pip install -q "flwr[simulation]>=1.5.0"
+
+# Install Opacus for Differential Privacy and fix Protobuf versioning
+pip install -q opacus==1.3.0
+pip install --force-reinstall protobuf==5.28.0
+
+# 3. DATA CONFIGURATION
+# Create the dataset directory and place your IEEE-CIS CSV files inside
+mkdir -p ../dataset
+# (Move your train_transaction.csv, train_identity.csv, etc., into ../dataset)
+
+# 4. SYSTEM PARAMETERS (configs/config.yaml)
+# Open and update the following key sections in your configuration file:
+# - data: Set dataset_path to the absolute path of your dataset folder
+# - model: Define architecture layers (e.g., [256, 128, 64]) and dropout rate
+# - differential_privacy: Set noise_multiplier and target_delta for ε budget
+# - federated_learning: Define num_rounds and strategy (FedAvg/FedProx)
+
+# 5. EXECUTION AND PERSISTENCE
+# Start the training process from your notebook or main script
+# The system will automatically:
+# - Partition data into non-IID bank sets
+# - Initialize model checkpoints in the 'checkpoints' folder
+# - Log metrics to 'results/training_logs.csv' for analysis
