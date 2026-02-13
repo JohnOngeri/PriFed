@@ -59,5 +59,3 @@ The model is evaluated using metrics critical for imbalanced fraud datasets:
 - **Configuration**: All hyperparameters and strategies managed via central `config.yaml`
 
 ---
-
-## 🏗️ System Architecture
