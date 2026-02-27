@@ -1,201 +1,286 @@
-# PrivFed: Privacy-Preserving Federated Learning for Fraud Detection
+Privacy-Preserving Federated Learning for Fraud Detection
 
-This is a machine learning system designed to detect fraud across multiple banking institutions without sharing raw transaction data. The system utilizes Federated Learning (FedAvg) and Differential Privacy (DP) to maintain data sovereignty while improving collective detection accuracy.
+PrivFed is a privacy-preserving machine learning system for fraud detection across multiple banks without sharing raw transaction data. It uses Federated Learning (FedAvg) and Differential Privacy (DP-SGD) to maintain data sovereignty, improve collective detection accuracy, and reduce leakage risks from model updates.
 
-## Problem Statement
+Repo: https://github.com/JohnOngeri/PriFed.git
 
-Multiple banks worldwide want to collaborate to detect fraudulent transactions more effectively, but face critical challenges:
+Why PrivFed?
 
-- **Privacy Constraints**: Cannot share raw customer data due to regulations (GDPR, PCI-DSS) and competitive concerns
-- **Data Heterogeneity**: Each bank has different customer demographics, fraud patterns, and transaction distributions (non-IID data)
-- **Security Risks**: Even federated learning can leak information through model updates (membership inference, model inversion attacks)
+Banks want to collaborate to catch fraud patterns that don’t appear inside a single institution — but collaboration is blocked by:
 
-Poject Demo: 
-Live Deployed  App:
-Download Android APK:
-Backend API Server (Render)
+Privacy constraints: raw transaction data cannot be shared (GDPR, PCI-DSS, local data protection laws)
 
+Non-IID data: each bank has unique customers, transaction distributions, and fraud patterns
 
----
-GITHUB REPO:[ https://github.com/JohnOngeri/PriFed.git](url)
+Security risks: model updates can leak sensitive information (membership inference, model inversion)
 
-## Solution Architecture
+PrivFed enables intelligence sharing instead of data sharing.
 
-PrivFed implements a sophisticated three-layer privacy-preserving system:
+Project Demo (Deployed)
 
-1. **Federated Learning Layer**: Banks train locally and share only model updates
-2. **Differential Privacy Layer**: Adds calibrated noise to prevent information leakage
-3. **Fairness Monitoring Layer**: Ensures equitable performance across all participating banks
+✅ Live deployed microservices running on Render using Docker
+✅ Mobile client as an Android APK
+✅ Backend services + database connected (Auth + AI/ML + PostgreSQL)
 
-System Screenshots
-Proof of deployment of the microservices architecture on the Render cloud environment using Docker.
-Grafana-style dashboard showing the 50-round convergence gap between Federated Learning and Local Baseline models.
-Visualizing the zero-knowledge transfer of intelligence between Nairobi, Lagos, and Joburg nodes.
+Links (fill in when ready):
 
-How to Install and Run the App (Step-by-Step)
-The PriFed system is decoupled into a Node.js Auth API, a Python FastAPI AI Server, and a Flutter Mobile App.
+Android APK: (add link)
 
-1. Clone the repository
-Bash
+Auth API (Render): (add link)
+
+AI/ML API (Render): (add link)
+
+Dashboard / Metrics: (add link)
+
+Architecture Overview
+
+PrivFed is built as a Dockerized microservices system:
+
+Services
+
+Auth API (Node.js + Express + Prisma)
+Handles authentication, JWT, user management, bank profiles.
+
+AI/ML API (FastAPI + PyTorch)
+Telemetry, privacy controls, fraud inference, federated coordination.
+
+Database (PostgreSQL)
+Stores users, banks, auth state, metadata.
+
+Frontend (Flutter)
+Mobile dashboard + client UI compiled into APK.
+
+Privacy Layers
+
+Federated Learning Layer
+Banks train locally and send only model updates (FedAvg).
+
+Differential Privacy Layer
+DP-SGD noise added to prevent leakage from updates.
+
+Fairness Monitoring Layer
+Tracks performance across banks to ensure equitable outcomes.
+
+System Screenshots (Add Yours Here)
+
+Add your screenshots below when you attach them:
+
+✅ App UI (Flutter)
+
+Login / Bank selection
+
+Dashboard (AUC, rounds, metrics)
+
+Fraud prediction screens
+
+✅ Docker + Render Deployment
+
+Render services overview (Auth / AI / DB)
+
+Docker build & deploy logs
+
+Running containers / service health
+
+✅ PostgreSQL / Prisma
+
+DB schema / migrations
+
+Connection status (Render Postgres)
+
+✅ Monitoring / Convergence Proof
+
+50-round convergence comparison (Federated vs Local baseline)
+
+Grafana-style metric dashboards
+
+Multi-node visualization (Nairobi / Lagos / Joburg)
+
+Screenshots directory suggestion: docs/screenshots/
+Example:
+
+docs/screenshots/render-services.png
+
+docs/screenshots/docker-deploy.png
+
+docs/screenshots/flutter-dashboard.png
+
+docs/screenshots/fedavg-vs-local.png
+
+Results (Experimental Evidence)
+
+PrivFed was evaluated using the IEEE-CIS Fraud Detection dataset.
+
+Strategy	Final AUC	Description
+Centralized Model	0.7418	Theoretical ceiling (not privacy-compliant)
+PriFed (FedAvg)	0.7289	Closed >95% of the intelligence gap while keeping data local
+PriFed + DP (ε = 8.0)	0.6674	Privacy-compliant (utility trade-off)
+Local-Only Average	0.5820	Baseline (silo training performs poorly)
+“Democratization of AI” (Key Finding)
+
+Bank Gamma (smallest institution) struggled due to highly imbalanced data:
+
+Local-only AUC: 0.5210
+
+After joining PrivFed: 0.7790
+
+📈 ~50% improvement
+
+This shows the system benefits smaller institutions most — without violating privacy laws.
+
+Data Engineering & Visualization
+
+Dataset: IEEE-CIS Fraud Detection
+
+Pipeline includes:
+
+Log transforms of transaction amounts
+
+Temporal extraction (hour/day/week)
+
+Interaction ratios and card/device feature engineering
+
+Non-IID partitioning to simulate realistic bank differences
+
+Visualization of transaction distribution and fraud-rate per bank
+
+Model Architecture (Fraud Classifier)
+
+Optimized MLP for tabular data:
+
+Input: ~432 engineered features
+
+Hidden layers: 256 → 128 → 64
+
+Activation: ReLU
+
+Regularization: BatchNorm + Dropout (0.3)
+
+Optimizer: Adam (lr=0.001, weight_decay=1e-5)
+
+Metrics Used
+
+AUC-ROC (primary)
+
+PR-AUC
+
+Recall (fraud capture)
+
+Getting Started (Local Development)
+
+PrivFed is decoupled into:
+
+Node.js Auth API
+
+FastAPI AI/ML Server
+
+Flutter Mobile App
+
+1) Clone Repo
 git clone https://github.com/JohnOngeri/PriFed.git
 cd PriFed
-A. Backend Setup (Local Development)
-2. AI Backend (FastAPI, port 8000)
-
-Bash
+2) AI Backend (FastAPI — Port 8000)
 cd backend
 python -m venv venv
-venv\Scripts\activate          # Windows
-# source venv/bin/activate     # macOS/Linux
+
+# Windows
+venv\Scripts\activate
+
+# macOS/Linux
+source venv/bin/activate
 
 pip install -r requirements.txt
-uvicorn api.main:app --reload  # http://localhost:8000
-Leave this terminal running.
+uvicorn api.main:app --reload
 
-3. Auth Backend (Node + PostgreSQL, port 3000)
-Ensure PostgreSQL is running and DATABASE_URL is set in backend/.env. In a new terminal:
+Runs at: http://localhost:8000
+✅ Keep this terminal running.
 
-Bash
+3) Auth Backend (Node + PostgreSQL — Port 3000)
+
+Make sure PostgreSQL is running and DATABASE_URL is set in backend/.env.
+
 cd backend
 npm install
-npx prisma migrate dev         # create/update DB schema
-npm run start                  # http://localhost:3000
-B. Flutter Mobile App
-4. Install Flutter dependencies
+npx prisma migrate dev
+npm run start
 
-Bash
+Runs at: http://localhost:3000
+
+4) Flutter App (Mobile Client)
 cd frontend/mobile_app
 flutter pub get
-5. Run on Android emulator
-Start an emulator from Android Studio (Device Manager). With the backends running on your machine, the emulator connects automatically (via 10.0.2.2). In frontend/mobile_app:
+flutter run
+Android Emulator Notes
 
-Bash
-flutter devices
-flutter run                    # or: flutter run -d <emulator_id>
-6. Run on a physical Android device
-Enable Developer options and USB debugging on the device. Connect via USB and verify:
+Emulator connects to your machine via 10.0.2.2
 
-Bash
-flutter devices
-flutter run -d <device_id>
-C. Build APK
-7. Debug APK (for quick sideloading)
+Ensure both backends are running locally
 
-Bash
+Build APK
+Debug APK
 cd frontend/mobile_app
 flutter build apk --debug
-Result: build/app/outputs/flutter-apk/app-debug.apk
 
-8. Release APK (using deployed backends)
-Assuming your backends are deployed at https://auth.example.com/api and https://api.example.com/api:
+Output:
+build/app/outputs/flutter-apk/app-debug.apk
 
-Bash
+Release APK (Production Backends)
 cd frontend/mobile_app
-flutter build apk --release ^
-  --dart-define=PRODUCTION=true ^
-  --dart-define=AUTH_BASE_URL=https://auth.example.com/api ^
-  --dart-define=API_BASE_URL=https://api.example.com/api
-Result: build/app/outputs/flutter-apk/app-release.apk (Can be installed on any device and will use the deployed backends only).
+flutter build apk --release \
+--dart-define=PRODUCTION=true \
+--dart-define=AUTH_BASE_URL=https://auth.example.com/api \
+--dart-define=API_BASE_URL=https://api.example.com/api
 
-Deployment ArchitectureThis project utilizes a Dockerized Microservices Architecture deployed to managed cloud services (e.g., Render) to ensure the APK runs anywhere without requiring local backends.ComponentTechPortPurposeAuth APINode.js + Express + Prisma3000Login, JWT, User & Bank managementAI/ML APIFastAPI + PyTorch8000Telemetry, Privacy, Fraud predictionDatabasePostgreSQL5432Auth DatabaseFrontendFlutter (Dart)—Client UI, compiled to APK / Web
+Output:
+build/app/outputs/flutter-apk/app-release.apk
 
-### Data Engineering and Visualization
+Deployment (Docker + Render)
 
-The system processes the IEEE-CIS Fraud Detection dataset through a multi-stage pipeline:
+This project uses a Dockerized microservices deployment to ensure the APK works anywhere without local backends.
 
-- **Engineering**: Includes log transformations of transaction amounts, temporal extraction (hour, day, week), and card interaction ratios
-- **Partitioning**: Data is split into non-IID (non-independent and identically distributed) sets to simulate realistic differences between commercial, premium, and regional banks
-- **Visualizations**: The notebook generates distributions of transaction sizes and fraud rates per bank to demonstrate data heterogeneity
-  
-Testing Strategy,Final AUC,Description
-Centralized Model,0.7418,The Theoretical Ceiling. All data pooled together (violates privacy laws).
-PriFed (FedAvg),0.7289,Global Champion. Bridged >95% of the intelligence gap while keeping data local.
-PriFed + DP (ε=8.0),0.6674,Privacy Compliant. 100% mathematical anonymity with a minor ~8% utility tax.
-Local-Only Average,0.5820,The Baseline. Banks training in silos fail to detect complex fraud patterns.
+Component	Tech	Port	Purpose
+Auth API	Node.js + Express + Prisma	3000	Login, JWT, bank/user management
+AI/ML API	FastAPI + PyTorch	8000	Telemetry, privacy, fraud inference
+Database	PostgreSQL	5432	Auth + metadata
+Frontend	Flutter	—	Client UI (APK)
 
-### Model Architecture
+Add your render.yaml, docker-compose diagram, or service URLs here once screenshots are attached.
 
-The core model is an optimized Multi-Layer Perceptron (MLP) designed for tabular data:
+Tech Stack
 
-| Component | Details |
-|-----------|---------|
-| **Input Layer** | Configurable based on engineered feature count (~432 features) |
-| **Hidden Layers** | Three fully connected layers with 256, 128, and 64 units respectively |
-| **Activation** | ReLU functions for non-linear pattern handling |
-| **Regularization** | Batch Normalization and 0.3 Dropout rate to prevent overfitting |
-| **Optimizer** | Adam optimizer with learning rate 0.001 and weight decay 1e-5 |
+Federated Learning: Flower (flwr), FedAvg
 
-### Performance Metrics
+Deep Learning: PyTorch
 
-The model is evaluated using metrics critical for imbalanced fraud datasets:
+Differential Privacy: Opacus (DP-SGD)
 
-- **AUC-ROC**: Primary metric for classification quality across decision thresholds
-- **PR-AUC**: Precision-recall balance, essential for detecting rare fraud events
-- **Recall**: System's ability to capture the maximum number of fraudulent transactions
+Backend APIs: FastAPI + Node.js
 
-**Initial Results**: Empirical evidence shows the federated model achieves higher AUC than banks training in isolation, proving collaboration gain.
+Database: PostgreSQL + Prisma
 
-### Development Stack
+Frontend: Flutter (Android APK)
 
-- **Backend**: Python with PyTorch for deep learning and Flower (flwr) for federated framework
-- **Privacy**: Opacus library implements DP-SGD (Differential Privacy Stochastic Gradient Descent)
-- **Configuration**: All hyperparameters and strategies managed via central `config.yaml`
-
-
-2. The "Democratization of AI" (Data Imbalance Test)
-Bank Gamma (the smallest branch) had the most unbalanced data, achieving a dismal local AUC of 0.5210. After joining the PriFed network, its predictive power surged to 0.7790—a 50% improvement. This proves the system works exceptionally well even when data is unevenly distributed across nodes.
-
-3. Hardware & Deployment Performance
-Cloud GPU (Google Colab, T4 GPU): Model training and tensor aggregations (700k+ rows) were processed efficiently in the cloud without memory problems.
-
-Local User Interface (Flutter Dashboard): The trained model results were displayed in a Flutter dashboard. The dashboard ran smoothly (60fps) on normal hardware, proving that heavy machine learning tasks can run in the cloud while the user interface remains fast and lightweight.
-
-📊 Analysis
-This section evaluates the results based on the research objectives.
-
-Objective I & II (Literature Review & System Design): Achieved. The system successfully combined Federated Learning and Differential Privacy. Five configurations were tested as planned.
-
-Objective III (Reach at least 85% AUC-ROC): Partially Achieved / Reinterpreted. The proposal aimed for 85% AUC. However, the highest possible result (centralized model) was only 74.18% AUC due to the inherent difficulty of the dataset. The federated model reached 72.89% AUC, which closes over 95% of the gap between local-only training (0.58) and centralized training (0.74). In Federated Learning research, reaching parity with the centralized model is considered the benchmark for success.
-
-Objective IV (Evaluate Privacy vs Performance Trade-off): Achieved. Adding Differential Privacy reduced performance to 0.6674 AUC, but ensured strong privacy protection (ε = 8.0). This satisfies regulations such as the Kenya Data Protection Act.
-
-🗣️ Discussion
-The project followed the planned 13-week schedule closely.
-
-Why the Milestones Were Important:
-
-Weeks 1–3: Setting up data splits and local baselines was critical to clearly show how weak isolated training is.
-
-Weeks 4–7: Backend optimization improved the federated system.
-
-Final Phase: Dashboard development turned complex math into a highly usable, commercial product.
-
-Impact of the Results:
-The most important finding is the “Democratization of AI.” Small institutions (like Bank Gamma) improved their detection accuracy by 50% just by joining the network. This shows that African fintech companies can work together to fight fraud without sharing raw customer data or breaking privacy laws.
-
-🔮 Recommendations & Future Work
-Recommendations for the Community
-Regulatory Support: Central Banks and regulators (e.g., Kenya, Nigeria) should officially approve Federated Learning for fraud and AML systems.
-
-Intelligence Sharing Instead of Data Sharing: Banks should stop sharing raw data. Instead, they should share model intelligence through secure systems like PriFed.
+Infra: Docker + Render
 
 Future Work
-Adaptive Privacy Budgets: Instead of using a fixed ε = 8.0, the system could adjust the privacy level dynamically to improve performance.
 
-Early Stopping: The private model performed best early (Round 2) but worsened due to accumulated noise. Smarter stopping methods could preserve optimal performance.
+Adaptive privacy budgets (dynamic ε)
 
-Edge Deployment: Future versions should run directly on edge devices like POS terminals or ATMs to detect fraud at the exact moment of transaction.
+Early stopping (DP noise accumulates across rounds)
 
-🗂️ Related Project Files
-colab_training_notebook (1).ipynb - The core PyTorch machine learning pipeline, dataset partitioning, and DP-SGD implementation.
+Edge deployment (POS terminals / ATMs for real-time detection)
 
-backend/api/main.py - The FastAPI telemetry server handling UI data requests and AI processing.
+Formal regulatory adoption for AML/fraud systems
 
-backend/src/server.js - The Node.js Express Auth server.
+Project Files
 
-backend/prisma/schema.prisma - The PostgreSQL database schema.
+colab_training_notebook (1).ipynb — ML pipeline, data partitioning, DP-SGD experiments
 
-frontend/mobile_app/lib/screens/ - The Flutter Dart code containing the custom UI painters, telemetry logic, and cinematic visualizations.
+backend/api/main.py — FastAPI AI/Telemetry server
 
-John Ongeri Ouma Research Proposal (Final).pdf - The original academic framework and Gantt timeline for the thesis.
----
+backend/src/server.js — Node Auth server
+
+backend/prisma/schema.prisma — PostgreSQL schema
+
+frontend/mobile_app/lib/screens/ — Flutter UI + telemetry logic
+
+John Ongeri Ouma Research Proposal (Final).pdf — research framework and timeline
