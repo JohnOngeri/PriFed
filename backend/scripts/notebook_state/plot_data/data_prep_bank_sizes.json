@@ -1,0 +1,12 @@
+{
+  "bank_names": [
+    "Bank_A",
+    "Bank_B",
+    "Bank_C"
+  ],
+  "bank_sizes": [
+    172486,
+    213294,
+    204760
+  ]
+}

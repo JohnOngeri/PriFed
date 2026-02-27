@@ -1,0 +1,12 @@
+{
+  "labels": [
+    "Local Avg",
+    "Federated Config",
+    "Centralized"
+  ],
+  "auc": [
+    0.7055814663295877,
+    0.0,
+    0.7405583424357651
+  ]
+}

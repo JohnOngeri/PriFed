@@ -1,0 +1,84 @@
+{
+  "data": {
+    "dataset_path": "/content/drive/MyDrive/dataset",
+    "train_transaction": "train_transaction.csv",
+    "train_identity": "train_identity.csv",
+    "test_transaction": "test_transaction.csv",
+    "test_identity": "test_identity.csv",
+    "test_size": 0.2,
+    "val_size": 0.2,
+    "random_state": 42,
+    "partition_strategy": "time_based",
+    "num_banks": 3
+  },
+  "model": {
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "batch_size": 512,
+    "local_epochs": 5,
+    "optimizer": "adam"
+  },
+  "federated_learning": {
+    "num_rounds": 50,
+    "clients_per_round": 3,
+    "min_fit_clients": 2,
+    "min_evaluate_clients": 2,
+    "min_available_clients": 3,
+    "strategy": "FedAvg",
+    "fedprox_proximal_mu": 0.01,
+    "client_fraction": 1.0
+  },
+  "differential_privacy": {
+    "enabled": false,
+    "noise_multiplier": 1.0,
+    "max_grad_norm": 1.0
+  },
+  "experiment": {
+    "name": "privfed_fraud_detection",
+    "seed": 42,
+    "device": "auto",
+    "log_level": "INFO",
+    "save_checkpoints": true,
+    "checkpoint_frequency": 10,
+    "results_dir": "results",
+    "models_dir": "models",
+    "logs_dir": "logs",
+    "experiments_dir": "experiments",
+    "run_type": "federated"
+  },
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "reload": true,
+    "allow_origins": [
+      "*"
+    ],
+    "allow_credentials": true,
+    "allow_methods": [
+      "*"
+    ],
+    "allow_headers": [
+      "*"
+    ]
+  },
+  "debug": {
+    "score_sample_logging": false,
+    "pooled_score_aggregation": true,
+    "max_score_samples": 2000
+  },
+  "hyperparameter_config_id": 6,
+  "hyperparameter_spec": {
+    "label": "Tuning Config 2",
+    "run_type": "federated",
+    "lr": 0.001,
+    "bs": 512,
+    "opt": "adam",
+    "wd": 0.0001,
+    "epochs": 5,
+    "cf": 1.0,
+    "strat": "FedAvg"
+  },
+  "eval": {
+    "target_fpr": 0.01
+  }
+}

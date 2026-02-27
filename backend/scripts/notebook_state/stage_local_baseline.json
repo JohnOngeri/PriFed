@@ -1,0 +1,11 @@
+{
+  "stage": "local_baseline",
+  "timestamp": "2026-02-18T05:06:25.228447",
+  "metadata": {
+    "banks": [
+      "bank_A",
+      "bank_B",
+      "bank_C"
+    ]
+  }
+}

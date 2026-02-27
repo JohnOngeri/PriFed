@@ -1,0 +1,838 @@
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-10 16:12:08"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-10 16:12:08"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-10 16:12:08"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-10 16:12:08"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-10 16:12:39","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"388ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-10 16:12:39"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-10 16:16:29"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-10 16:16:29"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-10 16:16:29"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-10 16:16:29"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-10 16:17:58","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"452ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-10 16:17:58"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-10 16:21:16"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-10 16:21:16"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-10 16:21:16"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-10 16:21:16"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-10 16:22:00","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"272ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-10 16:22:01"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-10 16:22:02"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-10 16:22:02"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-10 16:22:02"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-10 16:22:02"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/favicon.ico","service":"privfed-backend","timestamp":"2026-01-10 16:22:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"8ms","ip":"::1","level":"warn","message":"Request completed","method":"GET","path":"/favicon.ico","service":"privfed-backend","statusCode":404,"timestamp":"2026-01-10 16:22:02"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-10 16:22:35","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"57ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-10 16:22:35"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/status","service":"privfed-backend","timestamp":"2026-01-10 16:22:51","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"181ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-10 16:22:51"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/metrics/global","service":"privfed-backend","timestamp":"2026-01-10 16:23:04","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"8ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/global","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-10 16:23:04"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-10 16:23:27"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-10 16:23:27"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-10 16:23:27"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-10 16:23:27"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-10 16:26:34"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-10 16:26:34"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-10 16:26:34"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-10 16:26:34"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-10 16:26:44","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"162ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-10 16:26:44"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/metrics/global","service":"privfed-backend","timestamp":"2026-01-10 16:27:28","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"79ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/global","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-10 16:27:28"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/status","service":"privfed-backend","timestamp":"2026-01-10 16:27:37","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"38ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-10 16:27:37"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 19:18:03"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 19:18:04"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 19:18:04"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 19:18:04"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 19:18:06"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 19:18:06"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 19:18:06"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 19:18:06"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-11 19:18:20","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"15ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 19:18:20"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-11 19:18:49","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"clientVersion":"5.22.0","level":"error","message":"Database health check failed: \nInvalid `prisma.$queryRaw()` invocation:\n\n\nCan't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.","name":"PrismaClientInitializationError","service":"privfed-backend","stack":"PrismaClientInitializationError: \nInvalid `prisma.$queryRaw()` invocation:\n\n\nCan't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.\n    at $n.handleRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:7615)\n    at $n.handleAndLogRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6623)\n    at $n.request (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6307)\n    at async l (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:130:9633)\n    at async healthCheck (file:///C:/PriFed/backend/src/controllers/health.controller.js:19:7)","timestamp":"2026-01-11 19:18:59"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-11 19:19:43","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"126ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 19:19:44"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/favicon.ico","service":"privfed-backend","timestamp":"2026-01-11 19:19:44","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"80ms","ip":"::1","level":"warn","message":"Request completed","method":"GET","path":"/favicon.ico","service":"privfed-backend","statusCode":404,"timestamp":"2026-01-11 19:19:44"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 20:09:41"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 20:09:41"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 20:09:41"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 20:09:41"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 21:09:42"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 21:09:42"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 21:09:42"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 21:09:42"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 21:09:43"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 21:09:43"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 21:09:43"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 21:09:43"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-11 21:37:55","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"636ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 21:37:56"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-11 21:38:05","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"12ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 21:38:05"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-11 21:38:08","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"8ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 21:38:08"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/auth","service":"privfed-backend","timestamp":"2026-01-11 21:55:47","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"166ms","ip":"::1","level":"warn","message":"Request completed","method":"GET","path":"/api/auth","service":"privfed-backend","statusCode":404,"timestamp":"2026-01-11 21:55:47"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:09:31"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:09:31"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:09:31"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:09:31"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-11 22:11:30","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"19ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 22:11:30"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:14:05"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:14:05"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:14:05"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:14:05"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:14:06"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:14:06"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:14:06"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:14:06"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-11 22:15:36","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"8ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 22:15:36"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:22:10"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:22:10"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:22:10"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:22:10"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:22:32"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:22:32"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:22:32"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:22:32"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:25:25"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:25:25"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:25:25"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:25:25"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-11 22:26:18","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"19ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 22:26:18"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-11 22:26:30","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"clientVersion":"5.22.0","level":"error","message":"Database health check failed: \nInvalid `prisma.$queryRaw()` invocation:\n\n\nCan't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.","name":"PrismaClientInitializationError","service":"privfed-backend","stack":"PrismaClientInitializationError: \nInvalid `prisma.$queryRaw()` invocation:\n\n\nCan't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.\n    at $n.handleRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:7615)\n    at $n.handleAndLogRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6623)\n    at $n.request (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6307)\n    at async l (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:130:9633)\n    at async healthCheck (file:///C:/PriFed/backend/src/controllers/health.controller.js:19:7)","timestamp":"2026-01-11 22:26:35"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-11 22:26:46","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:26:47"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:26:47"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:26:47"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:26:47"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/status","service":"privfed-backend","timestamp":"2026-01-11 22:27:11","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"clientVersion":"5.22.0","level":"error","message":"Get system status error: \nInvalid `prisma.trainingRound.findFirst()` invocation:\n\n\nCan't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.","name":"PrismaClientInitializationError","service":"privfed-backend","stack":"PrismaClientInitializationError: \nInvalid `prisma.trainingRound.findFirst()` invocation:\n\n\nCan't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.\n    at $n.handleRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:7615)\n    at $n.handleAndLogRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6623)\n    at $n.request (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6307)\n    at async l (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:130:9633)\n    at async getSystemStatus (file:///C:/PriFed/backend/src/controllers/status.controller.js:16:25)","timestamp":"2026-01-11 22:27:15"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:36:21"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:36:21"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:36:21"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:36:21"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:36:50"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:36:51"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:36:51"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:36:51"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:37:30"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:37:30"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:37:30"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:37:30"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-11 22:37:43","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"level":"error","message":"Database health check failed: Database query timeout","service":"privfed-backend","stack":"Error: Database query timeout\n    at Timeout._onTimeout (file:///C:/PriFed/backend/src/controllers/health.controller.js:24:33)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)","timestamp":"2026-01-11 22:37:45"}
+{"duration":"2032ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 22:37:45"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-11 22:45:27","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"level":"error","message":"Database health check failed: Database query timeout","service":"privfed-backend","stack":"Error: Database query timeout\n    at Timeout._onTimeout (file:///C:/PriFed/backend/src/controllers/health.controller.js:24:33)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)","timestamp":"2026-01-11 22:45:29"}
+{"duration":"2014ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 22:45:29"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:49:00"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:49:00"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:49:00"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:49:00"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 22:59:34"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 22:59:34"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 22:59:34"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 22:59:34"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:06:10"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:06:10"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:06:10"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:06:10"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:19:08"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:19:08"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:19:08"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:19:08"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:25:33"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:25:33"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:25:33"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:25:33"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:26:34"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:26:34"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:26:34"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:26:34"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:26:47"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:26:47"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:26:47"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:26:47"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:26:51"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:26:51"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:26:51"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:26:51"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:27:48"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:27:48"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:27:48"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:27:48"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:28:23"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:28:23"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:28:23"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:28:23"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:32:19"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:32:19"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:32:19"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:32:19"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-11 23:44:09","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"1074ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 23:44:10"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-11 23:44:42","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"20ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 23:44:42"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-11 23:49:14"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-11 23:49:14"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-11 23:49:14"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-11 23:49:14"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-11 23:50:27","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"294ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-11 23:50:27"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/favicon.ico","service":"privfed-backend","timestamp":"2026-01-11 23:50:28","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"113ms","ip":"::1","level":"warn","message":"Request completed","method":"GET","path":"/favicon.ico","service":"privfed-backend","statusCode":404,"timestamp":"2026-01-11 23:50:28"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-12 00:06:03"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 00:06:03"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 00:06:03"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 00:06:03"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/","service":"privfed-backend","timestamp":"2026-01-12 00:06:37","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"}
+{"duration":"9990ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-12 00:06:47"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-12 00:11:51","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-12 00:11:51","userAgent":"Dart/3.7 (dart:io)"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-12 00:11:55"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 00:11:55"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 00:11:55"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 00:11:55"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-12 00:13:14","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"duration":"2316ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-12 00:13:16"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-12 00:13:46","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"level":"info","message":"Email would be sent:","service":"privfed-backend","subject":"Welcome to PrivFed - Your Federation ID","text":"\n    \n    \n    \n      \n        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n        .button { display: inline-block; padding: 12px 24px; background-color: #00E5FF; color: #0A192F; text-decoration: none; border-radius: 4px; margin: 20px 0; font-weight: bold; }\n        .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #666; }\n        .federation-id-box { background: linear-gradient(135deg, #00E5FF 0%, #64FFDA 100%); padding: 30px; border-radius: 8px; margin: 30px 0; text-align: center; border: 3px solid #00E5FF; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3); }\n        .federation-id-label { font-size: 14px; color: #0A192F; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }\n        .federation-id-value { font-size: 48px; font-weight: bold; color: #0A192F; font-family: 'Courier New', monospace; letter-spacing: 4px; margin: 15px 0; }\n        .warning-box { background-color: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }\n        .warning-title { font-weight: bold; color: #856404; font-size: 16px; margin-bottom: 10px; }\n        .warning-text { color: #856404; margin: 5px 0; }\n        .info-section { background-color: #e7f3ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3; }\n        .info-title { font-weight: bold; color: #0d47a1; font-size: 16px; margin-bottom: 10px; }\n        .info-text { color: #0d47a1; margin: 5px 0; }\n      \n    \n    \n      \n        Welcome to PrivFed!\n        Hello,\n        Your account has been successfully created. Your Federation ID has been generated and is shown below.\n        \n        \n        \n          Your Federation ID\n          SQRBX\n          Save this ID securely\n        \n\n        \n        \n          ⚠️ IMPORTANT: Save Your Federation ID\n          Your Federation ID cannot be recovered or regenerated.\n          This ID is required to:\n          \n            Log in to the PrivFed mobile app\n            Participate in federated learning rounds\n            Access your federated learning data\n          \n          Please store this ID in a secure location.\n        \n\n        \n        \n          📱 Next Steps\n          You can now log in to the PrivFed mobile app using:\n          \n            Federation ID: SQRBX\n            Your passcode: (the one you created during signup)\n          \n        \n\n        \n          Get Started in PrivFed\n        \n\n        Thank you for joining the federated learning network!\n        \n        \n          This is an automated message from PrivFed. Please do not reply to this email.\n          For security, we cannot regenerate your Federation ID. Keep it safe.\n        \n      \n    \n    \n  ","timestamp":"2026-01-12 00:13:48","to":"test@example.com"}
+{"federationId":"SQRBX","level":"info","message":"User signed up successfully","service":"privfed-backend","timestamp":"2026-01-12 00:13:48","userId":"01141360-27de-4446-84b8-4c6317646753"}
+{"duration":"1523ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":201,"timestamp":"2026-01-12 00:13:48"}
+{"level":"warn","message":"SMTP not configured - emails will be logged instead of sent","service":"privfed-backend","timestamp":"2026-01-12 00:20:43"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 00:20:44"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 00:20:44"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 00:20:44"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-12 00:25:45","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-12 00:25:46","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"634ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-12 00:25:46"}
+{"level":"info","message":"Email would be sent:","service":"privfed-backend","subject":"Welcome to PrivFed - Your Federation ID","text":"\n    \n    \n    \n      \n        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n        .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n        .button { display: inline-block; padding: 12px 24px; background-color: #00E5FF; color: #0A192F; text-decoration: none; border-radius: 4px; margin: 20px 0; font-weight: bold; }\n        .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #666; }\n        .federation-id-box { background: linear-gradient(135deg, #00E5FF 0%, #64FFDA 100%); padding: 30px; border-radius: 8px; margin: 30px 0; text-align: center; border: 3px solid #00E5FF; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3); }\n        .federation-id-label { font-size: 14px; color: #0A192F; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }\n        .federation-id-value { font-size: 48px; font-weight: bold; color: #0A192F; font-family: 'Courier New', monospace; letter-spacing: 4px; margin: 15px 0; }\n        .warning-box { background-color: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }\n        .warning-title { font-weight: bold; color: #856404; font-size: 16px; margin-bottom: 10px; }\n        .warning-text { color: #856404; margin: 5px 0; }\n        .info-section { background-color: #e7f3ff; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3; }\n        .info-title { font-weight: bold; color: #0d47a1; font-size: 16px; margin-bottom: 10px; }\n        .info-text { color: #0d47a1; margin: 5px 0; }\n      \n    \n    \n      \n        Welcome to PrivFed!\n        Hello,\n        Your account has been successfully created. Your Federation ID has been generated and is shown below.\n        \n        \n        \n          Your Federation ID\n          7BW4B\n          Save this ID securely\n        \n\n        \n        \n          ⚠️ IMPORTANT: Save Your Federation ID\n          Your Federation ID cannot be recovered or regenerated.\n          This ID is required to:\n          \n            Log in to the PrivFed mobile app\n            Participate in federated learning rounds\n            Access your federated learning data\n          \n          Please store this ID in a secure location.\n        \n\n        \n        \n          📱 Next Steps\n          You can now log in to the PrivFed mobile app using:\n          \n            Federation ID: 7BW4B\n            Your passcode: (the one you created during signup)\n          \n        \n\n        \n          Get Started in PrivFed\n        \n\n        Thank you for joining the federated learning network!\n        \n        \n          This is an automated message from PrivFed. Please do not reply to this email.\n          For security, we cannot regenerate your Federation ID. Keep it safe.\n        \n      \n    \n    \n  ","timestamp":"2026-01-12 00:25:47","to":"j.ouma@alustudent.com"}
+{"federationId":"7BW4B","level":"info","message":"User signed up successfully","service":"privfed-backend","timestamp":"2026-01-12 00:25:47","userId":"302d0308-f531-40f8-a45c-3ae5a4d599d8"}
+{"duration":"1503ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":201,"timestamp":"2026-01-12 00:25:47"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-01-12 00:28:32","userAgent":"Dart/3.7 (dart:io)"}
+{"federationId":"7BW4B","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-01-12 00:28:33","userId":"302d0308-f531-40f8-a45c-3ae5a4d599d8"}
+{"duration":"1094ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-12 00:28:33"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 00:31:48"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 00:31:48"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 00:31:48"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 00:32:31"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 00:32:31"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 00:32:31"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 00:52:08"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 00:52:08"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 00:52:08"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 16:37:42"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 16:37:42"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 16:37:42"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 16:37:43"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 16:37:43"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 16:37:43"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-12 16:43:20","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-12 16:43:20","userAgent":"Dart/3.7 (dart:io)"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 16:43:22"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 16:43:22"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 16:43:22"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-12 16:46:36","userAgent":"Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.7462"}
+{"level":"error","message":"Database health check failed: Database query timeout","service":"privfed-backend","stack":"Error: Database query timeout\n    at Timeout._onTimeout (file:///C:/PriFed/backend/src/controllers/health.controller.js:24:33)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)","timestamp":"2026-01-12 16:46:38"}
+{"duration":"2059ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-12 16:46:38"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-12 16:48:46","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-12 16:48:46","userAgent":"Dart/3.7 (dart:io)"}
+{"clientVersion":"5.22.0","code":"P2002","level":"error","message":"Signup error: \n\u001b[31mInvalid \u001b[1m`prisma.user.create()`\u001b[22m invocation:\u001b[39m\n\n\nUnique constraint failed on the fields: (`email`)","meta":{"modelName":"User","target":["email"]},"name":"PrismaClientKnownRequestError","service":"privfed-backend","stack":"PrismaClientKnownRequestError: \n\u001b[31mInvalid \u001b[1m`prisma.user.create()`\u001b[22m invocation:\u001b[39m\n\n\nUnique constraint failed on the fields: (`email`)\n    at $n.handleRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:7315)\n    at $n.handleAndLogRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6623)\n    at $n.request (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6307)\n    at async l (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:130:9633)\n    at async signup (file:///C:/PriFed/backend/src/controllers/auth.controller.js:47:18)","timestamp":"2026-01-12 16:48:47"}
+{"duration":"1563ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":500,"timestamp":"2026-01-12 16:48:47"}
+{"level":"info","message":"Email sent successfully:","messageId":"<008f2faa-477a-451f-4913-254616803b3a@privfed.com>","service":"privfed-backend","subject":"Welcome to PrivFed - Your Federation ID","timestamp":"2026-01-12 16:49:21","to":"eccmentor.johnongeri@gmail.com"}
+{"federationId":"QHG5X","level":"info","message":"User signed up successfully","service":"privfed-backend","timestamp":"2026-01-12 16:49:21","userId":"3581f480-e064-4009-93a9-7d27b544168a"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-12 16:50:25","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"17ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":409,"timestamp":"2026-01-12 16:50:25"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-12 16:51:04","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"19ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":409,"timestamp":"2026-01-12 16:51:04"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-01-12 16:51:26","userAgent":"Dart/3.7 (dart:io)"}
+{"level":"info","message":"Email sent successfully:","messageId":"<3adca1db-f8a7-ceb5-5bff-5372c8aac4b3@privfed.com>","service":"privfed-backend","subject":"Welcome to PrivFed - Your Federation ID","timestamp":"2026-01-12 16:51:30","to":"pricilaakinyi436@gmail.com"}
+{"federationId":"Q4H82","level":"info","message":"User signed up successfully","service":"privfed-backend","timestamp":"2026-01-12 16:51:30","userId":"9b49ddf5-eff5-48a2-9daf-2400128608a8"}
+{"duration":"3405ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":201,"timestamp":"2026-01-12 16:51:30"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 17:20:37"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 17:20:37"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 17:20:37"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-01-12 17:36:45","userAgent":"Dart/3.7 (dart:io)"}
+{"federationId":"Q4H82","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-01-12 17:36:46","userId":"9b49ddf5-eff5-48a2-9daf-2400128608a8"}
+{"duration":"1009ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-12 17:36:46"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-01-12 18:09:47","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-01-12 18:09:48","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"1008ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-12 18:09:48"}
+{"federationId":"7BW4B","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-01-12 18:09:49","userId":"302d0308-f531-40f8-a45c-3ae5a4d599d8"}
+{"duration":"1497ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-01-12 18:09:49"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 18:13:19"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 18:13:19"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 18:13:19"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 18:13:20"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 18:13:20"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 18:13:20"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 18:20:36"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 18:20:36"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 18:20:36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 18:55:02"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 18:55:02"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 18:55:02"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 19:35:40"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 19:35:40"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 19:35:40"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 19:35:41"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 19:35:41"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 19:35:41"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-01-12 19:55:02"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-01-12 19:55:02"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-01-12 19:55:02"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 15:40:22"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 15:40:22"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 15:40:22"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 15:40:23"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 15:40:23"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 15:40:23"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 15:42:57","userAgent":"Dart/3.7 (dart:io)"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 15:42:59"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 15:42:59"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 15:42:59"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-13 15:56:19","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 15:56:19","userAgent":"Dart/3.7 (dart:io)"}
+{"level":"error","message":"Database health check failed: Database query timeout","service":"privfed-backend","stack":"Error: Database query timeout\n    at Timeout._onTimeout (file:///C:/PriFed/backend/src/controllers/health.controller.js:24:33)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)","timestamp":"2026-02-13 15:56:21"}
+{"duration":"2139ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-13 15:56:21"}
+{"clientVersion":"5.22.0","level":"error","message":"Login error: \n\u001b[31mInvalid \u001b[1m`prisma.user.findFirst()`\u001b[22m invocation:\u001b[39m\n\n\nCan't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.","name":"PrismaClientInitializationError","service":"privfed-backend","stack":"PrismaClientInitializationError: \n\u001b[31mInvalid \u001b[1m`prisma.user.findFirst()`\u001b[22m invocation:\u001b[39m\n\n\nCan't reach database server at `localhost:5432`\n\nPlease make sure your database server is running at `localhost:5432`.\n    at $n.handleRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:7615)\n    at $n.handleAndLogRequestError (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6623)\n    at $n.request (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6307)\n    at async l (C:\\PriFed\\backend\\node_modules\\@prisma\\client\\runtime\\library.js:130:9633)\n    at async login (file:///C:/PriFed/backend/src/controllers/auth.controller.js:129:18)","timestamp":"2026-02-13 15:56:23"}
+{"duration":"4097ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":500,"timestamp":"2026-02-13 15:56:23"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 17:46:01"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 17:46:01"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 17:46:01"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 17:46:02"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 17:46:02"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 17:46:02"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-13 18:08:36","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-02-13 18:08:36","userAgent":"Dart/3.7 (dart:io)"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 18:08:39"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 18:08:39"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 18:08:39"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 18:11:59"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 18:11:59"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 18:11:59"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-13 18:27:49","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-02-13 18:27:50","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"953ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-13 18:27:50"}
+{"duration":"815ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":409,"timestamp":"2026-02-13 18:27:50"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 18:45:15"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 18:45:15"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 18:45:15"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 19:45:12"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 19:45:12"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 19:45:12"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 19:45:15"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 19:45:15"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 19:45:15"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 19:56:37"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 19:56:37"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 19:56:37"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-13 20:17:11","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 20:17:12","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"831ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-13 20:17:12"}
+{"duration":"678ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-13 20:17:12"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 20:19:46","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"1080ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-13 20:19:47"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-02-13 20:32:19","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"1106ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":409,"timestamp":"2026-02-13 20:32:20"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-02-13 20:34:29","userAgent":"Dart/3.7 (dart:io)"}
+{"level":"info","message":"Email sent successfully:","messageId":"<0a7fe7f0-5591-e5c6-2d4a-fd12e7585b27@privfed.com>","service":"privfed-backend","subject":"Welcome to PrivFed - Your Federation ID","timestamp":"2026-02-13 20:35:09","to":"ogoremarvin@gmail.com"}
+{"federationId":"WWCY7","level":"info","message":"User signed up successfully","service":"privfed-backend","timestamp":"2026-02-13 20:35:09","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-02-13 20:35:42","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"1002ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":409,"timestamp":"2026-02-13 20:35:43"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-13 20:47:39","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 20:47:39","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"528ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-13 20:47:40"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-13 20:47:40","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"997ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-13 20:47:40"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 20:55:55"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 20:55:55"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 20:55:55"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 20:55:56"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 20:55:56"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 20:55:56"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 21:56:10"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 21:56:10"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 21:56:10"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 21:56:10"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 21:56:10"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 21:56:10"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 22:43:37"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 22:43:37"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 22:43:37"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-13 23:07:19","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 23:07:19","userAgent":"Dart/3.7 (dart:io)"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 23:07:22"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 23:07:22"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 23:07:22"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 8000","service":"privfed-backend","timestamp":"2026-02-13 23:07:24"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-13 23:07:24"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:8000/api","service":"privfed-backend","timestamp":"2026-02-13 23:07:24"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 23:07:31","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"768ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-13 23:07:32"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/refresh","service":"privfed-backend","timestamp":"2026-02-13 23:07:32","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"88ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/refresh","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-13 23:07:33"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 23:07:34","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"396ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-13 23:07:34"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 23:08:15","userAgent":"Dart/3.7 (dart:io)"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-13 23:08:27","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-13 23:10:16","userAgent":"Dart/3.7 (dart:io)"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-13 23:10:17","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1047ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-13 23:10:17"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 18:45:12"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 18:45:12"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 18:45:12"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 19:14:10"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 19:14:10"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 19:14:10"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 19:43:03"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 19:43:03"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 19:43:03"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api","service":"privfed-backend","timestamp":"2026-02-24 19:47:49","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/2.5.17 Chrome/142.0.7444.265 Electron/39.3.0 Safari/537.36"}
+{"duration":"237ms","ip":"::1","level":"warn","message":"Request completed","method":"GET","path":"/api","service":"privfed-backend","statusCode":404,"timestamp":"2026-02-24 19:47:49"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 20:52:48"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 20:52:48"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 20:52:48"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 20:52:52"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 20:52:52"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 20:52:52"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 21:51:39"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 21:51:39"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 21:51:39"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:13:15","userAgent":"Dart/3.7 (dart:io)"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 22:13:18"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 22:13:18"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 22:13:18"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 22:13:20"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 22:13:20"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 22:13:20"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:13:42","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"1790ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-24 22:13:44"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:23:16","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"1150ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-24 22:23:17"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:24:24","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"1911ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-24 22:24:25"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:26:30","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"690ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-24 22:26:31"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:26:56","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"376ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-24 22:26:57"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:30:42","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"958ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-24 22:30:43"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:30:49","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"388ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-24 22:30:50"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-02-24 22:34:18","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"824ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":409,"timestamp":"2026-02-24 22:34:19"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/signup","service":"privfed-backend","timestamp":"2026-02-24 22:34:38","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"28ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/signup","service":"privfed-backend","statusCode":409,"timestamp":"2026-02-24 22:34:38"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:51:52","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"1181ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-24 22:51:54"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 22:52:06"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 22:52:06"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 22:52:06"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 22:52:28","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"914ms","ip":"::ffff:127.0.0.1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-24 22:52:29"}
+{"error":"Not allowed by CORS","ip":"::1","level":"error","message":"Error occurred:","method":"OPTIONS","path":"/api/auth/login","service":"privfed-backend","stack":"Error: Not allowed by CORS\n    at origin (file:///C:/PriFed/backend/src/server.js:63:16)\n    at C:\\PriFed\\backend\\node_modules\\cors\\lib\\index.js:219:13\n    at optionsCallback (C:\\PriFed\\backend\\node_modules\\cors\\lib\\index.js:199:9)\n    at corsMiddleware (C:\\PriFed\\backend\\node_modules\\cors\\lib\\index.js:204:7)\n    at Layer.handle [as handle_request] (C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at internalNext (file:///C:/PriFed/backend/node_modules/helmet/index.mjs:533:6)","timestamp":"2026-02-24 23:38:58"}
+{"error":"Not allowed by CORS","ip":"::1","level":"error","message":"Error occurred:","method":"OPTIONS","path":"/api/auth/signup","service":"privfed-backend","stack":"Error: Not allowed by CORS\n    at origin (file:///C:/PriFed/backend/src/server.js:63:16)\n    at C:\\PriFed\\backend\\node_modules\\cors\\lib\\index.js:219:13\n    at optionsCallback (C:\\PriFed\\backend\\node_modules\\cors\\lib\\index.js:199:9)\n    at corsMiddleware (C:\\PriFed\\backend\\node_modules\\cors\\lib\\index.js:204:7)\n    at Layer.handle [as handle_request] (C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\PriFed\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at internalNext (file:///C:/PriFed/backend/node_modules/helmet/index.mjs:533:6)","timestamp":"2026-02-24 23:39:48"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 23:45:50"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 23:45:50"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 23:45:50"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 23:45:52"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 23:45:52"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 23:45:52"}
+{"level":"info","message":"SIGINT signal received: closing HTTP server","service":"privfed-backend","timestamp":"2026-02-24 23:46:29"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 23:46:54"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 23:46:54"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 23:46:54"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 23:48:26","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 23:48:29"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 23:48:29"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 23:48:29"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 23:50:44"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 23:50:44"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 23:50:44"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 23:51:14"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 23:51:14"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 23:51:14"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-24 23:51:36"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-24 23:51:36"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-24 23:51:36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-24 23:53:14","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-24 23:53:16","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2738ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-24 23:53:16"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 00:34:31"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 00:34:31"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 00:34:31"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 00:50:54"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 00:50:54"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 00:50:54"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 01:00:29"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 01:00:29"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 01:00:29"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 01:04:15","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 01:04:19"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 01:04:19"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 01:04:19"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 01:06:53"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 01:06:53"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 01:06:53"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 01:08:16","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 01:08:16","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"61ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 01:08:16"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 01:08:17","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"988ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 01:08:17"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 01:46:22"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 01:46:22"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 01:46:22"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 01:50:04","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 01:50:05","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"372ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 01:50:06"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 01:50:06","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1966ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 01:50:06"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 01:53:35"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 01:53:35"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 01:53:35"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 01:53:37"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 01:53:37"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 01:53:37"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 01:59:35","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"684ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 01:59:36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 13:02:19"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 13:02:19"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 13:02:19"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 13:02:21"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 13:02:21"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 13:02:21"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 13:03:53","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"740ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:03:54"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 13:04:29","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 13:04:29","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"653ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:04:29"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 13:08:14","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"140ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:08:14"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 13:17:09","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"256ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:17:09"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 13:25:06","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 13:25:07","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"670ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:25:08"}
+{"duration":"1575ms","ip":"::1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-25 13:25:08"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 13:25:42","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 13:25:43","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"959ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:25:43"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 13:30:45","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"344ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:30:45"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 13:33:45","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 13:33:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"94ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:33:46"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 13:33:47","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1340ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:33:47"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 13:38:32","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"226ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 13:38:32"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 13:57:37"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 13:57:37"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 13:57:37"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 14:00:05","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:00:06","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"323ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:00:06"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 14:00:08","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2564ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:00:08"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 14:02:28"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 14:02:28"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 14:02:28"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 14:05:18","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:05:19","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"482ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:05:20"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 14:05:25","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"6364ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:05:25"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:08:55","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"941ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:08:56"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:10:32","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"448ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:10:32"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:10:47","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"51ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:10:47"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 14:14:25","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 14:14:27","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1768ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:14:27"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 14:18:55","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:18:56","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"723ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:18:56"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 14:18:58","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2496ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:18:58"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 14:23:22","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:23:23","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"64ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:23:23"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 14:23:24","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1525ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:23:24"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 14:31:08","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:31:08","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"183ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:31:09"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 14:31:10","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1930ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:31:10"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 14:35:17","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:35:18","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"83ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:35:18"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 14:35:19","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1676ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:35:19"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 14:54:25"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 14:54:25"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 14:54:25"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 14:58:09","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 14:58:10","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"190ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:58:11"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 14:58:12","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2425ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 14:58:12"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 15:00:33"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 15:00:33"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 15:00:33"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 15:02:49","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 15:02:55"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 15:02:55"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 15:02:55"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 15:03:05","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 15:03:07","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1367ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:03:07"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 15:09:37","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 15:09:37","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"334ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:09:38"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 15:09:39","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2076ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:09:39"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 15:13:47","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"274ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:13:47"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 15:18:21"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 15:18:21"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 15:18:21"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 15:24:09","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 15:24:12","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"713ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:24:12"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 15:24:14","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"5173ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:24:14"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 15:25:30","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"473ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:25:30"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 15:32:29","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 15:32:30","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"177ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:32:30"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 15:32:31","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1830ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:32:31"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 15:39:17","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 15:39:18","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"68ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:39:18"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 15:39:19","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1808ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 15:39:19"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 16:47:27"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 16:47:27"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 16:47:27"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 16:51:28","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 16:51:29","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"439ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 16:51:29"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 16:51:31","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2709ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 16:51:31"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 17:37:44","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 17:37:45","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"42ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 17:37:45"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 17:37:47","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2609ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 17:37:47"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 17:39:25"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 17:39:25"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 17:39:25"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 17:41:20","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"871ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 17:41:21"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 17:51:01","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 17:51:08"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 17:51:08"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 17:51:08"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 17:51:08","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"363ms","ip":"::1","level":"warn","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":401,"timestamp":"2026-02-25 17:51:08"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 17:51:24","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 17:51:25","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1024ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 17:51:25"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 17:59:12","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 17:59:13","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"522ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 17:59:13"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 17:59:14","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2349ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 17:59:14"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 18:08:31","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 18:08:32","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"313ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:08:32"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 18:08:33","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1798ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:08:33"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 18:13:23","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 18:13:24","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"132ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:13:24"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 18:13:25","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1914ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:13:25"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 18:19:55","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 18:19:56","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"64ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:19:56"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 18:19:57","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1753ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:19:57"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 18:31:39","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 18:31:40","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"341ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:31:40"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 18:31:41","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2076ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:31:41"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 18:38:58","userAgent":"Dart/3.7 (dart:io)"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 18:38:58","userAgent":"Dart/3.7 (dart:io)"}
+{"duration":"601ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:38:58"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 18:39:02","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"4767ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:39:02"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 18:39:26"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 18:39:26"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 18:39:26"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 18:48:42","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 18:48:42","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"217ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:48:43"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 18:48:44","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1888ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 18:48:44"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 19:17:13","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 19:17:14","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"141ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 19:17:14"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 19:17:15","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1931ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 19:17:15"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 19:28:10","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 19:28:10","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"30ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 19:28:10"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 19:28:11","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"737ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 19:28:11"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 19:38:03","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 19:38:03","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"38ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 19:38:03"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 19:38:04","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1198ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 19:38:04"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 19:39:24"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 19:39:24"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 19:39:24"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 19:39:25"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 19:39:25"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 19:39:25"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 20:01:20","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 20:01:23"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 20:01:23"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 20:01:23"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 20:01:23","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 20:01:23","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"203ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 20:01:23"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 20:01:24","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1732ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 20:01:24"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-25 20:39:29"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-25 20:39:29"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-25 20:39:29"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 20:50:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"914ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 20:50:42"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 20:51:31","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"80ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 20:51:31"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-25 20:55:23","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-25 20:55:24","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"level":"error","message":"Database health check failed: Database query timeout","service":"privfed-backend","stack":"Error: Database query timeout\n    at Timeout._onTimeout (file:///C:/PriFed/backend/src/controllers/health.controller.js:24:33)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)","timestamp":"2026-02-25 20:55:26"}
+{"duration":"2125ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 20:55:26"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-25 20:55:29","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"6227ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-25 20:55:29"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 14:52:06"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 14:52:06"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 14:52:06"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 14:52:07"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 14:52:07"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 14:52:07"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 14:54:01","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 14:54:01","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"306ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 14:54:01"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 14:54:02","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"976ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 14:54:02"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 15:14:49"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 15:14:49"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 15:14:49"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 15:35:45","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 15:35:53"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 15:35:53"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 15:35:53"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 15:35:53","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 15:35:55","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1385ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 15:35:55"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 15:48:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 15:48:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"230ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 15:48:35"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 15:48:36","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1726ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 15:48:36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 15:57:55","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 15:57:57","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1997ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 15:57:57"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 16:14:52"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 16:14:52"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 16:14:52"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 17:44:49"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 17:44:49"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 17:44:49"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 17:44:50"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 17:44:50"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 17:44:50"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 19:14:10","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 19:14:15"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 19:14:16"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 19:14:16"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 19:14:16","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 19:14:17","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1736ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 19:14:17"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 19:37:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 19:37:03","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"313ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 19:37:03"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 19:37:04","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"2114ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 19:37:04"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 19:45:25","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 19:45:26","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"241ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 19:45:26"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 19:45:27","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"1862ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 19:45:27"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 20:01:51"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 20:01:51"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 20:01:51"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 20:04:18","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 20:04:21","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"351ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 20:04:21"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 20:04:23","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"4431ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 20:04:23"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 20:07:23","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"1623ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 20:07:25"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 20:11:57"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 20:11:57"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 20:11:57"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 20:13:55","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 20:13:55","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"1067ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 20:13:56"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 20:13:58","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"3079ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 20:13:58"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 20:15:10"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 20:15:11"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 20:15:11"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 20:15:12"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 20:15:12"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 20:15:12"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 20:30:36","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"855ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 20:30:37"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 20:45:16","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"323ms","ip":"::1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 20:45:16"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 21:01:08","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-26 21:01:10"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-26 21:01:10"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-26 21:01:10"}
+{"ip":"::1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-02-26 21:01:10","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"Incoming request","method":"GET","path":"/api/health","service":"privfed-backend","timestamp":"2026-02-26 21:01:10","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"duration":"327ms","ip":"::ffff:127.0.0.1","level":"info","message":"Request completed","method":"GET","path":"/health","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 21:01:11"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-02-26 21:01:11","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"933ms","ip":"::1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-02-26 21:01:11"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-27 15:47:41"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-27 15:47:41"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-27 15:47:41"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-27 15:47:42"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-27 15:47:42"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-27 15:47:42"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-02-27 15:51:42"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-02-27 15:51:42"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-02-27 15:51:42"}

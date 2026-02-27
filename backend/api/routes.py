@@ -4,8 +4,9 @@ Implements all endpoints for federated learning monitoring, privacy tracking,
 and fraud detection with robust error handling and validation.
 """
 
+from pathlib import Path as FPath
 from fastapi import APIRouter, HTTPException, Depends, Query, Path, Body
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from typing import Dict, List, Optional, Any
 import logging
 from datetime import datetime
@@ -21,8 +22,8 @@ from .schemas import (
 )
 from .services import (
     get_system_status, get_global_metrics, get_bank_metrics,
-    get_privacy_metrics, get_rounds_history, predict_fraud,
-    get_model_info, get_dataset_info, health_check
+    get_privacy_metrics, get_rounds_history, predict_fraud, benchmark_models,
+    get_model_info, get_dataset_info, health_check, get_technical_audit
 )
 
 logger = logging.getLogger(__name__)
@@ -68,6 +69,50 @@ async def get_status():
     except Exception as e:
         logger.error(f"Failed to get system status: {e}")
         raise HTTPException(status_code=500, detail="Failed to retrieve system status")
+
+
+def _plots_dir() -> Optional[FPath]:
+    """Return backend results/plots directory for serving scientific artifact images."""
+    for base in (FPath('.'), FPath('backend')):
+        d = base / 'results' / 'plots'
+        if d.is_dir():
+            return d
+    return None
+
+
+@router.get("/plots/{filename}",
+           tags=["System Information"],
+           summary="Get plot image",
+           description="Serve a scientific artifact plot image (e.g. final_thesis_comparison.png)")
+async def get_plot_image(
+    filename: str = Path(..., description="Plot filename, e.g. final_thesis_comparison.png"),
+):
+    """Serve plot PNG from backend/results/plots for the Research Verdict / Scientific Artifacts UI."""
+    if ".." in filename or "/" in filename or "\\" in filename:
+        raise HTTPException(status_code=400, detail="Invalid filename")
+    if not filename.lower().endswith(".png"):
+        raise HTTPException(status_code=400, detail="Only .png plot files are allowed")
+    plots_dir = _plots_dir()
+    if not plots_dir:
+        raise HTTPException(status_code=404, detail="Plots directory not found")
+    file_path = plots_dir / filename
+    if not file_path.is_file():
+        raise HTTPException(status_code=404, detail="Plot not found")
+    return FileResponse(file_path, media_type="image/png")
+
+
+@router.get("/audit",
+           tags=["System Information"],
+           summary="Technical audit sample",
+           description="Get training history, hyperparameter manifest, and model repository samples for the Research Verdict UI")
+async def get_audit():
+    """Return sample data for Technical Audit Trail and Network Manifest."""
+    try:
+        return get_technical_audit()
+    except Exception as e:
+        logger.warning("Technical audit failed: %s", e)
+        raise HTTPException(status_code=500, detail="Failed to load audit data")
+
 
 # Metrics Endpoints
 @router.get("/metrics/global",
@@ -206,6 +251,28 @@ async def predict_fraud_batch_endpoint(
     except Exception as e:
         logger.error(f"Failed to predict fraud batch: {e}")
         raise HTTPException(status_code=500, detail="Failed to predict fraud for batch")
+
+
+@router.post("/fraud/benchmark",
+             response_model=Dict[str, Any],
+             tags=["Fraud Detection"],
+             summary="Benchmark models (The Lab)",
+             description="Run Global Champion, Private DP, Bank C Specialist, and Local Baseline (Bank A) on the same transaction for real-world forensic comparison")
+async def benchmark_models_endpoint(
+    data: Dict[str, Any] = Body(..., description="Body with transaction_features dict, e.g. { \"transaction_features\": { \"amount\": 5200, \"hour\": 3, \"day\": 1 } }, optional bank_id for meta")
+):
+    """Benchmark all four models (global_champion, private_dp_champion, bank_c_specialist, local_baseline_bank_A) on one transaction."""
+    try:
+        features = data.get("transaction_features", {})
+        if not isinstance(features, dict):
+            raise HTTPException(status_code=400, detail="transaction_features must be an object")
+        result = await benchmark_models(features)
+        return result
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Benchmark failed: {e}")
+        raise HTTPException(status_code=500, detail="Benchmark failed")
 
 # Model Management Endpoints
 @router.get("/models/current",

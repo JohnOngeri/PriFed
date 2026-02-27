@@ -405,6 +405,7 @@ def save_model(model: nn.Module, filepath: str, metadata: Optional[Dict[str, Any
 def load_model(filepath: str, device: Optional[torch.device] = None) -> Tuple[nn.Module, Dict[str, Any]]:
     """
     Load a PyTorch model with metadata.
+    Handles both model_utils format (model_class, model_config) and Colab format (model_state_dict only).
     
     Args:
         filepath: Path to load the model from
@@ -416,10 +417,12 @@ def load_model(filepath: str, device: Optional[torch.device] = None) -> Tuple[nn
     if device is None:
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    # Load the saved dictionary
     save_dict = torch.load(filepath, map_location=device)
     
-    # Extract model configuration
+    # Colab/notebook format: only model_state_dict (no model_class)
+    if 'model_class' not in save_dict:
+        return _load_model_from_state_dict_only(save_dict, device, filepath)
+    
     model_class = save_dict['model_class']
     model_config = save_dict['model_config']
     
@@ -458,6 +461,36 @@ def load_model(filepath: str, device: Optional[torch.device] = None) -> Tuple[nn
     logger.info(f"Model loaded from: {filepath}")
     
     return model, metadata
+
+
+def _load_model_from_state_dict_only(save_dict: Dict, device: torch.device, filepath: str) -> Tuple[nn.Module, Dict[str, Any]]:
+    """Load model when only model_state_dict is present (Colab notebook format)."""
+    state_dict = save_dict.get('model_state_dict', save_dict)
+    if not isinstance(state_dict, dict):
+        raise ValueError("No model_state_dict found in checkpoint")
+    
+    # Infer input_dim from first linear layer: (out_features, in_features)
+    input_dim = 432  # default
+    for k, v in state_dict.items():
+        if 'linear' in k and 'weight' in k and hasattr(v, 'shape') and len(v.shape) == 2:
+            input_dim = int(v.shape[1])
+            break
+    
+    model_config = {
+        'input_dim': input_dim,
+        'hidden_layers': [256, 128, 64],
+        'dropout_rate': 0.3,
+        'activation': 'relu',
+        'batch_norm': True,
+        'output_dim': 1
+    }
+    model = FraudDetectionMLP(**model_config)
+    model.load_state_dict(state_dict, strict=False)
+    model.to(device)
+    metadata = save_dict.get('metadata', {})
+    logger.info(f"Model loaded from {filepath} (state_dict only, input_dim={input_dim})")
+    return model, metadata
+
 
 def get_model_summary(model: nn.Module, input_shape: Tuple[int, ...]) -> str:
     """

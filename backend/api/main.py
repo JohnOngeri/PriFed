@@ -21,7 +21,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from .routes import router
-# from .services import get_service  # Not needed for basic startup
+from .services import preload_benchmark_models
 from .schemas import ErrorResponse
 try:
     from utils.data_utils import load_config
@@ -65,18 +65,22 @@ async def lifespan(app: FastAPI):
     logger.info("Starting PrivFed API server...")
     
     try:
-        # Initialize basic service components
-        logger.info("PrivFed service initialized successfully")
-        
         # Create necessary directories
         os.makedirs("logs", exist_ok=True)
         os.makedirs("results", exist_ok=True)
         os.makedirs("models", exist_ok=True)
+
+        # [DEMO-CRITICAL] Preload all four benchmark models once (feature alignment + four-model Lab).
+        # Avoids degraded status and slow first request; model_cache reused for /predict and /fraud/benchmark.
+        try:
+            await preload_benchmark_models()
+        except Exception as e:
+            logger.warning("Model preload failed (will load on first request): %s", e)
         
         logger.info("PrivFed API server started successfully")
         
     except Exception as e:
-        logger.error(f"Failed to initialize PrivFed service: {e}")
+        logger.error("Failed to initialize PrivFed service: %s", e)
         raise
     
     yield
@@ -140,11 +144,11 @@ async def http_exception_handler(request: Request, exc: HTTPException):
     
     return JSONResponse(
         status_code=exc.status_code,
-        content=ErrorResponse(
-            error=f"HTTP {exc.status_code}",
-            message=exc.detail,
-            timestamp=datetime.now()
-        ).dict()
+        content={
+            "error": f"HTTP {exc.status_code}",
+            "message": str(exc.detail),
+            "timestamp": datetime.now().isoformat()
+        }
     )
 
 @app.exception_handler(Exception)
@@ -154,12 +158,12 @@ async def general_exception_handler(request: Request, exc: Exception):
     
     return JSONResponse(
         status_code=500,
-        content=ErrorResponse(
-            error="Internal Server Error",
-            message="An unexpected error occurred",
-            details={"type": type(exc).__name__},
-            timestamp=datetime.now()
-        ).dict()
+        content={
+            "error": "Internal Server Error",
+            "message": str(exc) if exc else "An unexpected error occurred",
+            "details": {"type": type(exc).__name__},
+            "timestamp": datetime.now().isoformat()
+        }
     )
 
 # Include API routes

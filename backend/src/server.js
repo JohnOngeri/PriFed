@@ -28,7 +28,7 @@ import datasetRoutes from './routes/dataset.routes.js';
 import trainingRoutes from './routes/training.routes.js';
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 
 // ============================================
 // MIDDLEWARE
@@ -41,27 +41,22 @@ app.use(helmet({
 }));
 
 // CORS configuration - Mobile optimized
-// P1 FIX: Allow mobile apps (no origin) and configured web origins
+// Allow mobile apps (no origin) and localhost/web origins in development
 const corsOptions = {
   origin: (origin, callback) => {
     // Allow requests with no origin (mobile apps, Postman, curl)
-    if (!origin) {
-      callback(null, true);
-      return;
+    if (!origin) return callback(null, true);
+
+    // Always allow any localhost or 127.0.0.1 origin in development
+    if (origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')) {
+      return callback(null, true);
     }
-    
-    // Allow configured origins
-    const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [
-      'http://localhost:3000',
-      'http://localhost:8080',
-      'http://localhost:8000'
-    ];
-    
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
+
+    // Otherwise fall back to configured allow-list
+    const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [];
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+
+    callback(new Error('Not allowed by CORS'));
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],

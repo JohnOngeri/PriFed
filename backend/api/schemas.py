@@ -132,7 +132,7 @@ class RoundsHistoryResponse(BaseResponse):
 
 # Fraud prediction
 class FraudPredictionRequest(BaseModel):
-    """Fraud prediction request."""
+    """Fraud prediction request with Model Router support for thesis-grade routing."""
     transaction_features: Dict[str, Union[float, int, str]] = Field(
         ..., 
         description="Transaction features for prediction",
@@ -148,6 +148,14 @@ class FraudPredictionRequest(BaseModel):
             "P_emaildomain": "gmail.com",
             "R_emaildomain": "gmail.com"
         }
+    )
+    bank_id: Optional[str] = Field(
+        None, 
+        description="Bank identifier (Bank_A, Bank_B, Bank_C). Used for fairness routing: Bank_C gets specialist model."
+    )
+    high_privacy_mode: Optional[bool] = Field(
+        False, 
+        description="If True, use Differential Privacy model (Config 4) for privacy-sensitive predictions."
     )
     
     @validator('transaction_features')
