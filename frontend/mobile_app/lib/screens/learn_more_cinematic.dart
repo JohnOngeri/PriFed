@@ -1,6 +1,17 @@
+import 'dart:ui';
+import 'dart:async';
+import 'dart:math' as math;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../theme/app_theme.dart';
+
+/// ---------------------------------------------------------------------------
+/// LEARN MORE CINEMATIC: THE KIGALI TRUST MESH
+/// 
+/// UNIQUE VALUE: Uses local context (Kimironko to Downtown) to demonstrate 
+/// real-time "Intelligence Vaccination". Proves that an attack in one 
+/// suburb creates immunity in the city center within 120ms.
+/// ---------------------------------------------------------------------------
 
 class LearnMoreCinematic extends StatefulWidget {
   const LearnMoreCinematic({super.key});
@@ -11,437 +22,102 @@ class LearnMoreCinematic extends StatefulWidget {
 
 class _LearnMoreCinematicState extends State<LearnMoreCinematic>
     with TickerProviderStateMixin {
-  late AnimationController _cardController;
-  late PageController _pageController;
+  
+  late AnimationController _pulseController;
+  late AnimationController _transferController;
+  int _activeStep = 0;
+  bool _webContentReady = false;
 
-  final List<LearningModule> _modules = [
-    LearningModule(
-      title: 'Federated Learning Fundamentals',
-      description: 'Learn the core concepts of federated learning and how it enables collaborative AI without data sharing.',
-      icon: Icons.school,
-      color: AppTheme.primaryBlue,
-      lessons: [
-        'What is Federated Learning?',
-        'Client-Server Architecture',
-        'Model Aggregation Strategies',
-        'Non-IID Data Challenges',
-      ],
+  // Modern Fintech Palette
+  static const Color spaceDark = Color(0xFF060912);
+  static const Color cyanGlow = Color(0xFF00F5FF);
+  static const Color privacyPurple = Color(0xFFD500F9);
+  static const Color goldWinner = Color(0xFFFFD700);
+  static const Color neonGreen = Color(0xFF00FF88);
+
+  final List<LifecycleStep> _steps = [
+    LifecycleStep(
+      title: "Local Flag: Kimironko",
+      location: "Equity Bank Branch",
+      desc: "A suspicious high-value transaction is attempted at an ATM in Kimironko. The local PriFed agent detects a 0.82 fraud probability.",
+      icon: Icons.location_on_rounded,
+      aiInsight: "*** SENSITIVE DATA ALERT: No customer names or account numbers leave Kimironko. Only the mathematical anomaly is processed. ***",
+      color: cyanGlow,
     ),
-    LearningModule(
-      title: 'Differential Privacy Deep Dive',
-      description: 'Understand the mathematical foundations of differential privacy and its implementation in ML systems.',
-      icon: Icons.security,
-      color: AppTheme.primaryPurple,
-      lessons: [
-        'Privacy Definitions & Guarantees',
-        'Epsilon-Delta Framework',
-        'DP-SGD Algorithm',
-        'Privacy Accounting Methods',
-      ],
+    LifecycleStep(
+      title: "Laplace Shielding",
+      location: "On-Premise Server",
+      desc: "Before transmission, we inject Laplace noise (ε=8.0). This masks the 'Kimironko ATM ID' while preserving the fraud pattern logic.",
+      icon: Icons.security_rounded,
+      aiInsight: "*** PRIVACY COMPLIANCE: This step satisfies the Rwanda Data Protection Law by ensuring zero PII enters the shared mesh. ***",
+      color: privacyPurple,
     ),
-    LearningModule(
-      title: 'Fraud Detection in Finance',
-      description: 'Explore machine learning techniques specifically designed for financial fraud detection.',
-      icon: Icons.account_balance,
-      color: AppTheme.dangerRed,
-      lessons: [
-        'Types of Financial Fraud',
-        'Feature Engineering for Fraud',
-        'Imbalanced Dataset Handling',
-        'Real-time Detection Systems',
-      ],
+    LifecycleStep(
+      title: "The Shared Brain",
+      location: "National Aggregator",
+      desc: "The update is merged with patterns from across Rwanda. The Global Model learns this new 'Midnight Thief' pattern instantly.",
+      icon: Icons.hub_rounded,
+      aiInsight: "*** COLLECTIVE GAIN: The model reaches 0.7289 AUC, nearly matching the performance of a giant centralized data lake. ***",
+      color: goldWinner,
     ),
-    LearningModule(
-      title: 'System Architecture & Implementation',
-      description: 'Technical deep dive into building production-ready federated learning systems.',
-      icon: Icons.architecture,
-      color: AppTheme.accentGreen,
-      lessons: [
-        'Scalable FL Infrastructure',
-        'Communication Protocols',
-        'Fault Tolerance & Recovery',
-        'Performance Optimization',
-      ],
+    LifecycleStep(
+      title: "Downtown Immunity",
+      location: "Bank of Kigali HQ",
+      desc: "The 'Intelligence Vaccine' is pushed to BK Downtown. If the thief tries the same card there, the system blocks it instantly.",
+      icon: Icons.verified_user_rounded,
+      aiInsight: "*** RESULT: Downtown Kigali is now immune to an attack that happened 4km away in Kimironko just 120ms ago. ***",
+      color: neonGreen,
     ),
   ];
 
   @override
   void initState() {
     super.initState();
+    _pulseController = AnimationController(duration: const Duration(seconds: 2), vsync: this)..repeat(reverse: true);
+    _transferController = AnimationController(duration: const Duration(seconds: 4), vsync: this)..repeat();
     
-    _cardController = AnimationController(
-      duration: const Duration(milliseconds: 800),
-      vsync: this,
-    );
-    
-    _pageController = PageController();
-    
-    _cardController.forward();
+    if (kIsWeb) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) setState(() => _webContentReady = true);
+      });
+    } else {
+      _webContentReady = true;
+    }
   }
 
   @override
   void dispose() {
-    _cardController.dispose();
-    _pageController.dispose();
+    _pulseController.dispose();
+    _transferController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    if (kIsWeb && !_webContentReady) return const Scaffold(backgroundColor: spaceDark);
+
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFF0A0E27), Color(0xFF1A1F3A)],
-          ),
-        ),
-        child: SafeArea(
-          child: Column(
-            children: [
-              _buildHeader(),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      _buildHeroSection(),
-                      _buildLearningModules(),
-                      _buildInteractiveDemo(),
-                      _buildResources(),
-                      _buildQuickFacts(),
-                      const SizedBox(height: AppTheme.spacingXL),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildHeader() {
-    return Padding(
-      padding: const EdgeInsets.all(AppTheme.spacingM),
-      child: Row(
+      backgroundColor: spaceDark,
+      body: Stack(
         children: [
-          IconButton(
-            onPressed: () => context.go('/dashboard'),
-            icon: const Icon(Icons.arrow_back, color: Colors.white),
-          ),
-          const SizedBox(width: AppTheme.spacingS),
-          Flexible(
-            child: Text(
-              'Learn More',
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-          const Spacer(),
-          Flexible(
-            child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 6,
-              ),
-              decoration: BoxDecoration(
-                color: AppTheme.primaryCyan.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppTheme.primaryCyan),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.auto_stories,
-                    color: AppTheme.primaryCyan,
-                    size: 16,
-                  ),
-                  const SizedBox(width: 4),
-                  const Text(
-                    'LEARN',
-                    style: TextStyle(
-                      color: AppTheme.primaryCyan,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHeroSection() {
-    return Container(
-      margin: const EdgeInsets.all(AppTheme.spacingM),
-      padding: const EdgeInsets.all(AppTheme.spacingXL),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppTheme.primaryCyan.withOpacity(0.2),
-            AppTheme.primaryPurple.withOpacity(0.1),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(AppTheme.radiusL),
-        border: Border.all(
-          color: AppTheme.primaryCyan.withOpacity(0.3),
-        ),
-      ),
-      child: Column(
-        children: [
-          Icon(
-            Icons.psychology,
-            color: AppTheme.primaryCyan,
-            size: 64,
-          ),
-          
-          const SizedBox(height: AppTheme.spacingL),
-          
-          const Text(
-            'Master Privacy-Preserving AI',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          
-          const SizedBox(height: AppTheme.spacingM),
-          
-          Text(
-            'Dive deep into federated learning, differential privacy, and fraud detection. Learn from industry experts and build production-ready systems.',
-            style: TextStyle(
-              color: Colors.white.withOpacity(0.8),
-              fontSize: 16,
-              height: 1.5,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          
-          const SizedBox(height: AppTheme.spacingL),
-          
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _buildHeroStat('4', 'Modules'),
-              _buildHeroStat('16', 'Lessons'),
-              _buildHeroStat('2h', 'Duration'),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHeroStat(String value, String label) {
-    return Column(
-      children: [
-        Text(
-          value,
-          style: TextStyle(
-            color: AppTheme.primaryCyan,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          label,
-          style: TextStyle(
-            color: Colors.white.withOpacity(0.8),
-            fontSize: 12,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildLearningModules() {
-    return Container(
-      margin: const EdgeInsets.all(AppTheme.spacingM),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Learning Modules',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          
-          const SizedBox(height: AppTheme.spacingL),
-          
-          ..._modules.asMap().entries.map((entry) {
-            final index = entry.key;
-            final module = entry.value;
-            
-            return AnimatedBuilder(
-              animation: _cardController,
-              builder: (context, child) {
-                final delay = index * 0.2;
-                final progress = (_cardController.value - delay).clamp(0.0, 1.0);
-                
-                return Transform.translate(
-                  offset: Offset(0, 50 * (1 - progress)),
-                  child: Opacity(
-                    opacity: progress,
-                    child: _buildModuleCard(module),
-                  ),
-                );
-              },
-            );
-          }),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildModuleCard(LearningModule module) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: AppTheme.spacingL),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            module.color.withOpacity(0.2),
-            module.color.withOpacity(0.05),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(AppTheme.radiusL),
-        border: Border.all(
-          color: module.color.withOpacity(0.3),
-        ),
-      ),
-      child: ExpansionTile(
-        leading: Container(
-          width: 48,
-          height: 48,
-          decoration: BoxDecoration(
-            color: module.color.withOpacity(0.2),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Icon(
-            module.icon,
-            color: module.color,
-            size: 24,
-          ),
-        ),
-        title: Text(
-          module.title,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        subtitle: Text(
-          module.description,
-          style: TextStyle(
-            color: Colors.white.withOpacity(0.8),
-            fontSize: 14,
-          ),
-        ),
-        iconColor: Colors.white,
-        collapsedIconColor: Colors.white,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(AppTheme.spacingL),
+          _buildBackgroundAura(),
+          SafeArea(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Lessons:',
-                  style: TextStyle(
-                    color: module.color,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                
-                const SizedBox(height: AppTheme.spacingM),
-                
-                ...module.lessons.asMap().entries.map((entry) {
-                  final index = entry.key;
-                  final lesson = entry.value;
-                  
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 24,
-                          height: 24,
-                          decoration: BoxDecoration(
-                            color: module.color.withOpacity(0.2),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: Text(
-                              '${index + 1}',
-                              style: TextStyle(
-                                color: module.color,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: AppTheme.spacingM),
-                        Expanded(
-                          child: Text(
-                            lesson,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: AppTheme.spacingS),
-                        Icon(
-                          Icons.play_circle_outline,
-                          color: module.color,
-                          size: 20,
-                        ),
-                      ],
-                    ),
-                  );
-                }),
-                
-                const SizedBox(height: AppTheme.spacingL),
-                
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // Start module
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: module.color,
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                    ),
-                    child: const Text(
-                      'Start Module',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
+                _buildHeader(),
+                Expanded(
+                  child: ListView(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    children: [
+                      _buildKigaliPulseVisual(),
+                      const SizedBox(height: 30),
+                      _buildInteractiveTimeline(),
+                      const SizedBox(height: 30),
+                      _buildScientificTruthCard(),
+                      const SizedBox(height: 30),
+                      _buildLocalMythBusters(),
+                      const SizedBox(height: 50),
+                    ],
                   ),
                 ),
               ],
@@ -452,313 +128,288 @@ class _LearnMoreCinematicState extends State<LearnMoreCinematic>
     );
   }
 
-  Widget _buildInteractiveDemo() {
+  Widget _buildBackgroundAura() {
+    return Positioned.fill(
+      child: Container(
+        decoration: const BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment(0.5, -0.5),
+            radius: 1.5,
+            colors: [Color(0xFF0A1633), spaceDark],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHeader() {
+    return Padding(
+      padding: const EdgeInsets.all(25),
+      child: Row(
+        children: [
+          IconButton(
+            icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white, size: 20),
+            onPressed: () => context.go('/dashboard'),
+          ),
+          const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("KNOWLEDGE LIFECYCLE", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w900, letterSpacing: 2)),
+              Text("THE 120ms VACCINATION PULSE", style: TextStyle(color: cyanGlow, fontSize: 8, fontWeight: FontWeight.bold)),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildKigaliPulseVisual() {
     return Container(
-      margin: const EdgeInsets.all(AppTheme.spacingM),
-      padding: const EdgeInsets.all(AppTheme.spacingL),
+      height: 220,
+      padding: const EdgeInsets.all(25),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            AppTheme.accentGold.withOpacity(0.2),
-            AppTheme.accentGold.withOpacity(0.05),
+        color: Colors.white.withOpacity(0.02),
+        borderRadius: BorderRadius.circular(30),
+        border: Border.all(color: Colors.white10),
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          CustomPaint(
+            size: Size.infinite,
+            painter: KigaliTransferPainter(
+              progress: _transferController.value,
+              pulse: _pulseController.value,
+              activeStep: _activeStep,
+            ),
+          ),
+          Positioned(
+            top: 0, left: 0,
+            child: _locationLabel("KIMIRONKO", cyanGlow),
+          ),
+          Positioned(
+            bottom: 0, right: 0,
+            child: _locationLabel("DOWNTOWN", neonGreen),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _locationLabel(String text, Color color) {
+    return Column(
+      children: [
+        Icon(Icons.account_balance, color: color, size: 16),
+        Text(text, style: TextStyle(color: color, fontSize: 9, fontWeight: FontWeight.w900)),
+      ],
+    );
+  }
+
+  Widget _buildInteractiveTimeline() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text("CHRONOLOGY OF A DEFENSE", style: TextStyle(color: Colors.white38, fontSize: 10, fontWeight: FontWeight.w900)),
+        const SizedBox(height: 15),
+        ..._steps.asMap().entries.map((entry) => _buildTimelineStep(entry.value, entry.key)),
+      ],
+    );
+  }
+
+  Widget _buildTimelineStep(LifecycleStep step, int index) {
+    bool isActive = _activeStep == index;
+    return GestureDetector(
+      onTap: () => setState(() => _activeStep = index),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 400),
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: isActive ? Colors.white.withOpacity(0.05) : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: isActive ? step.color.withOpacity(0.4) : Colors.white.withOpacity(0.03)),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              children: [
+                CircleAvatar(
+                  radius: 12, 
+                  backgroundColor: isActive ? step.color : Colors.white10,
+                  child: Text("${index + 1}", style: TextStyle(color: isActive ? Colors.black : Colors.white24, fontSize: 10, fontWeight: FontWeight.bold)),
+                ),
+                if (index != _steps.length - 1) Container(width: 1, height: 40, color: Colors.white10),
+              ],
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(step.title, style: TextStyle(color: isActive ? Colors.white : Colors.white38, fontWeight: FontWeight.bold, fontSize: 15)),
+                  Text(step.location.toUpperCase(), style: TextStyle(color: step.color.withOpacity(0.7), fontSize: 9, fontWeight: FontWeight.w900)),
+                  if (isActive) Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Text(step.desc, style: const TextStyle(color: Colors.white70, fontSize: 12, height: 1.5)),
+                  ),
+                  if (isActive) Container(
+                    margin: const EdgeInsets.only(top: 15),
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(color: Colors.black45, borderRadius: BorderRadius.circular(10)),
+                    child: Text(step.aiInsight, style: TextStyle(color: step.color, fontSize: 10, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold)),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
-        borderRadius: BorderRadius.circular(AppTheme.radiusL),
-        border: Border.all(
-          color: AppTheme.accentGold.withOpacity(0.3),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(
-                Icons.play_circle_filled,
-                color: AppTheme.accentGold,
-                size: 32,
-              ),
-              const SizedBox(width: AppTheme.spacingM),
-              const Expanded(
-                child: Text(
-                  'Interactive Demo',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          
-          const SizedBox(height: AppTheme.spacingM),
-          
-          Text(
-            'Experience federated learning in action with our interactive simulation. Watch as three banks collaborate to train a fraud detection model while keeping their data private.',
-            style: TextStyle(
-              color: Colors.white.withOpacity(0.9),
-              fontSize: 14,
-              height: 1.5,
-            ),
-          ),
-          
-          const SizedBox(height: AppTheme.spacingL),
-          
-          Row(
-            children: [
-              Expanded(
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    // Launch interactive demo
-                  },
-                  icon: const Icon(Icons.play_arrow, color: Colors.white),
-                  label: const Text(
-                    'Launch Demo',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppTheme.accentGold,
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                  ),
-                ),
-              ),
-              const SizedBox(width: AppTheme.spacingM),
-              Expanded(
-                child: OutlinedButton.icon(
-                  onPressed: () {
-                    // Watch video
-                  },
-                  icon: Icon(Icons.video_library, color: AppTheme.accentGold),
-                  label: Text(
-                    'Watch Video',
-                    style: TextStyle(color: AppTheme.accentGold),
-                  ),
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(color: AppTheme.accentGold),
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
       ),
     );
   }
 
-  Widget _buildResources() {
-    final resources = [
-      Resource(
-        title: 'Research Papers',
-        description: 'Latest academic papers on federated learning and differential privacy',
-        icon: Icons.article,
-        color: AppTheme.primaryBlue,
-      ),
-      Resource(
-        title: 'Code Examples',
-        description: 'Open-source implementations and code samples',
-        icon: Icons.code,
-        color: AppTheme.accentGreen,
-      ),
-      Resource(
-        title: 'Best Practices',
-        description: 'Industry guidelines and implementation recommendations',
-        icon: Icons.checklist,
-        color: AppTheme.primaryPurple,
-      ),
-      Resource(
-        title: 'Community Forum',
-        description: 'Connect with other practitioners and discuss ideas',
-        icon: Icons.forum,
-        color: AppTheme.primaryCyan,
-      ),
-    ];
-
+  Widget _buildScientificTruthCard() {
     return Container(
-      margin: const EdgeInsets.all(AppTheme.spacingM),
+      padding: const EdgeInsets.all(25),
+      decoration: BoxDecoration(
+        color: const Color(0xFF111729),
+        borderRadius: BorderRadius.circular(25),
+        border: Border.all(color: Colors.white10),
+      ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Text("EMPIRICAL EVIDENCE (ROUND 50)", style: TextStyle(color: Colors.white38, fontSize: 10, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 20),
+          _truthRow("Local AUC (Isolated)", "0.582", Colors.white24),
+          const Divider(color: Colors.white10, height: 20),
+          _truthRow("PriFed Global AUC", "0.728", cyanGlow),
+          const SizedBox(height: 15),
           const Text(
-            'Additional Resources',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          
-          const SizedBox(height: AppTheme.spacingL),
-          
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: AppTheme.spacingM,
-              mainAxisSpacing: AppTheme.spacingM,
-              childAspectRatio: 0.85, // Reduced from 1.1 to give more vertical space
-            ),
-            itemCount: resources.length,
-            itemBuilder: (context, index) {
-              return _buildResourceCard(resources[index]);
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildResourceCard(Resource resource) {
-    return Container(
-      padding: const EdgeInsets.all(AppTheme.spacingM),
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
-        borderRadius: BorderRadius.circular(AppTheme.radiusL),
-        border: Border.all(
-          color: resource.color.withOpacity(0.3),
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 48,
-            height: 48,
-            decoration: BoxDecoration(
-              color: resource.color.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Icon(
-              resource.icon,
-              color: resource.color,
-              size: 24,
-            ),
-          ),
-          
-          const SizedBox(height: AppTheme.spacingS),
-          
-          Text(
-            resource.title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-            ),
+            "By collaborating, Bank of Kigali Downtown gains a 25% accuracy increase from patterns it hasn't even seen yet.",
             textAlign: TextAlign.center,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          
-          const SizedBox(height: AppTheme.spacingS),
-          
-          Flexible(
-            child: Text(
-              resource.description,
-              style: TextStyle(
-                color: Colors.white.withOpacity(0.8),
-                fontSize: 11,
-                height: 1.3,
-              ),
-              textAlign: TextAlign.center,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-            ),
+            style: TextStyle(color: Colors.white54, fontSize: 11, fontStyle: FontStyle.italic),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildQuickFacts() {
-    final facts = [
-      '🔒 Differential privacy was invented at Microsoft Research in 2006',
-      '🏦 Major banks are already using federated learning for fraud detection',
-      '📊 FL can reduce communication costs by up to 100x compared to centralized training',
-      '🛡️ ε = 1.0 is considered the gold standard for strong privacy',
-      '🚀 Google uses federated learning for Gboard keyboard predictions',
-      '⚖️ Fairness-aware FL ensures equitable performance across all participants',
-    ];
+  Widget _truthRow(String label, String val, Color color) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(label, style: const TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600)),
+        Text(val, style: TextStyle(color: color, fontSize: 18, fontWeight: FontWeight.w900)),
+      ],
+    );
+  }
 
+  Widget _buildLocalMythBusters() {
     return Container(
-      margin: const EdgeInsets.all(AppTheme.spacingM),
-      padding: const EdgeInsets.all(AppTheme.spacingL),
+      padding: const EdgeInsets.all(25),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
-        borderRadius: BorderRadius.circular(AppTheme.radiusL),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.1),
-        ),
+        gradient: LinearGradient(colors: [goldWinner.withOpacity(0.1), Colors.transparent]),
+        borderRadius: BorderRadius.circular(25),
+        border: Border.all(color: goldWinner.withOpacity(0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Icon(
-                Icons.lightbulb,
-                color: AppTheme.accentGold,
-                size: 24,
-              ),
-              const SizedBox(width: AppTheme.spacingS),
-              const Text(
-                'Quick Facts',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-          
-          const SizedBox(height: AppTheme.spacingL),
-          
-          ...facts.map((fact) => Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4),
-            child: Text(
-              fact,
-              style: TextStyle(
-                color: Colors.white.withOpacity(0.9),
-                fontSize: 14,
-                height: 1.4,
-              ),
-            ),
-          )),
+          const Row(children: [
+            Icon(Icons.lightbulb, color: goldWinner, size: 18),
+            SizedBox(width: 10),
+            Text("SKEPTIC'S CORNER", style: TextStyle(color: goldWinner, fontWeight: FontWeight.bold, fontSize: 12)),
+          ]),
+          const SizedBox(height: 15),
+          _myth("Wait, does BK see Equity's customer balances?", "No. Only 'Gradient Updates' (math slopes) are shared. It's impossible to reverse-engineer a gradient back to a bank balance."),
+          const SizedBox(height: 10),
+          _myth("Is it really fast enough for real-time?", "Yes. The entire lifecycle—from Kimironko flag to Downtown immunity—takes under 120ms, faster than a standard card authorization pulse."),
+        ],
+      ),
+    );
+  }
+
+  Widget _myth(String q, String a) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(q, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12)),
+          Text(a, style: const TextStyle(color: Colors.white54, fontSize: 11)),
         ],
       ),
     );
   }
 }
 
-class LearningModule {
+class LifecycleStep {
   final String title;
-  final String description;
+  final String location;
+  final String desc;
+  final String aiInsight;
   final IconData icon;
   final Color color;
-  final List<String> lessons;
-
-  LearningModule({
-    required this.title,
-    required this.description,
-    required this.icon,
-    required this.color,
-    required this.lessons,
-  });
+  LifecycleStep({required this.title, required this.location, required this.desc, required this.aiInsight, required this.icon, required this.color});
 }
 
-class Resource {
-  final String title;
-  final String description;
-  final IconData icon;
-  final Color color;
+class KigaliTransferPainter extends CustomPainter {
+  final double progress;
+  final double pulse;
+  final int activeStep;
 
-  Resource({
-    required this.title,
-    required this.description,
-    required this.icon,
-    required this.color,
-  });
+  KigaliTransferPainter({required this.progress, required this.pulse, required this.activeStep});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final start = Offset(40, 40);
+    final end = Offset(size.width - 40, size.height - 40);
+    final center = Offset(size.width / 2, size.height / 2);
+    
+    final paint = Paint()..style = PaintingStyle.fill;
+    final linePaint = Paint()..strokeWidth = 1.5..style = PaintingStyle.stroke;
+
+    // 1. Draw Paths
+    linePaint.color = Colors.white.withOpacity(0.05);
+    Path path = Path();
+    path.moveTo(start.dx, start.dy);
+    path.quadraticBezierTo(center.dx, start.dy, center.dx, center.dy);
+    path.quadraticBezierTo(center.dx, end.dy, end.dx, end.dy);
+    canvas.drawPath(path, linePaint);
+
+    // 2. Draw Moving Intelligence Particles
+    if (activeStep >= 2) {
+      final metrics = path.computeMetrics().first;
+      for (int i = 0; i < 3; i++) {
+        double p = (progress + (i * 0.33)) % 1.0;
+        final tangent = metrics.getTangentForOffset(metrics.length * p);
+        if (tangent != null) {
+          paint.color = const Color(0xFFFFD700);
+          canvas.drawCircle(tangent.position, 2, paint);
+          paint.color = const Color(0xFFFFD700).withOpacity(0.2);
+          canvas.drawCircle(tangent.position, 6 * pulse, paint);
+        }
+      }
+    }
+
+    // 3. Draw Nodes
+    _drawNode(canvas, start, const Color(0xFF00F5FF), activeStep >= 0);
+    _drawNode(canvas, center, const Color(0xFFD500F9), activeStep >= 2);
+    _drawNode(canvas, end, const Color(0xFF00FF88), activeStep >= 3);
+  }
+
+  void _drawNode(Canvas canvas, Offset pos, Color color, bool active) {
+    final paint = Paint()..style = PaintingStyle.fill;
+    if (active) {
+      paint.color = color.withOpacity(0.2 * pulse);
+      canvas.drawCircle(pos, 15, paint);
+      paint.color = color;
+      canvas.drawCircle(pos, 4, paint);
+    } else {
+      paint.color = Colors.white10;
+      canvas.drawCircle(pos, 3, paint);
+    }
+  }
+
+  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }

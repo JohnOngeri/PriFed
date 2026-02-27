@@ -431,6 +431,19 @@ class ApiService extends ChangeNotifier {
     }
   }
 
+  /// Technical audit sample for Research Verdict (training history, hyperparameters, model repo).
+  /// Returns null on failure so UI can show fallback.
+  Future<Map<String, dynamic>?> getTechnicalAudit() async {
+    try {
+      final response = await _dioAi.get('/audit');
+      if (response.data is Map<String, dynamic>) return response.data;
+      return null;
+    } catch (e) {
+      debugPrint('Failed to get technical audit: $e');
+      return null;
+    }
+  }
+
   // Mock Data Methods (for offline/demo mode)
   SystemStatus _getMockSystemStatus() {
     return SystemStatus(
