@@ -2,10 +2,6 @@
 
 **PrivFed** is a privacy-preserving machine learning system for fraud detection across multiple banks **without sharing raw transaction data**. It uses **Federated Learning (FedAvg)** and **Differential Privacy (DP-SGD)** to maintain data sovereignty, improve collective detection accuracy, and reduce leakage risks from model updates.
 
-🔗 **Repository:** https://github.com/JohnOngeri/PriFed.git
-
----
-
 # Why PrivFed?
 
 Banks want to collaborate to catch fraud patterns that don’t appear inside a single institution — but collaboration is blocked by:
@@ -16,22 +12,19 @@ Banks want to collaborate to catch fraud patterns that don’t appear inside a s
 
 PrivFed enables **intelligence sharing instead of data sharing.**
 
----
-
 # Project Demo (Deployed)
 
-✅ Live deployed microservices running on Render using Docker  
-✅ Mobile client as an Android APK  
-✅ Backend services + database connected (Auth + AI/ML + PostgreSQL)
+ Live deployed microservices running on Render using Docker  
+Mobile client as an Android APK  
+ Backend services + database connected (Auth + AI/ML + PostgreSQL)
 
-### Links (fill in when ready):
+### Links
 
 - Android APK: *(add link)*
 - Auth API (Render): *(add link)*
 - AI/ML API (Render): *(add link)*
 - Dashboard / Metrics: *(add link)*
 
----
 
 # Architecture Overview
 
@@ -51,8 +44,6 @@ Stores users, banks, auth state, metadata.
 ### Frontend (Flutter)
 Mobile dashboard + client UI compiled into APK.
 
----
-
 # Privacy Layers
 
 ### Federated Learning Layer
@@ -64,9 +55,7 @@ DP-SGD noise added to prevent leakage from updates.
 ### Fairness Monitoring Layer
 Tracks performance across banks to ensure equitable outcomes.
 
----
-
-# System Screenshots (Add Yours Here)
+# System Screenshots 
 
 Add your screenshots below when you attach them:
 
@@ -89,18 +78,6 @@ Add your screenshots below when you attach them:
 - Grafana-style metric dashboards  
 - Multi-node visualization (Nairobi / Lagos / Joburg)  
 
-**Screenshots directory suggestion:** `docs/screenshots/`
-
-Example:
-```
-docs/screenshots/render-services.png
-docs/screenshots/docker-deploy.png
-docs/screenshots/flutter-dashboard.png
-docs/screenshots/fedavg-vs-local.png
-```
-
----
-
 # Results (Experimental Evidence)
 
 PrivFed was evaluated using the **IEEE-CIS Fraud Detection dataset**.
@@ -112,7 +89,6 @@ PrivFed was evaluated using the **IEEE-CIS Fraud Detection dataset**.
 | PriFed + DP (ε = 8.0) | 0.6674 | Privacy-compliant (utility trade-off) |
 | Local-Only Average | 0.5820 | Baseline (silo training performs poorly) |
 
----
 
 # “Democratization of AI” (Key Finding)
 
@@ -125,7 +101,6 @@ Bank Gamma (smallest institution) struggled due to highly imbalanced data:
 
 This shows the system benefits smaller institutions most — without violating privacy laws.
 
----
 
 # Data Engineering & Visualization
 
@@ -139,8 +114,6 @@ Pipeline includes:
 - Non-IID partitioning to simulate realistic bank differences  
 - Visualization of transaction distribution and fraud-rate per bank  
 
----
-
 # Model Architecture (Fraud Classifier)
 
 Optimized MLP for tabular data:
@@ -151,15 +124,12 @@ Optimized MLP for tabular data:
 - **Regularization:** BatchNorm + Dropout (0.3)  
 - **Optimizer:** Adam (lr=0.001, weight_decay=1e-5)  
 
----
 
 # Metrics Used
 
 - AUC-ROC (primary)
 - PR-AUC
 - Recall (fraud capture)
-
----
 
 # Getting Started (Local Development)
 
@@ -169,16 +139,12 @@ PrivFed is decoupled into:
 - FastAPI AI/ML Server  
 - Flutter Mobile App  
 
----
-
 ## 1) Clone Repo
 
 ```bash
 git clone https://github.com/JohnOngeri/PriFed.git
 cd PriFed
 ```
-
----
 
 ## 2) AI Backend (FastAPI — Port 8000)
 
@@ -199,8 +165,6 @@ uvicorn api.main:app --reload
 Runs at: http://localhost:8000  
 ✅ Keep this terminal running.
 
----
-
 ## 3) Auth Backend (Node + PostgreSQL — Port 3000)
 
 Make sure PostgreSQL is running and `DATABASE_URL` is set in `backend/.env`.
@@ -213,8 +177,6 @@ npm run start
 ```
 
 Runs at: http://localhost:3000
-
----
 
 ## 4) Flutter App (Mobile Client)
 
@@ -229,7 +191,6 @@ flutter run
 - Emulator connects via `10.0.2.2`
 - Ensure both backends are running locally
 
----
 
 # Build APK
 
@@ -262,8 +223,6 @@ Output:
 build/app/outputs/flutter-apk/app-release.apk
 ```
 
----
-
 # Deployment (Docker + Render)
 
 This project uses a Dockerized microservices deployment to ensure the APK works anywhere without local backends.
@@ -277,8 +236,6 @@ This project uses a Dockerized microservices deployment to ensure the APK works 
 
 Add your `render.yaml`, `docker-compose` diagram, or service URLs here once screenshots are attached.
 
----
-
 # Tech Stack
 
 - Federated Learning: Flower (flwr), FedAvg  
@@ -288,8 +245,6 @@ Add your `render.yaml`, `docker-compose` diagram, or service URLs here once scre
 - Database: PostgreSQL + Prisma  
 - Frontend: Flutter (Android APK)  
 - Infra: Docker + Render  
-
----
 
 # Future Work
 
