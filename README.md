@@ -20,9 +20,9 @@ Mobile client as an Android APK
 
 ### Links
 
-- Android APK: *(add link)*
-- Auth API (Render): *(add link)*
-- AI/ML API (Render): *(add link)*
+- Android APK: [*(add link)](https://drive.google.com/drive/folders/1qY41_rN4COWteuQQYqy4K2LeoLrDMi1G?usp=sharing)*
+- Auth API (Render): [privfed-auth-node.onrender.com](url)
+- AI/ML API (Render): [*privfed-auth.onrender.com*](url)
 - Dashboard / Metrics: *(add link)*
 
 
