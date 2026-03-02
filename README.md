@@ -13,6 +13,9 @@ Banks want to collaborate to catch fraud patterns that don’t appear inside a s
 PrivFed enables **intelligence sharing instead of data sharing.**
 
 # Project Demo (Deployed)
+<img width="1365" height="585" alt="image" src="https://github.com/user-attachments/assets/2811198f-4497-4fab-8afc-aa533cbd2460" />
+<img width="1365" height="585" alt="image" src="https://github.com/user-attachments/assets/3d359209-d93d-4b8e-bd19-e232ed08a265" />
+
 
  Live deployed microservices running on Render using Docker  
 Mobile client as an Android APK  
@@ -20,10 +23,10 @@ Mobile client as an Android APK
 
 ### Links
 
-- Android APK: [*(add link)](https://drive.google.com/drive/folders/1qY41_rN4COWteuQQYqy4K2LeoLrDMi1G?usp=sharing)*
+- Android APK:  [https://drive.google.com/drive/folders/1qY41_rN4COWteuQQYqy4K2LeoLrDMi1G?usp=sharing](url)
 - Auth API (Render): [privfed-auth-node.onrender.com](url)
 - AI/ML API (Render): [*privfed-auth.onrender.com*](url)
-- Dashboard / Metrics: *(add link)*
+
 
 
 # Architecture Overview
