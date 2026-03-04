@@ -4,7 +4,7 @@
 
 # Why PrivFed?
 
-Banks want to collaborate to catch fraud patterns that don’t appear inside a single institution — but collaboration is blocked by:
+Banks want to collaborate to catch fraud patterns that don’t appear inside a single institution but collaboration is blocked by:
 
 - **Privacy constraints** — Raw transaction data cannot be shared (GDPR, PCI-DSS, local data protection laws)
 - **Non-IID data** — Each bank has unique customers, transaction distributions, and fraud patterns
@@ -26,7 +26,7 @@ Mobile client as an Android APK
 - Android APK:  [https://drive.google.com/drive/folders/1qY41_rN4COWteuQQYqy4K2LeoLrDMi1G?usp=sharing](url)
 - Auth API (Render): [privfed-auth-node.onrender.com](url)
 - AI/ML API (Render): [*privfed-auth.onrender.com*](url)
-
+  Project Demo 5mins (skipped the login and sign up and focused on explaining what the rubric wanted to maintain the 5mins requirement)  [https://drive.google.com/file/d/1FqnrlLQZMVrg6bWhu4QVyzR1y-ipQvI-/view?usp=sharing](url)
 
 
 # Architecture Overview
@@ -43,6 +43,8 @@ Telemetry, privacy controls, fraud inference, federated coordination.
 
 ### Database (PostgreSQL)
 Stores users, banks, auth state, metadata.
+<img width="1365" height="680" alt="image" src="https://github.com/user-attachments/assets/df179bb3-ad57-4141-8c23-d896c0eb6337" />
+
 
 ### Frontend (Flutter)
 Mobile dashboard + client UI compiled into APK.
@@ -65,7 +67,17 @@ Add your screenshots below when you attach them:
 ### App UI (Flutter)
 - Login / Bank selection  
 - Dashboard (AUC, rounds, metrics)  
-- Fraud prediction screens  
+- Fraud prediction screens
+- <img width="1080" height="2400" alt="Screenshot_1772638898" src="https://github.com/user-attachments/assets/c872f3fb-f080-46fa-9dbf-1f878f8fe8b8" />
+- <img width="1080" height="2400" alt="Screenshot_1772639118" src="https://github.com/user-attachments/assets/62a84a8a-5398-42db-8650-30354f09d99b" />
+<img width="1080" height="2400" alt="Screenshot_1772639375" src="https://github.com/user-attachments/assets/87784193-0a2b-418b-b1ab-10f2ef972606" />
+<img width="1080" height="2400" alt="Screenshot_1772640190" src="https://github.com/user-attachments/assets/5f234792-3f24-4756-917c-5dc3906c5153" />
+<img width="1080" height="2400" alt="Screenshot_1772640197" src="https://github.com/user-attachments/assets/2312bccc-2bce-4dcb-956b-82427658708c" />
+
+
+
+
+ 
 
 ### Docker + Render Deployment
 - Render services overview (Auth / AI / DB)  
@@ -75,6 +87,7 @@ Add your screenshots below when you attach them:
 ### PostgreSQL / Prisma
 - DB schema / migrations  
 - Connection status (Render Postgres)  
+<img width="1362" height="723" alt="image" src="https://github.com/user-attachments/assets/1acf18d9-874b-4e9e-aa4c-6a53daecaa67" />
 
 ### Monitoring / Convergence Proof
 - 50-round convergence comparison (Federated vs Local baseline)  
