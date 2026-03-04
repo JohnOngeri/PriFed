@@ -23,10 +23,10 @@ Mobile client as an Android APK
 
 ### Links
 
-- Android APK:  [https://drive.google.com/drive/folders/1qY41_rN4COWteuQQYqy4K2LeoLrDMi1G?usp=sharing](url)
-- Auth API (Render): [privfed-auth-node.onrender.com](url)
-- AI/ML API (Render): [*privfed-auth.onrender.com*](url)
-  Project Demo 5mins (skipped the login and sign up and focused on explaining what the rubric wanted to maintain the 5mins requirement)  [https://drive.google.com/file/d/1FqnrlLQZMVrg6bWhu4QVyzR1y-ipQvI-/view?usp=sharing](url)
+- **Android APK:** [Download from Google Drive](https://drive.google.com/drive/folders/1qY41_rN4COWteuQQYqy4K2LeoLrDMi1G?usp=sharing)
+- **Auth API (Render):** [privfed-auth-node.onrender.com](https://privfed-auth-node.onrender.com)
+- **AI/ML API (Render):** [privfed-auth.onrender.com](https://privfed-auth.onrender.com)
+- **Project Demo (5 mins):** [Watch Video Demo](https://drive.google.com/file/d/1FqnrlLQZMVrg6bWhu4QVyzR1y-ipQvI-/view?usp=sharing)
 
 
 # Architecture Overview
@@ -62,17 +62,15 @@ Tracks performance across banks to ensure equitable outcomes.
 
 # System Screenshots 
 
-Add your screenshots below when you attach them:
-
 ### App UI (Flutter)
 - Login / Bank selection  
 - Dashboard (AUC, rounds, metrics)  
 - Fraud prediction screens
-- <img width="1080" height="2400" alt="Screenshot_1772638898" src="https://github.com/user-attachments/assets/c872f3fb-f080-46fa-9dbf-1f878f8fe8b8" />
-- <img width="1080" height="2400" alt="Screenshot_1772639118" src="https://github.com/user-attachments/assets/62a84a8a-5398-42db-8650-30354f09d99b" />
-<img width="1080" height="2400" alt="Screenshot_1772639375" src="https://github.com/user-attachments/assets/87784193-0a2b-418b-b1ab-10f2ef972606" />
-<img width="1080" height="2400" alt="Screenshot_1772640190" src="https://github.com/user-attachments/assets/5f234792-3f24-4756-917c-5dc3906c5153" />
-<img width="1080" height="2400" alt="Screenshot_1772640197" src="https://github.com/user-attachments/assets/2312bccc-2bce-4dcb-956b-82427658708c" />
+- <img src="https://github.com/user-attachments/assets/c872f3fb-f080-46fa-9dbf-1f878f8fe8b8" width="200" alt="Screenshot_1772638898" />
+- <img src="https://github.com/user-attachments/assets/62a84a8a-5398-42db-8650-30354f09d99b" width="200" alt="Screenshot_1772639118" />
+<img src="https://github.com/user-attachments/assets/87784193-0a2b-418b-b1ab-10f2ef972606" width="200" alt="Screenshot_1772639375" />
+<img src="https://github.com/user-attachments/assets/5f234792-3f24-4756-917c-5dc3906c5153" width="200" alt="Screenshot_1772640190" />
+<img src="https://github.com/user-attachments/assets/2312bccc-2bce-4dcb-956b-82427658708c" width="200" alt="Screenshot_1772640197" />
 
 
 
