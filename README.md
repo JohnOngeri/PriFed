@@ -26,7 +26,7 @@ Mobile client as an Android APK
 - **Android APK:** [Download from Google Drive](https://drive.google.com/drive/folders/1qY41_rN4COWteuQQYqy4K2LeoLrDMi1G?usp=sharing)
 - **Auth API (Render):** [privfed-auth-node.onrender.com](https://privfed-auth-node.onrender.com)
 - **AI/ML API (Render):** [privfed-auth.onrender.com](https://privfed-auth.onrender.com)
-- **Project Demo (5 mins):** [Watch Video Demo](https://drive.google.com/file/d/1FqnrlLQZMVrg6bWhu4QVyzR1y-ipQvI-/view?usp=sharing)
+- **Project Demo (5 mins):** [Watch Video Demo](https://drive.google.com/file/d/1yrd_p3grg8ILx5N4GycSr1ZawXh-0fQb/view?usp=sharing)
 
 
 # Architecture Overview
