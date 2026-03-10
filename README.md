@@ -22,7 +22,7 @@ Mobile client as an Android APK
  Backend services + database connected (Auth + AI/ML + PostgreSQL)
 
 ### Links
-
+  github repo: [Repository][https://github.com/JohnOngeri/PriFed.git](url)
 - **Android APK:** [Download from Google Drive](https://drive.google.com/drive/folders/1qY41_rN4COWteuQQYqy4K2LeoLrDMi1G?usp=sharing)
 - **Auth API (Render):** [privfed-auth-node.onrender.com](https://privfed-auth-node.onrender.com)
 - **AI/ML API (Render):** [privfed-auth.onrender.com](https://privfed-auth.onrender.com)
