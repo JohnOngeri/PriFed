@@ -75,7 +75,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => context.go('/login'),
+          onPressed: () => context.pop(),
         ),
         title: const Text(
           'Reset Password',
@@ -285,9 +285,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 
                 const SizedBox(height: 20),
                 
-                // Back to Login
                 TextButton(
-                  onPressed: () => context.go('/login'),
+                  onPressed: () => context.pop(),
                   child: Text(
                     'Back to Login',
                     style: TextStyle(

@@ -124,7 +124,7 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
                 Expanded(
                   child: ListView(
                     controller: _mainScroll,
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
                     children: [
                       _buildVictorySummaryCard(),
                       const SizedBox(height: 30),
@@ -160,18 +160,24 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
 
   Widget _buildHeader() {
     return Padding(
-      padding: const EdgeInsets.all(25),
+      padding: const EdgeInsets.fromLTRB(8, 16, 16, 8),
       child: Row(
         children: [
-          IconButton(icon: const Icon(Icons.arrow_back_ios, color: Colors.white70), onPressed: () => context.go('/dashboard')),
-          const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("RESEARCH VERDICT", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w900, letterSpacing: 2)),
-              Text("EMPIRICAL EXPERIMENT ROUND 50", style: TextStyle(color: Color(0xFF00F5FF), fontSize: 10, fontWeight: FontWeight.bold)),
-            ],
+          IconButton(
+            icon: const Icon(Icons.arrow_back_ios, color: Colors.white70, size: 20),
+            onPressed: () => context.go('/dashboard'),
           ),
-          const Spacer(),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text("RESEARCH VERDICT",
+                    style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w900, letterSpacing: 1.5)),
+                Text("EMPIRICAL EXPERIMENT ROUND 50",
+                    style: TextStyle(color: Color(0xFF00F5FF), fontSize: 9, fontWeight: FontWeight.bold)),
+              ],
+            ),
+          ),
           _buildVerificationSeal(),
         ],
       ),
@@ -197,26 +203,29 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
   }
 
   Widget _buildVictorySummaryCard() {
+    final w = MediaQuery.of(context).size.width;
+    final pad = w * 0.05;
     return Container(
-      padding: const EdgeInsets.all(30),
+      padding: EdgeInsets.all(pad),
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.03),
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white.withOpacity(0.05)),
         boxShadow: [BoxShadow(color: const Color(0xFF00F5FF).withOpacity(0.05), blurRadius: 40)],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("THE CORE CONCLUSION", style: TextStyle(color: Color(0xFF00F5FF), fontSize: 10, fontWeight: FontWeight.w900, letterSpacing: 1.5)),
-          const SizedBox(height: 15),
+          const Text("THE CORE CONCLUSION",
+              style: TextStyle(color: Color(0xFF00F5FF), fontSize: 10, fontWeight: FontWeight.w900, letterSpacing: 1.5)),
+          const SizedBox(height: 12),
           const Text(
             "Federated Learning bridged the local intelligence gap by 25.2%, reaching near-parity with centralized systems while maintaining mathematical privacy.",
-            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold, height: 1.4),
+            style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold, height: 1.4),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 20),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _metricHero("FEDERATED", valGlobalFed, const Color(0xFF00F5FF)),
               _metricHero("LOCAL AVG", valLocalAvg, const Color(0xFFFF3131)),
@@ -231,26 +240,33 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
   Widget _metricHero(String label, double value, Color color) {
     return Column(
       children: [
-        Text(value.toStringAsFixed(4), style: TextStyle(color: color, fontSize: 24, fontWeight: FontWeight.w900)),
-        Text(label, style: const TextStyle(color: Colors.white38, fontSize: 9, fontWeight: FontWeight.bold)),
+        Text(value.toStringAsFixed(4),
+            style: TextStyle(color: color, fontSize: 20, fontWeight: FontWeight.w900)),
+        const SizedBox(height: 4),
+        Text(label,
+            style: const TextStyle(color: Colors.white38, fontSize: 8, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center),
       ],
     );
   }
 
   Widget _buildArtifactSlider() {
+    final w = MediaQuery.of(context).size.width;
+    final cardWidth = w * 0.78;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.only(left: 10, bottom: 15),
-          child: Text("SCIENTIFIC ARTIFACTS (BACKEND PLOTS)", style: TextStyle(color: Colors.white38, fontSize: 10, fontWeight: FontWeight.bold)),
+          padding: EdgeInsets.only(left: 4, bottom: 12),
+          child: Text("SCIENTIFIC ARTIFACTS",
+              style: TextStyle(color: Colors.white38, fontSize: 10, fontWeight: FontWeight.bold)),
         ),
         SizedBox(
-          height: 380,
+          height: 340,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: _artifacts.length,
-            itemBuilder: (context, i) => _buildArtifactCard(_artifacts[i], i),
+            itemBuilder: (context, i) => _buildArtifactCard(_artifacts[i], i, cardWidth),
           ),
         ),
       ],
@@ -262,14 +278,14 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
     return '$base/plots/$filename';
   }
 
-  Widget _buildArtifactCard(Map<String, String> item, int i) {
+  Widget _buildArtifactCard(Map<String, String> item, int i, double cardWidth) {
     final plotUrl = _plotUrl(item['file']!);
     return Container(
-      width: 320,
-      margin: const EdgeInsets.only(right: 20),
+      width: cardWidth,
+      margin: const EdgeInsets.only(right: 16),
       decoration: BoxDecoration(
         color: const Color(0xFF111729),
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white.withOpacity(0.05)),
       ),
       child: Column(
@@ -280,7 +296,7 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: Colors.black38,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
               clipBehavior: Clip.antiAlias,
               child: Image.network(
@@ -293,15 +309,13 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const SizedBox(
-                          width: 32,
-                          height: 32,
+                          width: 28,
+                          height: 28,
                           child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF00F5FF)),
                         ),
-                        const SizedBox(height: 12),
-                        Text(
-                          item['file']!,
-                          style: const TextStyle(color: Color(0xFF00F5FF), fontSize: 10),
-                        ),
+                        const SizedBox(height: 8),
+                        Text(item['file']!,
+                            style: const TextStyle(color: Color(0xFF00F5FF), fontSize: 9)),
                       ],
                     ),
                   );
@@ -310,13 +324,11 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
                   return Stack(
                     alignment: Alignment.center,
                     children: [
-                      const Icon(Icons.insert_chart_outlined, color: Colors.white10, size: 60),
+                      const Icon(Icons.insert_chart_outlined, color: Colors.white10, size: 48),
                       Positioned(
-                        bottom: 15,
-                        child: Text(
-                          item['file']!,
-                          style: const TextStyle(color: Color(0xFF00F5FF), fontSize: 10),
-                        ),
+                        bottom: 10,
+                        child: Text(item['file']!,
+                            style: const TextStyle(color: Color(0xFF00F5FF), fontSize: 9)),
                       ),
                     ],
                   );
@@ -327,21 +339,25 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
           Expanded(
             flex: 2,
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(14),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(item['title']!, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 16)),
-                  const SizedBox(height: 5),
-                  Text(item['subtitle']!, style: const TextStyle(color: Color(0xFF00F5FF), fontSize: 10, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 10),
-                  Text(item['insight']!, style: const TextStyle(color: Colors.white54, fontSize: 11, height: 1.4)),
-                  const Spacer(),
-                  Text("Backend: /api/plots/${item['file']}", style: const TextStyle(color: Colors.white10, fontSize: 7)),
+                  Text(item['title']!,
+                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 14)),
+                  const SizedBox(height: 4),
+                  Text(item['subtitle']!,
+                      style: const TextStyle(color: Color(0xFF00F5FF), fontSize: 9, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Expanded(
+                    child: Text(item['insight']!,
+                        style: const TextStyle(color: Colors.white54, fontSize: 10, height: 1.4),
+                        overflow: TextOverflow.fade),
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -349,13 +365,16 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
 
   Widget _buildFinalScoreboard() {
     return Container(
-      padding: const EdgeInsets.all(30),
-      decoration: BoxDecoration(color: Colors.white.withOpacity(0.02), borderRadius: BorderRadius.circular(30)),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.02),
+          borderRadius: BorderRadius.circular(20)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("PERFORMANCE SCOREBOARD", style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w900)),
-          const SizedBox(height: 25),
+          const Text("PERFORMANCE SCOREBOARD",
+              style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w900)),
+          const SizedBox(height: 16),
           _scoreboardRow("CENTRALIZED CEILING", valCentralized, Colors.white24, false),
           _scoreboardRow("GLOBAL CHAMPION (PRIFED)", valGlobalFed, const Color(0xFF00F5FF), true),
           _scoreboardRow("PRIVATE MODEL (ε=8.0)", valPrivateDP, const Color(0xFFD500F9), false),
@@ -367,19 +386,29 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
 
   Widget _scoreboardRow(String name, double val, Color color, bool isWinner) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.all(15),
+      margin: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       decoration: BoxDecoration(
         color: isWinner ? color.withOpacity(0.1) : Colors.black26,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: isWinner ? color.withOpacity(0.3) : Colors.white.withOpacity(0.05)),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+            color: isWinner ? color.withOpacity(0.3) : Colors.white.withOpacity(0.05)),
       ),
       child: Row(
         children: [
-          Icon(isWinner ? Icons.stars : Icons.blur_on, color: color, size: 18),
-          const SizedBox(width: 15),
-          Expanded(child: Text(name, style: TextStyle(color: isWinner ? Colors.white : Colors.white38, fontWeight: FontWeight.bold, fontSize: 12))),
-          Text(val.toStringAsFixed(4), style: TextStyle(color: color, fontSize: 18, fontWeight: FontWeight.w900)),
+          Icon(isWinner ? Icons.stars : Icons.blur_on, color: color, size: 16),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(name,
+                style: TextStyle(
+                    color: isWinner ? Colors.white : Colors.white38,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 11),
+                overflow: TextOverflow.ellipsis),
+          ),
+          const SizedBox(width: 8),
+          Text(val.toStringAsFixed(4),
+              style: TextStyle(color: color, fontSize: 16, fontWeight: FontWeight.w900)),
         ],
       ),
     );
@@ -390,10 +419,10 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
     final hp = _auditData?['hyperparameters'] as Map<String, dynamic>?;
     final repo = _auditData?['model_repository'] as Map<String, dynamic>?;
     return Container(
-      padding: const EdgeInsets.all(30),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: const Color(0xFF111729),
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white.withOpacity(0.05)),
       ),
       child: Column(
@@ -510,21 +539,34 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
     final jsonStr = "{\n  \"optimizer\": \"$optim\",\n  \"loss\": \"$loss\",\n  \"epsilon\": $epsilon,\n  \"delta\": \"$delta\",\n  \"fed_rounds\": $fedRounds,\n  \"nodes\": $nodes\n}";
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(25),
-      decoration: BoxDecoration(color: Colors.black45, borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.white10)),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+          color: Colors.black45,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.white10)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("NETWORK MANIFEST (JSON)", style: TextStyle(color: Colors.white24, fontSize: 9, fontWeight: FontWeight.bold)),
+          const Text("NETWORK MANIFEST (JSON)",
+              style: TextStyle(color: Colors.white24, fontSize: 9, fontWeight: FontWeight.bold)),
           const SizedBox(height: 10),
-          SelectableText(
-            jsonStr,
-            style: const TextStyle(color: Color(0xFF00FF88), fontFamily: 'Courier', fontSize: 12),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SelectableText(
+              jsonStr,
+              style: const TextStyle(
+                  color: Color(0xFF00FF88), fontFamily: 'Courier', fontSize: 11),
+            ),
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 12),
           Text(
-            verification != null ? "*** VERIFIED: $verification ***" : "*** VERIFIED: These parameters achieved the target convergence. Accuracy was optimized against the IEEE-CIS Dataset (708,648 samples). ***",
-            style: TextStyle(color: const Color(0xFFD500F9).withOpacity(0.7), fontSize: 10, fontStyle: FontStyle.italic),
+            verification != null
+                ? "*** VERIFIED: $verification ***"
+                : "*** VERIFIED: These parameters achieved the target convergence. Accuracy was optimized against the IEEE-CIS Dataset (708,648 samples). ***",
+            style: TextStyle(
+                color: const Color(0xFFD500F9).withOpacity(0.7),
+                fontSize: 10,
+                fontStyle: FontStyle.italic),
           ),
         ],
       ),

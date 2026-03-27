@@ -17,36 +17,20 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen>
     with SingleTickerProviderStateMixin {
   VideoPlayerController? _videoController;
-  late AnimationController _pulseController;
-  late Animation<double> _pulseAnimation;
   bool _videoError = false;
   bool _videoRenderError = false;
-  bool _videoDisabled = false; // Flag to completely disable video
+  bool _videoDisabled = false;
   html.VideoElement? _webVideoElement;
   String? _videoViewId;
-  
-  // Check if we should disable video (only as last resort after errors)
-  bool get _shouldDisableVideo {
-    // Only disable if we've encountered rendering errors
-    return _videoRenderError;
-  }
+
+  bool get _shouldDisableVideo => _videoRenderError;
 
   @override
   void initState() {
     super.initState();
     
-    // 1. Initialize Video Background IMMEDIATELY (don't await)
+    // 1. Initialize Video Background
     _initializeVideo();
-
-    // 2. Pulse Animation for Diagram
-    _pulseController = AnimationController(
-      duration: const Duration(seconds: 3),
-      vsync: this,
-    )..repeat(reverse: true);
-    
-    _pulseAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
-    );
   }
 
   Future<void> _initializeVideo() async {
@@ -230,10 +214,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     
     if (kIsWeb) {
       try {
-        if (_webVideoElement != null) {
-          (_webVideoElement as html.VideoElement).pause();
-          (_webVideoElement as html.VideoElement).src = '';
-        }
+        _webVideoElement?.pause();
+        _webVideoElement?.src = '';
         _webVideoElement = null;
         _videoViewId = null;
       } catch (e) {
@@ -258,8 +240,6 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     // Mark video as disabled to prevent any further rendering attempts
     _videoDisabled = true;
     _videoRenderError = true;
-    
-    _pulseController.dispose();
     super.dispose();
   }
 
@@ -365,89 +345,17 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 20),
                   _buildHeader(),
                   const Spacer(),
-
-                  // MIDDLE SECTION: TEXT LEFT, DIAGRAM RIGHT
-                  LayoutBuilder(
-                    builder: (context, constraints) {
-                      final isSmallScreen = constraints.maxWidth < 600;
-                      if (isSmallScreen) {
-                        // Stack vertically on small screens
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            _buildHeroText(),
-                            const SizedBox(height: 12),
-                            _buildSubText(),
-                            const SizedBox(height: 24),
-                            SizedBox(
-                              height: 200,
-                              width: double.infinity,
-                              child: AnimatedBuilder(
-                                animation: _pulseAnimation,
-                                builder: (context, child) {
-                                  return CustomPaint(
-                                    painter: CollaborationPainter(
-                                      pulse: _pulseAnimation.value,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                        );
-                      }
-                      // Side by side on larger screens
-                      return Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          // TEXT BLOCK (Left)
-                          Expanded(
-                            flex: 3,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                _buildHeroText(),
-                                const SizedBox(height: 12),
-                                _buildSubText(),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(width: 16),
-                          // NETWORK DIAGRAM (Right/Centered Right)
-                          Expanded(
-                            flex: 2,
-                            child: SizedBox(
-                              height: 200,
-                              child: AnimatedBuilder(
-                                animation: _pulseAnimation,
-                                builder: (context, child) {
-                                  return CustomPaint(
-                                    painter: CollaborationPainter(
-                                      pulse: _pulseAnimation.value,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                        ],
-                      );
-                    },
-                  ),
-
+                  _buildHeroText(),
+                  const SizedBox(height: 16),
+                  _buildSubText(),
                   const Spacer(),
-
-                  // BOTTOM ACTIONS
                   _buildActionButton(),
-                  const SizedBox(height: 12),
-                  _buildPrivacyLink(),
-                  const SizedBox(height: 20),
-                  _buildBottomMetricsRow(),
-                  SizedBox(height: MediaQuery.of(context).padding.bottom + 8),
+                  SizedBox(height: MediaQuery.of(context).padding.bottom + 32),
                 ],
               ),
             ),
@@ -504,186 +412,45 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
   Widget _buildHeroText() {
     return const Text(
-      'Collaborative\nIntelligence.\nAbsolute Privacy.',
+      'Fraud detection\nthat respects\nprivacy.',
       style: TextStyle(
         color: Colors.white,
-        fontSize: 28,
-        fontWeight: FontWeight.w900,
-        height: 1.1,
+        fontSize: 25,
+        fontWeight: FontWeight.w800,
+        height: 1.15,
+        letterSpacing: -0.5,
       ),
     );
   }
 
   Widget _buildSubText() {
     return Text(
-      'Train smarter models without sharing data.',
-      style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 14),
+      'Multiple banks. One shared model.\nZero shared data.',
+      style: TextStyle(
+        color: Colors.white.withOpacity(0.65),
+        fontSize: 16,
+        height: 1.5,
+      ),
     );
   }
 
   Widget _buildActionButton() {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: 56,
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(colors: [Color(0xFF64FFDA), Color(0xFF48CAE4)]),
-        borderRadius: BorderRadius.circular(12),
-      ),
-            child: ElevatedButton(
-              onPressed: () => context.go('/login'),
+      child: ElevatedButton(
+        onPressed: () => context.push('/login'),
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
+          backgroundColor: const Color(0xFF64FFDA),
+          foregroundColor: const Color(0xFF0A192F),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          elevation: 0,
         ),
-        child: const Text('[ Initialize Local Node ]', 
-          style: TextStyle(color: Color(0xFF0A192F), fontWeight: FontWeight.bold)),
+        child: const Text(
+          'Get Started',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        ),
       ),
     );
   }
-
-  Widget _buildPrivacyLink() {
-    return const Text(
-      'View Privacy Protocol (ε = 0.5)',
-      style: TextStyle(color: Color(0xFF64FFDA), decoration: TextDecoration.underline, fontSize: 12),
-    );
-  }
-
-  Widget _buildBottomMetricsRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Expanded(
-          child: _metricTile('Accuracy', '94%'),
-        ),
-        Expanded(
-          child: _metricTile('Privacy', 'DP-SGD'),
-        ),
-        Expanded(
-          child: _metricTile('Lift', '+4.2%'),
-        ),
-      ],
-    );
-  }
-
-  Widget _metricTile(String label, String val) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          label, 
-          style: const TextStyle(color: Colors.white60, fontSize: 11),
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 4),
-        Text(
-          val, 
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-      ],
-    );
-  }
-}
-
-// Network Diagram Painter - More visible with brighter colors
-class CollaborationPainter extends CustomPainter {
-  final double pulse;
-  CollaborationPainter({required this.pulse});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height / 2);
-    
-    // Connection lines - brighter and more visible
-    final connectionPaint = Paint()
-      ..color = const Color(0xFF64FFDA).withOpacity(0.7 + pulse * 0.3)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
-
-    // Node positions around center
-    final nodes = [
-      Offset(center.dx - 50, center.dy - 50),
-      Offset(center.dx + 50, center.dy - 50),
-      Offset(center.dx - 50, center.dy + 50),
-      Offset(center.dx + 50, center.dy + 50),
-    ];
-
-    // Draw connection lines with glow effect
-    for (var node in nodes) {
-      // Outer glow
-      final glowPaint = Paint()
-        ..color = const Color(0xFF64FFDA).withOpacity(0.2)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 4.0
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3);
-      canvas.drawLine(center, node, glowPaint);
-      
-      // Main line
-      canvas.drawLine(center, node, connectionPaint);
-      
-      // Animated dots along the line
-      final dotCount = 3;
-      for (int i = 0; i < dotCount; i++) {
-        final t = (i / (dotCount + 1)) + (pulse * 0.3);
-        if (t > 1.0) continue;
-        final dotX = center.dx + (node.dx - center.dx) * t;
-        final dotY = center.dy + (node.dy - center.dy) * t;
-        final dotPaint = Paint()
-          ..color = const Color(0xFF64FFDA).withOpacity(0.9 + pulse * 0.1)
-          ..style = PaintingStyle.fill;
-        canvas.drawCircle(Offset(dotX, dotY), 3, dotPaint);
-      }
-    }
-
-    // Draw peripheral nodes (banks)
-    final nodePaint = Paint()
-      ..color = const Color(0xFF64FFDA).withOpacity(0.6)
-      ..style = PaintingStyle.fill;
-    
-    final nodeBorderPaint = Paint()
-      ..color = const Color(0xFF64FFDA).withOpacity(0.9)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
-
-    for (var node in nodes) {
-      // Glow around node
-      final nodeGlow = Paint()
-        ..color = const Color(0xFF64FFDA).withOpacity(0.3 + pulse * 0.2)
-        ..style = PaintingStyle.fill
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 5);
-      canvas.drawCircle(node, 12, nodeGlow);
-      
-      // Node circle
-      canvas.drawCircle(node, 10, nodePaint);
-      canvas.drawCircle(node, 10, nodeBorderPaint);
-    }
-
-    // Central Global Model node - brighter and more prominent
-    final centerGlow = Paint()
-      ..color = const Color(0xFF00B4D8).withOpacity(0.4 + pulse * 0.3)
-      ..style = PaintingStyle.fill
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 15);
-    canvas.drawCircle(center, 20 + (pulse * 8), centerGlow);
-    
-    final centerPaint = Paint()
-      ..color = const Color(0xFF00B4D8).withOpacity(0.9)
-      ..style = PaintingStyle.fill;
-    canvas.drawCircle(center, 18, centerPaint);
-    
-    final centerBorder = Paint()
-      ..color = const Color(0xFF64FFDA).withOpacity(1.0)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
-    canvas.drawCircle(center, 18, centerBorder);
-    
-    // Inner glow
-    final innerGlow = Paint()
-      ..color = const Color(0xFF64FFDA).withOpacity(0.6)
-      ..style = PaintingStyle.fill;
-    canvas.drawCircle(center, 12, innerGlow);
-  }
-
-  @override
-  bool shouldRepaint(CollaborationPainter oldDelegate) => 
-      oldDelegate.pulse != pulse;
 }

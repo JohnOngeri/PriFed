@@ -354,9 +354,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 
                 const SizedBox(height: 20),
                 
-                // Back to Login
                 TextButton(
-                  onPressed: () => context.go('/login'),
+                  onPressed: () => context.pop(),
                   child: Text(
                     'Back to Login',
                     style: TextStyle(

@@ -29,7 +29,10 @@ class ApiConfig {
       if (host != null) return 'http://$host:3000/api';
     }
     if (isProduction) {
-      return const String.fromEnvironment('AUTH_BASE_URL', defaultValue: 'https://api.privfed.com/api');
+      return const String.fromEnvironment(
+        'AUTH_BASE_URL',
+        defaultValue: 'https://privfed-auth-node.onrender.com/api',
+      );
     }
     final env = const String.fromEnvironment('AUTH_BASE_URL', defaultValue: '');
     if (env.isNotEmpty) return env;
@@ -39,7 +42,10 @@ class ApiConfig {
   static String get aiBaseUrl {
     if (_overrideBaseUrl != null) return _overrideBaseUrl!;
     if (isProduction) {
-      return const String.fromEnvironment('API_BASE_URL', defaultValue: 'https://api.privfed.com/api');
+      return const String.fromEnvironment(
+        'API_BASE_URL',
+        defaultValue: 'https://privfed-auth.onrender.com/api',
+      );
     }
     final env = const String.fromEnvironment('API_BASE_URL', defaultValue: '');
     if (env.isNotEmpty) return env;

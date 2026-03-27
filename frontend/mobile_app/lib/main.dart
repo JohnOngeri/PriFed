@@ -129,10 +129,64 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/onboarding',
       builder: (context, state) => _sizedRoute(const OnboardingScreen()),
+      routes: [
+        GoRoute(
+          path: 'identity',
+          builder: (context, state) => _sizedRoute(const IdentityInitializationScreen()),
+        ),
+        GoRoute(
+          path: 'privacy',
+          builder: (context, state) {
+            final nodeId = state.uri.queryParameters['nodeId'];
+            return _sizedRoute(PrivacyProtocolScreen(nodeId: nodeId));
+          },
+        ),
+        GoRoute(
+          path: 'scan',
+          builder: (context, state) {
+            final nodeId = state.uri.queryParameters['nodeId'];
+            final epsilon = state.uri.queryParameters['epsilon'];
+            return _sizedRoute(EnvironmentScanScreen(nodeId: nodeId, epsilon: epsilon));
+          },
+        ),
+        GoRoute(
+          path: 'data-link',
+          builder: (context, state) {
+            final nodeId = state.uri.queryParameters['nodeId'];
+            final epsilon = state.uri.queryParameters['epsilon'];
+            return _sizedRoute(DataLinkScreen(nodeId: nodeId, epsilon: epsilon));
+          },
+        ),
+        GoRoute(
+          path: 'sync',
+          builder: (context, state) {
+            final nodeId = state.uri.queryParameters['nodeId'];
+            final epsilon = state.uri.queryParameters['epsilon'];
+            return _sizedRoute(InitialSyncScreen(nodeId: nodeId, epsilon: epsilon));
+          },
+        ),
+      ],
     ),
     GoRoute(
       path: '/login',
       builder: (context, state) => _sizedRoute(const LoginScreen()),
+      routes: [
+        GoRoute(
+          path: 'signup',
+          builder: (context, state) => _sizedRoute(const IdentityInitializationScreen()),
+        ),
+        GoRoute(
+          path: 'forgot-password',
+          builder: (context, state) => _sizedRoute(const ForgotPasswordScreen()),
+        ),
+        GoRoute(
+          path: 'reset-password',
+          builder: (context, state) {
+            final token = state.uri.queryParameters['token'];
+            return _sizedRoute(ResetPasswordScreen(token: token));
+          },
+        ),
+      ],
     ),
     GoRoute(
       path: '/forgot-password',
@@ -145,45 +199,9 @@ final GoRouter _router = GoRouter(
         return _sizedRoute(ResetPasswordScreen(token: token));
       },
     ),
-    // Onboarding Flow - Step 1: Identity Initialization
     GoRoute(
       path: '/onboarding/identity',
       builder: (context, state) => _sizedRoute(const IdentityInitializationScreen()),
-    ),
-    // Onboarding Flow - Step 2: Privacy Protocol
-    GoRoute(
-      path: '/onboarding/privacy',
-      builder: (context, state) {
-        final nodeId = state.uri.queryParameters['nodeId'];
-        return _sizedRoute(PrivacyProtocolScreen(nodeId: nodeId));
-      },
-    ),
-    // Onboarding Flow - Step 3: Environment Scan
-    GoRoute(
-      path: '/onboarding/scan',
-      builder: (context, state) {
-        final nodeId = state.uri.queryParameters['nodeId'];
-        final epsilon = state.uri.queryParameters['epsilon'];
-        return _sizedRoute(EnvironmentScanScreen(nodeId: nodeId, epsilon: epsilon));
-      },
-    ),
-    // Onboarding Flow - Step 4: Data Link
-    GoRoute(
-      path: '/onboarding/data-link',
-      builder: (context, state) {
-        final nodeId = state.uri.queryParameters['nodeId'];
-        final epsilon = state.uri.queryParameters['epsilon'];
-        return _sizedRoute(DataLinkScreen(nodeId: nodeId, epsilon: epsilon));
-      },
-    ),
-    // Onboarding Flow - Step 5: Initial Sync
-    GoRoute(
-      path: '/onboarding/sync',
-      builder: (context, state) {
-        final nodeId = state.uri.queryParameters['nodeId'];
-        final epsilon = state.uri.queryParameters['epsilon'];
-        return _sizedRoute(InitialSyncScreen(nodeId: nodeId, epsilon: epsilon));
-      },
     ),
     GoRoute(
       path: '/dashboard',

@@ -27,10 +27,11 @@ model User {
   updatedAt     DateTime  @updatedAt
 
   // Relations
-  refreshTokens RefreshToken[]
-  bank          Bank?     @relation(fields: [bankId], references: [id])
-  sessions      Session[]
-  notifications Notification[]
+  refreshTokens      RefreshToken[]
+  bank               Bank?     @relation(fields: [bankId], references: [id])
+  sessions           Session[]
+  notifications      Notification[]
+  passwordResetTokens PasswordResetToken[]
 
   @@index([federationId])
   @@index([email])
@@ -89,6 +90,8 @@ model PasswordResetToken {
   expiresAt DateTime
   usedAt    DateTime?
   createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@index([token])

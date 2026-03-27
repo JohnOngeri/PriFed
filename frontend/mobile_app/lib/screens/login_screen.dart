@@ -312,42 +312,36 @@ class _LoginScreenState extends State<LoginScreen>
           ),
 
           // LAYER D: MAIN UI CONTENT
-          SafeArea(
-            child: Stack(
-              children: [
-                // Back button at top
-                Positioned(
-                  top: 16,
-                  left: 16,
-                  child: IconButton(
-                    onPressed: () => context.go('/onboarding'),
-                    icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
-                    tooltip: 'Back',
-                  ),
+          Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              leading: IconButton(
+                onPressed: () => context.pop(),
+                icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
+              ),
+            ),
+            body: Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 20),
+                    _buildLogo(),
+                    const SizedBox(height: 40),
+                    _buildWelcomeHeader(),
+                    const SizedBox(height: 30),
+                    _buildLoginCard(),
+                    const SizedBox(height: 40),
+                    _buildActionButtons(),
+                    const SizedBox(height: 40),
+                    _buildFooter(),
+                    const SizedBox(height: 20),
+                  ],
                 ),
-                // Main content
-                Center(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(height: 20),
-                        _buildLogo(),
-                        const SizedBox(height: 40),
-                        _buildWelcomeHeader(),
-                        const SizedBox(height: 30),
-                        _buildLoginCard(),
-                        const SizedBox(height: 40),
-                        _buildActionButtons(),
-                        const SizedBox(height: 40),
-                        _buildFooter(),
-                        const SizedBox(height: 20),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],
@@ -382,7 +376,7 @@ class _LoginScreenState extends State<LoginScreen>
     return const Column(
       children: [
         Text(
-          'Welcome Back, Sentinel',
+          'Welcome Back',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.white,
@@ -423,30 +417,23 @@ class _LoginScreenState extends State<LoginScreen>
           _buildInputField(
             controller: _federationIdController,
             hintText: 'Federation ID',
-            prefixIcon: Icons.vpn_key,
-            suffixIcon: Icons.camera_alt,
-            onSuffixTap: () {
-              // Handle camera scan
-            },
+            prefixIcon: Icons.badge_outlined,
           ),
           const SizedBox(height: 20),
           _buildInputField(
             controller: _passcodeController,
             hintText: 'Secure Passcode',
-            prefixIcon: Icons.lock,
+            prefixIcon: Icons.lock_outline,
             obscureText: _obscurePasscode,
-            suffixIcon: Icons.settings,
-            onSuffixTap: () {
-              // Handle password settings
-              setState(() => _obscurePasscode = !_obscurePasscode);
-            },
+            suffixIcon: _obscurePasscode ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+            onSuffixTap: () => setState(() => _obscurePasscode = !_obscurePasscode),
           ),
           const SizedBox(height: 16),
           Align(
             alignment: Alignment.centerRight,
             child: GestureDetector(
               onTap: () {
-                context.go('/forgot-password');
+              context.push('/login/forgot-password');
               },
               child: Text(
                 'Forgot ID/Passcode?',
@@ -534,7 +521,7 @@ class _LoginScreenState extends State<LoginScreen>
                     ),
                   )
                 : const Text(
-              '[Access Secure Vault]',
+              'Access Secure Vault',
               style: TextStyle(color: Color(0xFF0A192F), fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
@@ -570,16 +557,13 @@ class _LoginScreenState extends State<LoginScreen>
           width: double.infinity,
           height: 56,
             child: OutlinedButton(
-              onPressed: () {
-                // Navigate to Identity Initialization (Step 1)
-                context.go('/onboarding/identity');
-              },
+              onPressed: () => context.push('/login/signup'),
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: Color(0xFF64FFDA)),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
               ),
               child: const Text(
-                '[Join the Federation]',
+                'Join the Federation',
                 style: TextStyle(color: Color(0xFF64FFDA), fontWeight: FontWeight.bold, fontSize: 16),
               ),
             ),

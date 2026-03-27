@@ -1,7 +1,39 @@
+# PrivFed: Auth (Node) + AI (FastAPI) + Postgres. APK uses AUTH_BASE_URL + API_BASE_URL.
+# Optional: nginx, redis, prometheus, grafana, jupyter (see bottom).
+
 version: '3.8'
 
 services:
-  # PrivFed Backend API
+  # ========== Auth API (Node + Prisma) – login, JWT, users, banks ==========
+  privfed-auth:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.node
+    container_name: privfed-auth
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=postgresql://privfed_user:${POSTGRES_PASSWORD:-privfed_secure_password_2024}@postgres:5432/privfed
+      - JWT_SECRET=${JWT_SECRET:-change-me-in-production}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:-change-me-in-production}
+      - CORS_ORIGIN=${CORS_ORIGIN:-*}
+      - FRONTEND_URL=${FRONTEND_URL:-privfed://}
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - privfed-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ========== AI/ML API (FastAPI) ==========
   privfed-backend:
     build:
       context: ./backend
@@ -72,7 +104,7 @@ services:
       - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --lc-collate=C --lc-ctype=C
     volumes:
       - privfed-postgres-data:/var/lib/postgresql/data
-      - ./backend/sql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      # Optional: add ./backend/sql/init.sql for extra init; Prisma migrations create Auth tables
     networks:
       - privfed-network
     restart: unless-stopped
@@ -124,12 +156,12 @@ services:
       - '--storage.tsdb.retention.time=200h'
       - '--web.enable-lifecycle'
 
-  # Grafana for visualization
+  # Grafana for visualization (host 3001 to avoid conflict with Auth on 3000)
   grafana:
     image: grafana/grafana:latest
     container_name: privfed-grafana
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=privfed_admin_2024
       - GF_USERS_ALLOW_SIGN_UP=false

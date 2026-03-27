@@ -41,23 +41,8 @@ app.use(helmet({
 }));
 
 // CORS configuration - Mobile optimized
-// Allow mobile apps (no origin) and localhost/web origins in development
 const corsOptions = {
-  origin: (origin, callback) => {
-    // Allow requests with no origin (mobile apps, Postman, curl)
-    if (!origin) return callback(null, true);
-
-    // Always allow any localhost or 127.0.0.1 origin in development
-    if (origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')) {
-      return callback(null, true);
-    }
-
-    // Otherwise fall back to configured allow-list
-    const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [];
-    if (allowedOrigins.includes(origin)) return callback(null, true);
-
-    callback(new Error('Not allowed by CORS'));
-  },
+  origin: true, // Allow ALL origins (mobile apps send no origin header)
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'X-Retry'],
@@ -124,10 +109,11 @@ app.use(errorHandler);
 // SERVER STARTUP
 // ============================================
 
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   logger.info(`🚀 PrivFed API Server running on port ${PORT}`);
   logger.info(`📱 Environment: ${process.env.NODE_ENV || 'development'}`);
   logger.info(`🔗 API Base URL: http://localhost:${PORT}/api`);
+  logger.info(`📡 LAN URL: http://10.110.11.178:${PORT}/api`);
 });
 
 // Graceful shutdown

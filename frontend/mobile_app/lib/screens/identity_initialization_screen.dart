@@ -100,52 +100,45 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
           ),
 
           // 4. Main UI Content (Centered)
-          SafeArea(
-            child: Stack(
-              children: [
-                // Back button at top - return to login screen
-                Positioned(
-                  top: 16,
-                  left: 16,
-                  child: IconButton(
-                    onPressed: () => context.go('/login'),
-                    icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
-                    tooltip: 'Back',
-                  ),
-                ),
-                // Main content
-                Center(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 20.0),
-                    child: Column(
+          Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              leading: IconButton(
+                onPressed: () => context.pop(),
+                icon: const Icon(Icons.arrow_back, color: Colors.white, size: 28),
+              ),
+            ),
+            body: Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Logo Header
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Logo Header
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Icons.hexagon, color: Color(0xFF00E5FF), size: 24),
-                            const SizedBox(width: 8),
-                            const Text(
-                              'PrivFed',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1.5,
-                              ),
-                            ),
-                          ],
+                        const Icon(Icons.hexagon, color: Color(0xFF00E5FF), size: 24),
+                        const SizedBox(width: 8),
+                        const Text(
+                          'PrivFed',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1.5,
+                          ),
                         ),
-                        const SizedBox(height: 40),
-
-                        // Premium Glass Card (Fixed Width: 450px)
-                        _buildGlassCard(context),
                       ],
                     ),
-                  ),
+                    const SizedBox(height: 24),
+                    _buildGlassCard(context),
+                    const SizedBox(height: 24),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ],
@@ -613,7 +606,7 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
                       ? () {
                           Navigator.of(dialogContext).pop();
                           if (context.mounted) {
-                            context.go('/onboarding/privacy?nodeId=$federationId');
+                            context.go('/dashboard');
                           }
                         }
                       : null,
@@ -655,13 +648,12 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
       if (!mounted) return;
 
       if (result['success'] == true) {
-        // Signup successful - show Federation ID dialog
         final federationId = result['federationId'] ?? result['user']?['federationId'];
         if (federationId != null) {
+          setState(() => _isSigningUp = false);
           await _showFederationIdDialog(context, federationId);
         } else {
-          // Fallback if Federation ID is missing
-          context.go('/onboarding/privacy');
+          context.go('/dashboard');
         }
       } else {
         // Signup failed - show error
