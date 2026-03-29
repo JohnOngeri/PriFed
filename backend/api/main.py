@@ -18,6 +18,10 @@ from contextlib import asynccontextmanager
 import os
 import sys
 
+# Define absolute paths at module level so they are accessible globally
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+plots_path = os.path.join(base_dir, "results", "plots")
+
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -66,10 +70,6 @@ async def lifespan(app: FastAPI):
     logger.info("Starting PrivFed API server...")
     
     try:
-        # Define absolute paths relative to this file
-        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        plots_path = os.path.join(base_dir, "results", "plots")
-
         # Create necessary directories
         os.makedirs(os.path.join(base_dir, "logs"), exist_ok=True)
         os.makedirs(plots_path, exist_ok=True)

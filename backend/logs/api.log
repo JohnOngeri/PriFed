@@ -2913,3 +2913,79 @@ TypeError: Object of type datetime is not JSON serializable
 2026-03-27 18:30:31,150 - api.services - INFO - Preloaded model: local_baseline
 2026-03-27 18:30:31,150 - api.main - INFO - PrivFed API server started successfully
 2026-03-27 18:33:01,291 - api.main - INFO - Shutting down PrivFed API server...
+2026-03-29 17:02:44,194 - utils.data_utils - INFO - Configuration loaded successfully from configs/config.yaml
+2026-03-29 17:02:44,210 - api.main - INFO - Starting PrivFed API server...
+2026-03-29 17:02:44,274 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 17:02:44,275 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 17:02:44,283 - utils.model_utils - INFO - Model loaded from models\global_champion.pth (state_dict only, input_dim=50)
+2026-03-29 17:02:44,286 - api.services - INFO - Model Router: loaded config_5_global_champion from global_champion.pth (key=config_5_global)
+2026-03-29 17:02:44,286 - api.services - INFO - Preloaded model: config_5_global
+2026-03-29 17:02:44,293 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 17:02:44,294 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 17:02:44,295 - utils.model_utils - INFO - Model loaded from models\private_dp_champion.pth (state_dict only, input_dim=50)
+2026-03-29 17:02:44,296 - api.services - INFO - Model Router: loaded config_4_dp from private_dp_champion.pth (key=config_4_private)
+2026-03-29 17:02:44,296 - api.services - INFO - Preloaded model: config_4_private
+2026-03-29 17:02:44,302 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 17:02:44,302 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 17:02:44,303 - utils.model_utils - INFO - Model loaded from models\bank_c_specialist.pth (state_dict only, input_dim=50)
+2026-03-29 17:02:44,304 - api.services - INFO - Model Router: loaded config_8_bank_c_specialist from bank_c_specialist.pth (key=config_8_specialist)
+2026-03-29 17:02:44,304 - api.services - INFO - Preloaded model: config_8_specialist
+2026-03-29 17:02:44,310 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 17:02:44,310 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 17:02:44,312 - utils.model_utils - INFO - Model loaded from models\local_baseline_bank_A.pth (state_dict only, input_dim=50)
+2026-03-29 17:02:44,312 - api.services - INFO - Model Router: loaded local_baseline from local_baseline_bank_A.pth (key=local_baseline)
+2026-03-29 17:02:44,312 - api.services - INFO - Preloaded model: local_baseline
+2026-03-29 17:02:44,312 - api.main - INFO - PrivFed API server started successfully
+2026-03-29 17:04:24,797 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 17:04:24,933 - api.main - INFO - Response: 200 - 0.1406s
+2026-03-29 17:04:24,956 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 17:04:24,988 - api.main - INFO - Response: 200 - 0.0340s
+2026-03-29 17:05:25,047 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 17:05:25,050 - api.main - INFO - Response: 200 - 0.0039s
+2026-03-29 17:05:25,061 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:05:55,621 - api.main - INFO - Response: 200 - 30.5589s
+2026-03-29 17:05:55,630 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/audit
+2026-03-29 17:05:55,631 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:05:55,633 - api.main - INFO - Request: GET http://localhost:8000/api/plots/final_thesis_comparison.png
+2026-03-29 17:05:55,633 - api.main - INFO - Request: GET http://localhost:8000/api/plots/local_baseline_auc_by_bank.png
+2026-03-29 17:05:55,872 - api.main - INFO - Response: 200 - 0.2411s
+2026-03-29 17:05:55,875 - api.main - INFO - Response: 200 - 0.2441s
+2026-03-29 17:05:55,891 - api.main - INFO - Request: GET http://localhost:8000/api/plots/privacy_utility_tradeoff_HD.png
+2026-03-29 17:05:55,893 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 17:05:55,894 - api.main - INFO - Response: 200 - 0.2607s
+2026-03-29 17:05:55,965 - api.main - INFO - Response: 200 - 0.3318s
+2026-03-29 17:05:55,971 - api.main - INFO - Response: 200 - 0.0771s
+2026-03-29 17:05:55,978 - api.main - INFO - Response: 200 - 0.0870s
+2026-03-29 17:06:03,438 - api.main - INFO - Request: GET http://localhost:8000/api/plots/fairness_std_comparison.png
+2026-03-29 17:06:03,440 - api.main - INFO - Response: 200 - 0.0019s
+2026-03-29 17:06:06,745 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:06:06,751 - api.main - INFO - Response: 200 - 0.0059s
+2026-03-29 17:06:13,093 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 17:06:13,135 - api.main - INFO - Response: 200 - 0.0415s
+2026-03-29 17:06:16,678 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:06:16,684 - api.main - INFO - Response: 200 - 0.0060s
+2026-03-29 17:06:29,450 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:06:29,454 - api.main - INFO - Response: 200 - 0.0045s
+2026-03-29 17:06:33,535 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 17:06:33,579 - api.main - INFO - Response: 200 - 0.0446s
+2026-03-29 17:06:38,971 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:06:38,979 - api.main - INFO - Response: 200 - 0.0080s
+2026-03-29 17:06:44,438 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:06:44,443 - api.main - INFO - Response: 200 - 0.0050s
+2026-03-29 17:06:47,945 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:06:47,952 - api.main - INFO - Response: 200 - 0.0070s
+2026-03-29 17:06:51,940 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:06:51,951 - api.main - INFO - Response: 200 - 0.0110s
+2026-03-29 17:06:59,362 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:06:59,372 - api.main - INFO - Response: 200 - 0.0101s
+2026-03-29 17:07:02,902 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:07:02,910 - api.main - INFO - Response: 200 - 0.0074s
+2026-03-29 17:07:07,462 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:07:07,466 - api.main - INFO - Response: 200 - 0.0040s
+2026-03-29 17:07:13,463 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:07:13,471 - api.main - INFO - Response: 200 - 0.0084s
+2026-03-29 17:07:13,476 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:07:13,490 - api.main - INFO - Response: 200 - 0.0140s
+2026-03-29 17:07:33,550 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 17:07:33,655 - api.main - INFO - Response: 200 - 0.1049s
+2026-03-29 17:08:08,562 - api.main - INFO - Shutting down PrivFed API server...

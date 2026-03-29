@@ -1028,3 +1028,19 @@
 {"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-03-27 18:28:57"}
 {"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-03-27 18:28:57"}
 {"level":"info","message":"📡 LAN URL: http://10.110.11.178:3000/api","service":"privfed-backend","timestamp":"2026-03-27 18:28:57"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-03-29 16:59:22"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-03-29 16:59:22"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-03-29 16:59:22"}
+{"level":"info","message":"📡 LAN URL: http://10.110.11.178:3000/api","service":"privfed-backend","timestamp":"2026-03-29 16:59:22"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-03-29 16:59:22"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-03-29 16:59:22"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-03-29 16:59:22"}
+{"level":"info","message":"📡 LAN URL: http://10.110.11.178:3000/api","service":"privfed-backend","timestamp":"2026-03-29 16:59:22"}
+{"ip":"127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-03-29 17:04:24","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-03-29 17:04:31"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-03-29 17:04:31"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-03-29 17:04:31"}
+{"level":"info","message":"📡 LAN URL: http://10.110.11.178:3000/api","service":"privfed-backend","timestamp":"2026-03-29 17:04:31"}
+{"ip":"127.0.0.1","level":"info","message":"Incoming request","method":"POST","path":"/api/auth/login","service":"privfed-backend","timestamp":"2026-03-29 17:05:23","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"}
+{"federationId":"WWCY7","level":"info","message":"User logged in successfully","service":"privfed-backend","timestamp":"2026-03-29 17:05:24","userId":"1b5c8812-ae51-406f-9163-1ea4a9fc2796"}
+{"duration":"927ms","ip":"127.0.0.1","level":"info","message":"Request completed","method":"POST","path":"/login","service":"privfed-backend","statusCode":200,"timestamp":"2026-03-29 17:05:24"}
