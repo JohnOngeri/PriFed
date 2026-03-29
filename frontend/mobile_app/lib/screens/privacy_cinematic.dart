@@ -39,10 +39,10 @@ class _PrivacyCinematicState extends State<PrivacyCinematic>
 
   // --- Constants & Colors ---
   static const Color spaceDark = Color(0xFF060912);
-  static const Color cyanGlow = Color(0xFF00F5FF);
-  static const Color privacyPurple = Color(0xFFD500F9);
-  static const Color neonGreen = Color(0xFF00FF88);
-  static const Color warningRed = Color(0xFFFF3131);
+  static const Color cyanGlow = AppTheme.cyberCyan;
+  static const Color privacyPurple = AppTheme.privacyPurple;
+  static const Color neonGreen = AppTheme.neuralGreen;
+  static const Color warningRed = AppTheme.dangerRed;
 
   // --- Narrative Data for Judges ---
   final List<String> _privacyInsights = [
@@ -148,7 +148,7 @@ class _PrivacyCinematicState extends State<PrivacyCinematic>
       children: [
         IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white70, size: 20),
-          onPressed: () => context.go('/dashboard'),
+          onPressed: () => context.canPop() ? context.pop() : context.go('/dashboard'),
         ),
         const Column(
           children: [
@@ -436,13 +436,13 @@ class LaplaceNoisePainter extends CustomPainter {
       double wave = math.sin((animation * 2 * math.pi) + i);
       double radius = (rand.nextDouble() * baseRadius) * (1.2 + wave * 0.3);
 
-      paint.color = const Color(0xFFD500F9).withOpacity(0.05 + (0.2 * (1 - epsilon / 10)));
+      paint.color = AppTheme.privacyPurple.withOpacity(0.05 + (0.2 * (1 - epsilon / 10)));
       canvas.drawCircle(Offset(x, y), radius, paint);
 
       // Draw faint connections to simulate gradient perturbation
       if (i % 4 == 0) {
         final linePaint = Paint()
-          ..color = const Color(0xFF00F5FF).withOpacity(0.03)
+          ..color = AppTheme.cyberCyan.withOpacity(0.03)
           ..strokeWidth = 0.5;
         canvas.drawLine(Offset(x, y), Offset(size.width / 2, size.height / 2), linePaint);
       }

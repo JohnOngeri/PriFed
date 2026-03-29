@@ -518,7 +518,7 @@ class _MainDashboardState extends State<MainDashboard>
       child: DashboardCard(
         title: 'PRIVACY',
         imagePath: 'assets/images/privacy.jpg',
-        onTap: () => context.go('/privacy'),
+        onTap: () => context.go('/privacy-shield'),
         child: Container(),
       ),
     );

@@ -79,7 +79,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           color: AppTheme.privacyPurple,
                           title: 'Privacy Settings',
                           subtitle: 'Differential privacy configuration',
-                          onTap: () => context.go('/privacy'),
+                          onTap: () => context.go('/privacy-shield'),
                         ),
                         const SizedBox(height: 8),
                         _buildNavTile(

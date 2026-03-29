@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import '../theme/app_theme.dart';
 import '../providers/api_service.dart';
 
 class IdentityInitializationScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class IdentityInitializationScreen extends StatefulWidget {
 }
 
 class _IdentityInitializationScreenState extends State<IdentityInitializationScreen>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _controller;
   
   // Form controllers
@@ -56,23 +57,14 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
         children: [
           // 1. Cinematic Background (Skyscrapers - Center/Cover)
           Positioned.fill(
-            child: kIsWeb
-                ? Image.network(
-                    '/assets/images/identity%20initialization.png',
-                    fit: BoxFit.cover,
-                    alignment: Alignment.center,
-                    errorBuilder: (context, error, stackTrace) {
-                      return _buildFallbackBackground();
-                    },
-                  )
-                : Image.asset(
-                    'assets/images/identity initialization.png',
-                    fit: BoxFit.cover,
-                    alignment: Alignment.center,
-                    errorBuilder: (context, error, stackTrace) {
-                      return _buildFallbackBackground();
-                    },
-                  ),
+            child: Image.asset(
+              'assets/images/identity initialization.png',
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+              errorBuilder: (context, error, stackTrace) {
+                return _buildFallbackBackground();
+              },
+            ),
           ),
 
           // 2. Very Subtle Radial Gradient Overlay (Minimal darkening for text readability)
@@ -118,17 +110,28 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
                   children: [
                     // Logo Header
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Icon(Icons.hexagon, color: Color(0xFF00E5FF), size: 24),
-                        const SizedBox(width: 8),
-                        const Text(
-                          'PrivFed',
+                        Row(
+                          children: [
+                            const Icon(Icons.hexagon, color: AppTheme.cyberCyan, size: 24),
+                            const SizedBox(width: 8),
+                            const Text(
+                              'PrivFed',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 1.5,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          'Step 1 of 5',
                           style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.5,
+                            color: Colors.white.withOpacity(0.7),
+                            fontSize: 14,
                           ),
                         ),
                       ],
@@ -155,13 +158,13 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
         borderRadius: BorderRadius.circular(30),
         // Subtle glowing cyan border
         border: Border.all(
-          color: const Color(0xFF00E5FF).withOpacity(0.4),
+          color: AppTheme.cyberCyan.withOpacity(0.4),
           width: 1.5,
         ),
         // Outer glow effect
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF00E5FF).withOpacity(0.15),
+            color: AppTheme.cyberCyan.withOpacity(0.15),
             blurRadius: 40,
             spreadRadius: 2,
           ),
@@ -394,7 +397,7 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
             color: Colors.black.withOpacity(0.2),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: const Color(0xFF00E5FF).withOpacity(0.3),
+              color: AppTheme.cyberCyan.withOpacity(0.3),
               width: 1,
             ),
           ),
@@ -429,17 +432,17 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
             width: double.infinity,
             height: 50,
             decoration: BoxDecoration(
-              color: _isSigningUp ? Colors.grey : const Color(0xFF00E5FF),
+              color: _isSigningUp ? Colors.grey : AppTheme.cyberCyan,
               borderRadius: BorderRadius.circular(8),
               boxShadow: _isSigningUp ? null : [
                 BoxShadow(
-                  color: const Color(0xFF00E5FF).withOpacity(0.6),
+                  color: AppTheme.cyberCyan.withOpacity(0.6),
                   blurRadius: 20,
                   spreadRadius: 2,
                   offset: const Offset(0, 0),
                 ),
                 BoxShadow(
-                  color: const Color(0xFF00E5FF).withOpacity(0.4),
+                  color: AppTheme.cyberCyan.withOpacity(0.4),
                   blurRadius: 15,
                   offset: const Offset(0, 5),
                 ),
@@ -483,7 +486,7 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
               backgroundColor: const Color(0xFF0A192F),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
-                side: BorderSide(color: const Color(0xFF00E5FF).withOpacity(0.5), width: 2),
+                side: BorderSide(color: AppTheme.cyberCyan.withOpacity(0.5), width: 2),
         ),
               title: Row(
                 children: [
@@ -507,15 +510,15 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
                       padding: const EdgeInsets.all(24),
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
-                          colors: [Color(0xFF00E5FF), Color(0xFF64FFDA)],
+                          colors: [AppTheme.cyberCyan, Color(0xFF64FFDA)],
                         ),
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: const Color(0xFF00E5FF), width: 2),
+                        border: Border.all(color: AppTheme.cyberCyan, width: 2),
                       ),
                       child: Column(
                         children: [
                           const Text(
-                            'YOUR FEDERATION ID',
+                            'STEP 1: YOUR FEDERATION ID',
                             style: TextStyle(
                               color: Color(0xFF0A192F),
                               fontSize: 12,
@@ -578,7 +581,7 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.05),
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: const Color(0xFF00E5FF).withOpacity(0.3), width: 1),
+                        border: Border.all(color: AppTheme.cyberCyan.withOpacity(0.3), width: 1),
                       ),
                       child: CheckboxListTile(
                         contentPadding: EdgeInsets.zero,
@@ -588,7 +591,7 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
                           style: TextStyle(color: Colors.white, fontSize: 14),
                         ),
                         value: hasConfirmed,
-                        activeColor: const Color(0xFF00E5FF),
+                        activeColor: AppTheme.cyberCyan,
                         checkColor: const Color(0xFF0A192F),
                         onChanged: (value) {
                           setDialogState(() {
@@ -606,12 +609,13 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
                       ? () {
                           Navigator.of(dialogContext).pop();
                           if (context.mounted) {
-                            context.go('/dashboard');
+                            // Explicitly navigate to Step 2 using the full hierarchical path
+                            context.go('/onboarding/privacy?nodeId=$federationId');
                           }
                         }
                       : null,
                   style: TextButton.styleFrom(
-                    foregroundColor: const Color(0xFF00E5FF),
+                    foregroundColor: AppTheme.cyberCyan,
                     disabledForegroundColor: Colors.grey,
                   ),
                   child: const Text(
@@ -653,7 +657,7 @@ class _IdentityInitializationScreenState extends State<IdentityInitializationScr
           setState(() => _isSigningUp = false);
           await _showFederationIdDialog(context, federationId);
         } else {
-          context.go('/dashboard');
+          context.go('/onboarding/privacy');
         }
       } else {
         // Signup failed - show error
@@ -695,11 +699,11 @@ class TechParticlePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = const Color(0xFF00E5FF).withOpacity(0.2);
+    final paint = Paint()..color = AppTheme.cyberCyan.withOpacity(0.2);
     final random = math.Random(42);
     for (int i = 0; i < 50; i++) {
       double x = random.nextDouble() * size.width;
-      double y = (random.nextDouble() * size.height + (animation.value * 100)) % size.height;
+      double y = (random.nextDouble() * size.height + (animation.value * 150)) % size.height;
       canvas.drawCircle(Offset(x, y), random.nextDouble() * 2, paint);
     }
   }

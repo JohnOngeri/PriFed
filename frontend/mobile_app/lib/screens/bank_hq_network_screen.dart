@@ -130,6 +130,11 @@ class _BankHQNetworkScreenState extends State<BankHQNetworkScreen>
             ],
           ),
           const Spacer(),
+          IconButton(
+            icon: const Icon(Icons.shield_outlined, color: cyanGlow),
+            tooltip: 'Privacy Shield Lab',
+            onPressed: () => context.push('/privacy-shield'),
+          ),
           _buildPrimaryBadge(),
         ],
       ),

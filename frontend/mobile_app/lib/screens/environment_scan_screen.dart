@@ -14,9 +14,10 @@ class EnvironmentScanScreen extends StatefulWidget {
 }
 
 class _EnvironmentScanScreenState extends State<EnvironmentScanScreen>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _scanController;
   late Animation<double> _scanProgress;
+  late AnimationController _particleController;
   
   bool _isScanning = true;
   bool _scanComplete = false;
@@ -36,6 +37,11 @@ class _EnvironmentScanScreenState extends State<EnvironmentScanScreen>
     _scanProgress = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(parent: _scanController, curve: Curves.easeInOut),
     );
+
+    _particleController = AnimationController(
+      duration: const Duration(seconds: 20),
+      vsync: this,
+    )..repeat();
     _startScan();
   }
 
@@ -88,6 +94,7 @@ class _EnvironmentScanScreenState extends State<EnvironmentScanScreen>
   @override
   void dispose() {
     _scanController.dispose();
+    _particleController.dispose();
     super.dispose();
   }
 
@@ -100,7 +107,9 @@ class _EnvironmentScanScreenState extends State<EnvironmentScanScreen>
           // Background particles
           Positioned.fill(
             child: CustomPaint(
-              painter: ParticleBackgroundPainter(),
+              painter: ParticleBackgroundPainter(
+                animation: _particleController,
+              ),
             ),
           ),
           
@@ -114,6 +123,7 @@ class _EnvironmentScanScreenState extends State<EnvironmentScanScreen>
                     children: [
                       IconButton(
                         icon: const Icon(Icons.arrow_back, color: Colors.white),
+                        // Navigates back to Step 2 ensuring full path is used
                         onPressed: () => context.go('/onboarding/privacy?nodeId=${widget.nodeId}'),
                       ),
                       const Spacer(),
@@ -277,7 +287,15 @@ class _EnvironmentScanScreenState extends State<EnvironmentScanScreen>
                       ),
                       child: ElevatedButton(
                         onPressed: () {
-                          context.go('/onboarding/data-link?nodeId=${widget.nodeId}&epsilon=${widget.epsilon}');
+                          // Explicitly move to Step 4: Data Linking
+                          final uri = Uri(
+                            path: '/onboarding/data-link',
+                            queryParameters: {
+                              if (widget.nodeId != null) 'nodeId': widget.nodeId!,
+                              if (widget.epsilon != null) 'epsilon': widget.epsilon!,
+                            },
+                          );
+                          context.go(uri.toString());
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
@@ -389,20 +407,23 @@ class _EnvironmentScanScreenState extends State<EnvironmentScanScreen>
 }
 
 class ParticleBackgroundPainter extends CustomPainter {
+  final Animation<double> animation;
+  ParticleBackgroundPainter({required this.animation}) : super(repaint: animation);
+
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = AppTheme.cyberCyan.withOpacity(0.1);
+    final paint = Paint()..color = AppTheme.cyberCyan.withOpacity(0.1);
     final random = math.Random(42);
     
     for (int i = 0; i < 50; i++) {
       final x = random.nextDouble() * size.width;
-      final y = random.nextDouble() * size.height;
+      // Matching "Sentinel" drift style
+      final yOffset = (animation.value * 150 * (random.nextDouble() + 0.5)) % size.height;
+      final y = (random.nextDouble() * size.height + yOffset) % size.height;
       canvas.drawCircle(Offset(x, y), random.nextDouble() * 2, paint);
     }
   }
 
   @override
-  bool shouldRepaint(ParticleBackgroundPainter oldDelegate) => false;
+  bool shouldRepaint(ParticleBackgroundPainter oldDelegate) => true;
 }
-

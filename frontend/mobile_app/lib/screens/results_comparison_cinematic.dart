@@ -238,15 +238,18 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
   }
 
   Widget _metricHero(String label, double value, Color color) {
-    return Column(
-      children: [
-        Text(value.toStringAsFixed(4),
-            style: TextStyle(color: color, fontSize: 20, fontWeight: FontWeight.w900)),
-        const SizedBox(height: 4),
-        Text(label,
-            style: const TextStyle(color: Colors.white38, fontSize: 8, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center),
-      ],
+    return InkWell(
+      onTap: label.contains("DP") ? () => context.push('/privacy-shield') : null,
+      child: Column(
+        children: [
+          Text(value.toStringAsFixed(4),
+              style: TextStyle(color: color, fontSize: 20, fontWeight: FontWeight.w900)),
+          const SizedBox(height: 4),
+          Text(label,
+              style: const TextStyle(color: Colors.white38, fontSize: 8, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center),
+        ],
+      ),
     );
   }
 

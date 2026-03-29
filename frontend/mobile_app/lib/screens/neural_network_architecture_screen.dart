@@ -275,7 +275,18 @@ class _NeuralNetworkArchitectureScreenState extends State<NeuralNetworkArchitect
           const SizedBox(width: 15),
           Expanded(
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(l['name']!, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14)),
+              Row(
+                children: [
+                  Text(l['name']!, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14)),
+                  if (isDP) ...[
+                    const SizedBox(width: 8),
+                    GestureDetector(
+                      onTap: () => context.push('/privacy-shield'),
+                      child: const Icon(Icons.open_in_new, color: purpleSecurity, size: 14),
+                    ),
+                  ],
+                ],
+              ),
               Text(l['type']!, style: const TextStyle(color: Colors.white38, fontSize: 10)),
             ]),
           ),

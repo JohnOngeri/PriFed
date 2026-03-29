@@ -216,7 +216,7 @@ final GoRouter _router = GoRouter(
       builder: (context, state) => _sizedRoute(const BanksCinematic()),
     ),
     GoRoute(
-      path: '/privacy',
+      path: '/privacy-shield',
       builder: (context, state) => _sizedRoute(const PrivacyCinematic()),
     ),
     GoRoute(

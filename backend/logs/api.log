@@ -2989,3 +2989,570 @@ TypeError: Object of type datetime is not JSON serializable
 2026-03-29 17:07:33,550 - api.main - INFO - Request: GET http://localhost:8000/api/audit
 2026-03-29 17:07:33,655 - api.main - INFO - Response: 200 - 0.1049s
 2026-03-29 17:08:08,562 - api.main - INFO - Shutting down PrivFed API server...
+2026-03-29 17:10:45,090 - utils.data_utils - INFO - Configuration loaded successfully from configs/config.yaml
+2026-03-29 17:10:45,145 - api.main - INFO - Starting PrivFed API server...
+2026-03-29 17:10:45,241 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 17:10:45,241 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 17:10:45,250 - utils.model_utils - INFO - Model loaded from models\global_champion.pth (state_dict only, input_dim=50)
+2026-03-29 17:10:45,251 - api.services - INFO - Model Router: loaded config_5_global_champion from global_champion.pth (key=config_5_global)
+2026-03-29 17:10:45,252 - api.services - INFO - Preloaded model: config_5_global
+2026-03-29 17:10:45,267 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 17:10:45,267 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 17:10:45,269 - utils.model_utils - INFO - Model loaded from models\private_dp_champion.pth (state_dict only, input_dim=50)
+2026-03-29 17:10:45,269 - api.services - INFO - Model Router: loaded config_4_dp from private_dp_champion.pth (key=config_4_private)
+2026-03-29 17:10:45,270 - api.services - INFO - Preloaded model: config_4_private
+2026-03-29 17:10:45,282 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 17:10:45,282 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 17:10:45,284 - utils.model_utils - INFO - Model loaded from models\bank_c_specialist.pth (state_dict only, input_dim=50)
+2026-03-29 17:10:45,285 - api.services - INFO - Model Router: loaded config_8_bank_c_specialist from bank_c_specialist.pth (key=config_8_specialist)
+2026-03-29 17:10:45,285 - api.services - INFO - Preloaded model: config_8_specialist
+2026-03-29 17:10:45,298 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 17:10:45,298 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 17:10:45,300 - utils.model_utils - INFO - Model loaded from models\local_baseline_bank_A.pth (state_dict only, input_dim=50)
+2026-03-29 17:10:45,301 - api.services - INFO - Model Router: loaded local_baseline from local_baseline_bank_A.pth (key=local_baseline)
+2026-03-29 17:10:45,301 - api.services - INFO - Preloaded model: local_baseline
+2026-03-29 17:10:45,302 - api.main - INFO - PrivFed API server started successfully
+2026-03-29 17:12:26,576 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 17:12:27,212 - api.main - INFO - Response: 200 - 0.6520s
+2026-03-29 17:12:27,288 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 17:12:27,412 - api.main - INFO - Response: 200 - 0.1246s
+2026-03-29 17:12:30,519 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 17:12:30,524 - api.main - INFO - Response: 200 - 0.0050s
+2026-03-29 17:12:30,532 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:12:39,031 - api.main - INFO - Request: GET http://localhost:8000/api/plots/final_thesis_comparison.png
+2026-03-29 17:12:39,032 - api.main - INFO - Response: 200 - 8.5005s
+2026-03-29 17:12:39,349 - api.main - INFO - Request: GET http://localhost:8000/api/plots/local_baseline_auc_by_bank.png
+2026-03-29 17:12:39,355 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/audit
+2026-03-29 17:12:39,379 - api.main - INFO - Response: 200 - 0.0261s
+2026-03-29 17:12:39,382 - api.main - INFO - Response: 200 - 0.3509s
+2026-03-29 17:12:39,388 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 17:12:39,441 - api.main - INFO - Response: 200 - 0.0922s
+2026-03-29 17:12:39,444 - api.main - INFO - Response: 200 - 0.0564s
+2026-03-29 17:12:45,700 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:12:45,708 - api.main - INFO - Response: 200 - 0.0083s
+2026-03-29 17:12:55,592 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:12:55,602 - api.main - INFO - Response: 200 - 0.0090s
+2026-03-29 17:13:59,343 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:13:59,349 - api.main - INFO - Response: 200 - 0.0060s
+2026-03-29 17:14:08,748 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:14:08,753 - api.main - INFO - Response: 200 - 0.0053s
+2026-03-29 17:14:08,755 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 17:14:08,762 - api.main - INFO - Response: 200 - 0.0073s
+2026-03-29 17:29:22,888 - api.main - INFO - Shutting down PrivFed API server...
+2026-03-29 19:36:30,508 - utils.data_utils - INFO - Configuration loaded successfully from configs/config.yaml
+2026-03-29 19:36:30,540 - api.main - INFO - Starting PrivFed API server...
+2026-03-29 19:36:30,675 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 19:36:30,675 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 19:36:30,687 - utils.model_utils - INFO - Model loaded from models\global_champion.pth (state_dict only, input_dim=50)
+2026-03-29 19:36:30,688 - api.services - INFO - Model Router: loaded config_5_global_champion from global_champion.pth (key=config_5_global)
+2026-03-29 19:36:30,689 - api.services - INFO - Preloaded model: config_5_global
+2026-03-29 19:36:30,737 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 19:36:30,738 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 19:36:30,740 - utils.model_utils - INFO - Model loaded from models\private_dp_champion.pth (state_dict only, input_dim=50)
+2026-03-29 19:36:30,741 - api.services - INFO - Model Router: loaded config_4_dp from private_dp_champion.pth (key=config_4_private)
+2026-03-29 19:36:30,741 - api.services - INFO - Preloaded model: config_4_private
+2026-03-29 19:36:30,780 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 19:36:30,781 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 19:36:30,782 - utils.model_utils - INFO - Model loaded from models\bank_c_specialist.pth (state_dict only, input_dim=50)
+2026-03-29 19:36:30,784 - api.services - INFO - Model Router: loaded config_8_bank_c_specialist from bank_c_specialist.pth (key=config_8_specialist)
+2026-03-29 19:36:30,784 - api.services - INFO - Preloaded model: config_8_specialist
+2026-03-29 19:36:30,820 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 19:36:30,820 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 19:36:30,822 - utils.model_utils - INFO - Model loaded from models\local_baseline_bank_A.pth (state_dict only, input_dim=50)
+2026-03-29 19:36:30,823 - api.services - INFO - Model Router: loaded local_baseline from local_baseline_bank_A.pth (key=local_baseline)
+2026-03-29 19:36:30,823 - api.services - INFO - Preloaded model: local_baseline
+2026-03-29 19:36:30,824 - api.main - INFO - PrivFed API server started successfully
+2026-03-29 19:43:02,638 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 19:43:02,946 - api.main - INFO - Response: 200 - 0.3187s
+2026-03-29 19:43:02,996 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 19:43:03,077 - api.main - INFO - Response: 200 - 0.0808s
+2026-03-29 19:47:31,533 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 19:47:31,728 - api.main - INFO - Response: 200 - 0.2211s
+2026-03-29 19:47:32,009 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 19:47:41,287 - api.main - INFO - Response: 200 - 9.2776s
+2026-03-29 20:00:03,561 - utils.data_utils - INFO - Configuration loaded successfully from configs/config.yaml
+2026-03-29 20:00:03,600 - api.main - INFO - Starting PrivFed API server...
+2026-03-29 20:00:03,671 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:00:03,671 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:00:03,677 - utils.model_utils - INFO - Model loaded from models\global_champion.pth (state_dict only, input_dim=50)
+2026-03-29 20:00:03,680 - api.services - INFO - Model Router: loaded config_5_global_champion from global_champion.pth (key=config_5_global)
+2026-03-29 20:00:03,681 - api.services - INFO - Preloaded model: config_5_global
+2026-03-29 20:00:03,691 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:00:03,692 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:00:03,693 - utils.model_utils - INFO - Model loaded from models\private_dp_champion.pth (state_dict only, input_dim=50)
+2026-03-29 20:00:03,694 - api.services - INFO - Model Router: loaded config_4_dp from private_dp_champion.pth (key=config_4_private)
+2026-03-29 20:00:03,694 - api.services - INFO - Preloaded model: config_4_private
+2026-03-29 20:00:03,705 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:00:03,706 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:00:03,708 - utils.model_utils - INFO - Model loaded from models\bank_c_specialist.pth (state_dict only, input_dim=50)
+2026-03-29 20:00:03,708 - api.services - INFO - Model Router: loaded config_8_bank_c_specialist from bank_c_specialist.pth (key=config_8_specialist)
+2026-03-29 20:00:03,709 - api.services - INFO - Preloaded model: config_8_specialist
+2026-03-29 20:00:03,722 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:00:03,722 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:00:03,724 - utils.model_utils - INFO - Model loaded from models\local_baseline_bank_A.pth (state_dict only, input_dim=50)
+2026-03-29 20:00:03,724 - api.services - INFO - Model Router: loaded local_baseline from local_baseline_bank_A.pth (key=local_baseline)
+2026-03-29 20:00:03,724 - api.services - INFO - Preloaded model: local_baseline
+2026-03-29 20:00:03,724 - api.main - INFO - PrivFed API server started successfully
+2026-03-29 20:11:11,734 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 20:11:12,823 - api.main - INFO - Response: 200 - 1.2142s
+2026-03-29 20:11:12,904 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 20:11:13,013 - api.main - INFO - Response: 200 - 0.1090s
+2026-03-29 20:12:08,475 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 20:12:08,494 - api.main - INFO - Response: 200 - 0.0206s
+2026-03-29 20:12:08,514 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 20:12:16,896 - api.main - INFO - Response: 200 - 8.3819s
+2026-03-29 20:14:59,052 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 20:14:59,132 - api.main - INFO - Response: 200 - 0.0932s
+2026-03-29 20:14:59,200 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 20:14:59,289 - api.main - INFO - Response: 200 - 0.0893s
+2026-03-29 20:17:59,555 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 20:17:59,594 - api.main - INFO - Response: 200 - 0.0410s
+2026-03-29 20:18:02,958 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 20:18:06,073 - api.main - INFO - Response: 200 - 3.1150s
+2026-03-29 20:25:25,091 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 20:25:25,153 - api.main - INFO - Response: 200 - 0.0729s
+2026-03-29 20:25:25,208 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 20:25:25,289 - api.main - INFO - Response: 200 - 0.0811s
+2026-03-29 20:25:38,140 - api.main - INFO - Shutting down PrivFed API server...
+2026-03-29 20:26:43,707 - utils.data_utils - INFO - Configuration loaded successfully from configs/config.yaml
+2026-03-29 20:26:43,722 - api.main - INFO - Starting PrivFed API server...
+2026-03-29 20:26:43,771 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:26:43,771 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:26:43,776 - utils.model_utils - INFO - Model loaded from models\global_champion.pth (state_dict only, input_dim=50)
+2026-03-29 20:26:43,778 - api.services - INFO - Model Router: loaded config_5_global_champion from global_champion.pth (key=config_5_global)
+2026-03-29 20:26:43,778 - api.services - INFO - Preloaded model: config_5_global
+2026-03-29 20:26:43,782 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:26:43,783 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:26:43,783 - utils.model_utils - INFO - Model loaded from models\private_dp_champion.pth (state_dict only, input_dim=50)
+2026-03-29 20:26:43,784 - api.services - INFO - Model Router: loaded config_4_dp from private_dp_champion.pth (key=config_4_private)
+2026-03-29 20:26:43,784 - api.services - INFO - Preloaded model: config_4_private
+2026-03-29 20:26:43,788 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:26:43,789 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:26:43,789 - utils.model_utils - INFO - Model loaded from models\bank_c_specialist.pth (state_dict only, input_dim=50)
+2026-03-29 20:26:43,790 - api.services - INFO - Model Router: loaded config_8_bank_c_specialist from bank_c_specialist.pth (key=config_8_specialist)
+2026-03-29 20:26:43,790 - api.services - INFO - Preloaded model: config_8_specialist
+2026-03-29 20:26:43,795 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:26:43,795 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:26:43,796 - utils.model_utils - INFO - Model loaded from models\local_baseline_bank_A.pth (state_dict only, input_dim=50)
+2026-03-29 20:26:43,797 - api.services - INFO - Model Router: loaded local_baseline from local_baseline_bank_A.pth (key=local_baseline)
+2026-03-29 20:26:43,797 - api.services - INFO - Preloaded model: local_baseline
+2026-03-29 20:26:43,797 - api.main - INFO - PrivFed API server started successfully
+2026-03-29 20:28:42,670 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 20:28:42,875 - api.main - INFO - Response: 200 - 0.2129s
+2026-03-29 20:28:42,894 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 20:28:42,939 - api.main - INFO - Response: 200 - 0.0454s
+2026-03-29 20:29:41,149 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 20:29:41,151 - api.main - INFO - Response: 200 - 0.0016s
+2026-03-29 20:29:41,156 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 20:29:45,980 - api.main - INFO - Response: 200 - 4.8237s
+2026-03-29 20:34:06,570 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 20:34:06,637 - api.main - INFO - Response: 200 - 0.0778s
+2026-03-29 20:34:06,690 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 20:34:06,855 - api.main - INFO - Response: 200 - 0.1655s
+2026-03-29 20:34:08,123 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 20:34:08,489 - api.main - INFO - Response: 200 - 0.3658s
+2026-03-29 20:51:44,705 - utils.data_utils - INFO - Configuration loaded successfully from configs/config.yaml
+2026-03-29 20:51:44,753 - api.main - INFO - Starting PrivFed API server...
+2026-03-29 20:51:44,877 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:51:44,879 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:51:44,890 - utils.model_utils - INFO - Model loaded from models\global_champion.pth (state_dict only, input_dim=50)
+2026-03-29 20:51:44,892 - api.services - INFO - Model Router: loaded config_5_global_champion from global_champion.pth (key=config_5_global)
+2026-03-29 20:51:44,892 - api.services - INFO - Preloaded model: config_5_global
+2026-03-29 20:51:44,903 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:51:44,903 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:51:44,906 - utils.model_utils - INFO - Model loaded from models\private_dp_champion.pth (state_dict only, input_dim=50)
+2026-03-29 20:51:44,906 - api.services - INFO - Model Router: loaded config_4_dp from private_dp_champion.pth (key=config_4_private)
+2026-03-29 20:51:44,907 - api.services - INFO - Preloaded model: config_4_private
+2026-03-29 20:51:44,918 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:51:44,918 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:51:44,921 - utils.model_utils - INFO - Model loaded from models\bank_c_specialist.pth (state_dict only, input_dim=50)
+2026-03-29 20:51:44,921 - api.services - INFO - Model Router: loaded config_8_bank_c_specialist from bank_c_specialist.pth (key=config_8_specialist)
+2026-03-29 20:51:44,922 - api.services - INFO - Preloaded model: config_8_specialist
+2026-03-29 20:51:44,936 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-29 20:51:44,937 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-29 20:51:44,939 - utils.model_utils - INFO - Model loaded from models\local_baseline_bank_A.pth (state_dict only, input_dim=50)
+2026-03-29 20:51:44,940 - api.services - INFO - Model Router: loaded local_baseline from local_baseline_bank_A.pth (key=local_baseline)
+2026-03-29 20:51:44,940 - api.services - INFO - Preloaded model: local_baseline
+2026-03-29 20:51:44,941 - api.main - INFO - PrivFed API server started successfully
+2026-03-29 20:55:14,194 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 20:55:14,391 - api.main - INFO - Response: 200 - 0.1995s
+2026-03-29 20:55:14,413 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 20:55:14,454 - api.main - INFO - Response: 200 - 0.0414s
+2026-03-29 21:08:01,721 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 21:08:01,749 - api.main - INFO - Response: 200 - 0.0304s
+2026-03-29 21:08:01,760 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 21:08:01,801 - api.main - INFO - Response: 200 - 0.0412s
+2026-03-29 21:40:22,223 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 21:40:22,649 - api.main - INFO - Response: 200 - 0.4357s
+2026-03-29 21:40:22,785 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 21:40:22,943 - api.main - INFO - Response: 200 - 0.1667s
+2026-03-29 21:46:07,080 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 21:46:07,172 - api.main - INFO - Response: 200 - 0.0956s
+2026-03-29 21:52:00,262 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 21:52:00,333 - api.main - INFO - Response: 200 - 0.0799s
+2026-03-29 21:52:00,470 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 21:52:00,633 - api.main - INFO - Response: 200 - 0.1628s
+2026-03-29 21:52:03,749 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:03,754 - api.main - INFO - Response: 200 - 0.0051s
+2026-03-29 21:52:03,776 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:22,334 - api.main - INFO - Response: 200 - 18.5589s
+2026-03-29 21:52:22,346 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:22,363 - api.main - INFO - Response: 200 - 0.0177s
+2026-03-29 21:52:22,373 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:22,400 - api.main - INFO - Response: 200 - 0.0270s
+2026-03-29 21:52:22,412 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:22,441 - api.main - INFO - Response: 200 - 0.0292s
+2026-03-29 21:52:32,823 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:32,840 - api.main - INFO - Response: 200 - 0.0169s
+2026-03-29 21:52:36,979 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:37,152 - api.main - INFO - Response: 200 - 0.1728s
+2026-03-29 21:52:45,887 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:45,915 - api.main - INFO - Response: 200 - 0.0262s
+2026-03-29 21:52:51,810 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:52,410 - api.main - INFO - Response: 200 - 0.5927s
+2026-03-29 21:52:56,290 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:52:56,307 - api.main - INFO - Response: 200 - 0.0170s
+2026-03-29 21:53:15,401 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:53:15,615 - api.main - INFO - Response: 200 - 0.2142s
+2026-03-29 21:53:24,541 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:53:24,702 - api.main - INFO - Response: 200 - 0.1609s
+2026-03-29 21:53:31,243 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:53:31,389 - api.main - INFO - Response: 200 - 0.1455s
+2026-03-29 21:53:38,243 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/fraud/predict
+2026-03-29 21:53:38,246 - api.main - INFO - Response: 200 - 0.0030s
+2026-03-29 21:53:38,267 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/predict
+2026-03-29 21:53:38,385 - api.services - INFO - Loading global_champion.pth...
+2026-03-29 21:53:39,427 - api.services - INFO - Inference successful.
+2026-03-29 21:53:39,434 - api.main - INFO - Response: 200 - 1.1661s
+2026-03-29 21:53:39,759 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/fraud/benchmark
+2026-03-29 21:53:39,762 - api.main - INFO - Response: 200 - 0.0027s
+2026-03-29 21:53:39,770 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/benchmark
+2026-03-29 21:53:39,866 - api.main - INFO - Response: 200 - 0.0952s
+2026-03-29 21:53:46,575 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/predict
+2026-03-29 21:53:46,580 - api.services - INFO - Loading global_champion.pth...
+2026-03-29 21:53:46,599 - api.services - INFO - Inference successful.
+2026-03-29 21:53:46,613 - api.main - INFO - Response: 200 - 0.0380s
+2026-03-29 21:53:50,426 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:53:50,450 - api.main - INFO - Response: 200 - 0.0235s
+2026-03-29 21:53:53,711 - api.main - INFO - Request: GET http://localhost:8000/api/plots/final_thesis_comparison.png
+2026-03-29 21:53:53,946 - api.main - INFO - Response: 200 - 0.2353s
+2026-03-29 21:53:53,982 - api.main - INFO - Request: GET http://localhost:8000/api/plots/local_baseline_auc_by_bank.png
+2026-03-29 21:53:54,025 - api.main - INFO - Response: 200 - 0.0431s
+2026-03-29 21:53:54,076 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/audit
+2026-03-29 21:53:54,095 - api.main - INFO - Response: 200 - 0.0191s
+2026-03-29 21:53:54,117 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 21:53:54,336 - api.main - INFO - Response: 200 - 0.2184s
+2026-03-29 21:53:57,462 - api.main - INFO - Request: GET http://localhost:8000/api/plots/privacy_utility_tradeoff_HD.png
+2026-03-29 21:53:57,482 - api.main - INFO - Response: 200 - 0.0200s
+2026-03-29 21:53:57,916 - api.main - INFO - Request: GET http://localhost:8000/api/plots/fairness_std_comparison.png
+2026-03-29 21:53:57,942 - api.main - INFO - Response: 200 - 0.0270s
+2026-03-29 21:54:01,449 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:54:01,528 - api.main - INFO - Response: 200 - 0.0792s
+2026-03-29 21:54:09,386 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:54:09,620 - api.main - INFO - Response: 200 - 0.2346s
+2026-03-29 21:54:15,913 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:54:15,959 - api.main - INFO - Response: 200 - 0.0460s
+2026-03-29 21:54:19,177 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 21:54:20,365 - api.main - INFO - Response: 200 - 1.1897s
+2026-03-29 22:00:50,597 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 22:00:50,860 - api.main - INFO - Response: 200 - 0.2793s
+2026-03-29 22:00:54,018 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:00:54,239 - api.main - INFO - Response: 200 - 0.2203s
+2026-03-29 22:01:06,971 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:01:07,011 - api.main - INFO - Response: 200 - 0.0396s
+2026-03-29 22:01:10,930 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:01:10,966 - api.main - INFO - Response: 200 - 0.0358s
+2026-03-29 22:01:16,332 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:01:16,346 - api.main - INFO - Response: 200 - 0.0138s
+2026-03-29 22:01:21,515 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:01:21,541 - api.main - INFO - Response: 200 - 0.0247s
+2026-03-29 22:01:26,064 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:01:26,298 - api.main - INFO - Response: 200 - 0.2335s
+2026-03-29 22:01:34,229 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:01:34,368 - api.main - INFO - Response: 200 - 0.1392s
+2026-03-29 22:01:43,763 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/predict
+2026-03-29 22:01:44,019 - api.services - INFO - Loading global_champion.pth...
+2026-03-29 22:01:44,494 - api.services - INFO - Inference successful.
+2026-03-29 22:01:44,510 - api.main - INFO - Response: 200 - 0.7458s
+2026-03-29 22:01:44,835 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/benchmark
+2026-03-29 22:01:44,922 - api.main - INFO - Response: 200 - 0.0880s
+2026-03-29 22:01:48,663 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/predict
+2026-03-29 22:01:48,873 - api.services - INFO - Loading global_champion.pth...
+2026-03-29 22:01:49,554 - api.services - INFO - Inference successful.
+2026-03-29 22:01:49,564 - api.main - INFO - Response: 200 - 0.9018s
+2026-03-29 22:01:55,419 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:01:58,236 - api.main - INFO - Response: 200 - 2.8171s
+2026-03-29 22:02:01,584 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 22:02:04,721 - api.main - INFO - Response: 200 - 3.1366s
+2026-03-29 22:02:06,751 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 22:02:06,758 - api.main - INFO - Response: 200 - 0.0076s
+2026-03-29 22:02:06,773 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:02:06,829 - api.main - INFO - Response: 200 - 0.0569s
+2026-03-29 22:22:34,015 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 22:22:34,048 - api.main - INFO - Response: 200 - 0.0340s
+2026-03-29 22:22:34,069 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 22:22:34,121 - api.main - INFO - Response: 200 - 0.0525s
+2026-03-29 22:22:35,435 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 22:22:35,437 - api.main - INFO - Response: 200 - 0.0016s
+2026-03-29 22:22:35,441 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:22:35,506 - api.main - INFO - Response: 200 - 0.0646s
+2026-03-29 22:22:42,768 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:22:42,782 - api.main - INFO - Response: 200 - 0.0140s
+2026-03-29 22:24:32,648 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:24:32,936 - api.main - INFO - Response: 200 - 0.2986s
+2026-03-29 22:24:36,383 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:24:36,402 - api.main - INFO - Response: 200 - 0.0191s
+2026-03-29 22:24:44,676 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:24:44,698 - api.main - INFO - Response: 200 - 0.0218s
+2026-03-29 22:24:51,054 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:24:51,107 - api.main - INFO - Response: 200 - 0.0529s
+2026-03-29 22:24:54,452 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:24:54,486 - api.main - INFO - Response: 200 - 0.0361s
+2026-03-29 22:28:41,568 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 22:28:41,667 - api.main - INFO - Response: 200 - 0.1040s
+2026-03-29 22:30:44,866 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 22:30:44,925 - api.main - INFO - Response: 200 - 0.0641s
+2026-03-29 22:30:46,771 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:30:46,966 - api.main - INFO - Response: 200 - 0.1935s
+2026-03-29 22:33:15,385 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 22:33:15,489 - api.main - INFO - Response: 200 - 0.1221s
+2026-03-29 22:33:15,537 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:33:15,847 - api.main - INFO - Response: 200 - 0.3099s
+2026-03-29 22:34:53,891 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 22:34:53,929 - api.main - INFO - Response: 200 - 0.0441s
+2026-03-29 22:34:53,961 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 22:34:54,031 - api.main - INFO - Response: 200 - 0.0704s
+2026-03-29 22:35:23,356 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:35:23,480 - api.main - INFO - Response: 200 - 0.1233s
+2026-03-29 22:35:29,518 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:35:29,530 - api.main - INFO - Response: 200 - 0.0120s
+2026-03-29 22:35:34,069 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:35:34,080 - api.main - INFO - Response: 200 - 0.0116s
+2026-03-29 22:35:36,765 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:35:36,793 - api.main - INFO - Response: 200 - 0.0285s
+2026-03-29 22:35:39,681 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:35:39,692 - api.main - INFO - Response: 200 - 0.0110s
+2026-03-29 22:35:42,859 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:35:42,872 - api.main - INFO - Response: 200 - 0.0136s
+2026-03-29 22:35:46,265 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:35:46,275 - api.main - INFO - Response: 200 - 0.0101s
+2026-03-29 22:35:50,181 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:35:50,325 - api.main - INFO - Response: 200 - 0.1441s
+2026-03-29 22:35:53,009 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/audit
+2026-03-29 22:35:53,097 - api.main - INFO - Response: 200 - 0.0887s
+2026-03-29 22:35:53,214 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 22:36:03,626 - api.main - INFO - Response: 200 - 10.4116s
+2026-03-29 22:36:03,630 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:36:03,641 - api.main - INFO - Response: 200 - 0.0111s
+2026-03-29 22:36:06,373 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:36:06,379 - api.main - INFO - Response: 200 - 0.0060s
+2026-03-29 22:36:10,668 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:36:10,678 - api.main - INFO - Response: 200 - 0.0094s
+2026-03-29 22:36:14,358 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:36:14,367 - api.main - INFO - Response: 200 - 0.0088s
+2026-03-29 22:36:27,051 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:36:27,058 - api.main - INFO - Response: 200 - 0.0071s
+2026-03-29 22:36:48,545 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:36:48,555 - api.main - INFO - Response: 200 - 0.0100s
+2026-03-29 22:36:54,468 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:36:54,477 - api.main - INFO - Response: 200 - 0.0090s
+2026-03-29 22:39:18,114 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:39:18,291 - api.main - INFO - Response: 200 - 0.1826s
+2026-03-29 22:39:26,691 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:39:26,711 - api.main - INFO - Response: 200 - 0.0204s
+2026-03-29 22:39:30,971 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:39:30,979 - api.main - INFO - Response: 200 - 0.0082s
+2026-03-29 22:39:34,074 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:39:34,091 - api.main - INFO - Response: 200 - 0.0170s
+2026-03-29 22:39:38,033 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:39:38,047 - api.main - INFO - Response: 200 - 0.0138s
+2026-03-29 22:39:41,510 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:39:41,520 - api.main - INFO - Response: 200 - 0.0110s
+2026-03-29 22:39:48,615 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:39:48,625 - api.main - INFO - Response: 200 - 0.0110s
+2026-03-29 22:39:51,877 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 22:39:52,087 - api.main - INFO - Response: 200 - 0.2094s
+2026-03-29 22:39:53,840 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:39:53,852 - api.main - INFO - Response: 200 - 0.0122s
+2026-03-29 22:39:57,560 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:39:57,571 - api.main - INFO - Response: 200 - 0.0110s
+2026-03-29 22:40:01,150 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:40:01,163 - api.main - INFO - Response: 200 - 0.0130s
+2026-03-29 22:40:04,624 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:40:04,639 - api.main - INFO - Response: 200 - 0.0150s
+2026-03-29 22:40:08,050 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:40:08,063 - api.main - INFO - Response: 200 - 0.0127s
+2026-03-29 22:40:11,667 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:40:11,674 - api.main - INFO - Response: 200 - 0.0080s
+2026-03-29 22:43:58,262 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 22:43:58,344 - api.main - INFO - Response: 200 - 0.0928s
+2026-03-29 22:43:58,394 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:43:58,556 - api.main - INFO - Response: 200 - 0.1617s
+2026-03-29 22:58:00,525 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 22:58:00,599 - api.main - INFO - Response: 200 - 0.0870s
+2026-03-29 22:58:00,660 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 22:58:00,762 - api.main - INFO - Response: 200 - 0.1019s
+2026-03-29 22:58:12,977 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 22:58:12,978 - api.main - INFO - Response: 200 - 0.0010s
+2026-03-29 22:58:12,986 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:58:13,244 - api.main - INFO - Response: 200 - 0.2580s
+2026-03-29 22:58:31,875 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:58:31,978 - api.main - INFO - Response: 200 - 0.1031s
+2026-03-29 22:59:14,069 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 22:59:14,098 - api.main - INFO - Response: 200 - 0.0297s
+2026-03-29 23:07:25,499 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 23:07:25,720 - api.main - INFO - Response: 200 - 0.2322s
+2026-03-29 23:08:05,289 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 23:08:05,328 - api.main - INFO - Response: 200 - 0.0450s
+2026-03-29 23:08:05,362 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 23:08:05,427 - api.main - INFO - Response: 200 - 0.0659s
+2026-03-29 23:08:28,466 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 23:08:28,468 - api.main - INFO - Response: 200 - 0.0036s
+2026-03-29 23:08:28,488 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:08:28,740 - api.main - INFO - Response: 200 - 0.2518s
+2026-03-29 23:09:05,381 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:09:05,467 - api.main - INFO - Response: 200 - 0.0866s
+2026-03-29 23:18:17,507 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 23:18:17,588 - api.main - INFO - Response: 200 - 0.0898s
+2026-03-29 23:18:17,641 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 23:18:17,814 - api.main - INFO - Response: 200 - 0.1732s
+2026-03-29 23:18:25,314 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:18:25,544 - api.main - INFO - Response: 200 - 0.2314s
+2026-03-29 23:19:30,540 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 23:19:30,605 - api.main - INFO - Response: 200 - 0.0783s
+2026-03-29 23:19:30,720 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:19:30,918 - api.main - INFO - Response: 200 - 0.1982s
+2026-03-29 23:24:05,576 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 23:24:06,157 - api.main - INFO - Response: 200 - 0.6411s
+2026-03-29 23:24:08,911 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:09,068 - api.main - INFO - Response: 200 - 0.1576s
+2026-03-29 23:24:09,443 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:09,471 - api.main - INFO - Response: 200 - 0.0269s
+2026-03-29 23:24:13,733 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:13,941 - api.main - INFO - Response: 200 - 0.2075s
+2026-03-29 23:24:18,603 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:18,644 - api.main - INFO - Response: 200 - 0.0398s
+2026-03-29 23:24:22,367 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:22,416 - api.main - INFO - Response: 200 - 0.0484s
+2026-03-29 23:24:26,709 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:26,761 - api.main - INFO - Response: 200 - 0.0525s
+2026-03-29 23:24:30,945 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:31,097 - api.main - INFO - Response: 200 - 0.1523s
+2026-03-29 23:24:34,646 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/fraud/predict
+2026-03-29 23:24:34,671 - api.main - INFO - Response: 200 - 0.0248s
+2026-03-29 23:24:34,870 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/predict
+2026-03-29 23:24:35,137 - api.services - INFO - Loading global_champion.pth...
+2026-03-29 23:24:36,504 - api.services - INFO - Inference successful.
+2026-03-29 23:24:36,511 - api.main - INFO - Response: 200 - 1.6420s
+2026-03-29 23:24:36,985 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/fraud/benchmark
+2026-03-29 23:24:36,987 - api.main - INFO - Response: 200 - 0.0019s
+2026-03-29 23:24:36,997 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/benchmark
+2026-03-29 23:24:37,110 - api.main - INFO - Response: 200 - 0.1136s
+2026-03-29 23:24:39,774 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:39,819 - api.main - INFO - Response: 200 - 0.0449s
+2026-03-29 23:24:42,072 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/audit
+2026-03-29 23:24:42,074 - api.main - INFO - Response: 200 - 0.0014s
+2026-03-29 23:24:42,156 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 23:24:44,526 - api.main - INFO - Response: 200 - 2.3708s
+2026-03-29 23:24:44,603 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:44,690 - api.main - INFO - Response: 200 - 0.0902s
+2026-03-29 23:24:46,996 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:47,306 - api.main - INFO - Response: 200 - 0.3103s
+2026-03-29 23:24:50,736 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:51,007 - api.main - INFO - Response: 200 - 0.2702s
+2026-03-29 23:24:54,982 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:24:55,590 - api.main - INFO - Response: 200 - 0.6088s
+2026-03-29 23:25:01,179 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:25:01,283 - api.main - INFO - Response: 200 - 0.1046s
+2026-03-29 23:25:57,186 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:25:57,222 - api.main - INFO - Response: 200 - 0.0361s
+2026-03-29 23:30:35,248 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/health
+2026-03-29 23:30:35,391 - api.main - INFO - Response: 200 - 0.1614s
+2026-03-29 23:30:35,538 - api.main - INFO - Request: GET http://localhost:8000/api/health
+2026-03-29 23:30:35,662 - api.main - INFO - Response: 200 - 0.1245s
+2026-03-29 23:30:39,520 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/metrics/banks
+2026-03-29 23:30:39,522 - api.main - INFO - Response: 200 - 0.0020s
+2026-03-29 23:30:39,540 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:30:39,815 - api.main - INFO - Response: 200 - 0.2750s
+2026-03-29 23:30:39,822 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:30:39,848 - api.main - INFO - Response: 200 - 0.0260s
+2026-03-29 23:31:44,579 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:31:45,074 - api.main - INFO - Response: 200 - 0.5093s
+2026-03-29 23:33:18,224 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:33:18,414 - api.main - INFO - Response: 200 - 0.1945s
+2026-03-29 23:33:24,969 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:33:25,002 - api.main - INFO - Response: 200 - 0.0323s
+2026-03-29 23:33:37,722 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:33:38,238 - api.main - INFO - Response: 200 - 0.5165s
+2026-03-29 23:33:51,777 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:33:51,950 - api.main - INFO - Response: 200 - 0.1726s
+2026-03-29 23:33:58,896 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:33:59,037 - api.main - INFO - Response: 200 - 0.1403s
+2026-03-29 23:34:05,112 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:34:05,147 - api.main - INFO - Response: 200 - 0.0356s
+2026-03-29 23:34:09,774 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:34:09,791 - api.main - INFO - Response: 200 - 0.0183s
+2026-03-29 23:34:12,088 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 23:34:12,473 - api.main - INFO - Response: 200 - 0.3857s
+2026-03-29 23:34:14,260 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:34:14,647 - api.main - INFO - Response: 200 - 0.3871s
+2026-03-29 23:34:19,449 - api.main - INFO - Request: GET http://localhost:8000/api/audit
+2026-03-29 23:34:19,889 - api.main - INFO - Response: 200 - 0.4408s
+2026-03-29 23:34:21,130 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:34:21,159 - api.main - INFO - Response: 200 - 0.0298s
+2026-03-29 23:34:25,113 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:34:25,130 - api.main - INFO - Response: 200 - 0.0174s
+2026-03-29 23:34:30,596 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:34:30,629 - api.main - INFO - Response: 200 - 0.0325s
+2026-03-29 23:34:41,948 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/fraud/predict
+2026-03-29 23:34:42,355 - api.main - INFO - Response: 200 - 0.4074s
+2026-03-29 23:34:43,752 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/predict
+2026-03-29 23:34:47,103 - api.services - INFO - Loading global_champion.pth...
+2026-03-29 23:34:47,554 - api.services - INFO - Inference successful.
+2026-03-29 23:34:47,566 - api.main - INFO - Response: 200 - 3.8140s
+2026-03-29 23:34:47,963 - api.main - INFO - Request: OPTIONS http://localhost:8000/api/fraud/benchmark
+2026-03-29 23:34:47,965 - api.main - INFO - Response: 200 - 0.0016s
+2026-03-29 23:34:47,970 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/benchmark
+2026-03-29 23:34:48,036 - api.main - INFO - Response: 200 - 0.0652s
+2026-03-29 23:34:52,435 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/predict
+2026-03-29 23:34:52,441 - api.services - INFO - Loading global_champion.pth...
+2026-03-29 23:34:52,448 - api.services - INFO - Inference successful.
+2026-03-29 23:34:52,454 - api.main - INFO - Response: 200 - 0.0188s
+2026-03-29 23:34:56,614 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:34:56,778 - api.main - INFO - Response: 200 - 0.1634s
+2026-03-29 23:35:10,617 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:35:10,854 - api.main - INFO - Response: 200 - 0.2372s
+2026-03-29 23:37:24,134 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:37:24,225 - api.main - INFO - Response: 200 - 0.0912s
+2026-03-29 23:37:28,373 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:37:28,634 - api.main - INFO - Response: 200 - 0.2616s
+2026-03-29 23:37:31,219 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:37:32,112 - api.main - INFO - Response: 200 - 0.8927s
+2026-03-29 23:37:35,689 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:37:35,907 - api.main - INFO - Response: 200 - 0.2186s
+2026-03-29 23:37:38,952 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:37:39,579 - api.main - INFO - Response: 200 - 0.6283s
+2026-03-29 23:37:44,819 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:37:45,144 - api.main - INFO - Response: 200 - 0.3251s
+2026-03-29 23:37:48,250 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:37:48,373 - api.main - INFO - Response: 200 - 0.1228s
+2026-03-29 23:37:53,012 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/predict
+2026-03-29 23:37:53,024 - api.services - INFO - Loading private_dp_champion.pth...
+2026-03-29 23:37:53,646 - api.services - INFO - Inference successful.
+2026-03-29 23:37:53,689 - api.main - INFO - Response: 200 - 0.6769s
+2026-03-29 23:37:54,102 - api.main - INFO - Request: POST http://localhost:8000/api/fraud/benchmark
+2026-03-29 23:37:54,138 - api.main - INFO - Response: 200 - 0.0360s
+2026-03-29 23:37:59,670 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:37:59,839 - api.main - INFO - Response: 200 - 0.1688s
+2026-03-29 23:38:03,784 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:38:03,851 - api.main - INFO - Response: 200 - 0.0667s
+2026-03-29 23:38:07,879 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:38:07,907 - api.main - INFO - Response: 200 - 0.0278s
+2026-03-29 23:38:11,250 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:38:11,405 - api.main - INFO - Response: 200 - 0.1547s
+2026-03-29 23:38:16,321 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:38:16,557 - api.main - INFO - Response: 200 - 0.2373s
+2026-03-29 23:38:36,990 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:38:37,500 - api.main - INFO - Response: 200 - 0.5097s
+2026-03-29 23:38:43,939 - api.main - INFO - Request: GET http://localhost:8000/api/metrics/banks
+2026-03-29 23:38:44,038 - api.main - INFO - Response: 200 - 0.1033s

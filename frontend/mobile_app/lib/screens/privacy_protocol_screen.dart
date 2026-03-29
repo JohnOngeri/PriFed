@@ -13,17 +13,31 @@ class PrivacyProtocolScreen extends StatefulWidget {
 }
 
 class _PrivacyProtocolScreenState extends State<PrivacyProtocolScreen>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
+  late ScrollController _scrollController;
+  late AnimationController _particleController;
   
   double _epsilonValue = 0.5;
   bool _hasAccepted = false;
   bool _hasReadTerms = false;
+  bool _hasReachedBottom = false;
 
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
+    _scrollController.addListener(_onScroll);
+
+    // Ensure short content doesn't block the user
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients && 
+          _scrollController.position.maxScrollExtent <= 0) {
+        setState(() => _hasReachedBottom = true);
+      }
+    });
+
     _animationController = AnimationController(
       duration: const Duration(milliseconds: 800),
       vsync: this,
@@ -31,12 +45,33 @@ class _PrivacyProtocolScreenState extends State<PrivacyProtocolScreen>
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeIn),
     );
+
+    _particleController = AnimationController(
+      duration: const Duration(seconds: 20),
+      vsync: this,
+    )..repeat();
     _animationController.forward();
+  }
+
+  void _onScroll() {
+    if (_scrollController.hasClients) {
+      // Threshold to detect bottom (100 pixels from end)
+      if (_scrollController.offset >= _scrollController.position.maxScrollExtent - 100) {
+        if (!_hasReachedBottom) {
+          setState(() {
+            _hasReachedBottom = true;
+          });
+        }
+      }
+    }
   }
 
   @override
   void dispose() {
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
     _animationController.dispose();
+    _particleController.dispose();
     super.dispose();
   }
 
@@ -49,12 +84,15 @@ class _PrivacyProtocolScreenState extends State<PrivacyProtocolScreen>
           // Background particles
           Positioned.fill(
             child: CustomPaint(
-              painter: ParticleBackgroundPainter(),
+              painter: ParticleBackgroundPainter(
+                animation: _particleController,
+              ),
             ),
           ),
           
           SafeArea(
             child: SingleChildScrollView(
+              controller: _scrollController,
               padding: const EdgeInsets.all(24.0),
               child: Column(
                 children: [
@@ -63,6 +101,7 @@ class _PrivacyProtocolScreenState extends State<PrivacyProtocolScreen>
                     children: [
                       IconButton(
                         icon: const Icon(Icons.arrow_back, color: Colors.white),
+                        // Returns to Step 1
                         onPressed: () => context.go('/onboarding/identity'),
                       ),
                       const Spacer(),
@@ -154,6 +193,30 @@ class _PrivacyProtocolScreenState extends State<PrivacyProtocolScreen>
                     ),
                   ),
                   
+                  const SizedBox(height: 16),
+                  
+                  // Link to Privacy Lab Visualization
+                  FadeTransition(
+                    opacity: _fadeAnimation,
+                    child: Center(
+                      child: TextButton.icon(
+                        // Educational "Learn More" role: pushed onto the stack
+                        onPressed: () => context.push('/privacy-shield'),
+                        icon: const Icon(Icons.science_outlined, color: AppTheme.cyberCyan, size: 18),
+                        label: Text(
+                          'Enter Privacy Lab Visualization',
+                          style: TextStyle(
+                            color: AppTheme.cyberCyan.withOpacity(0.8),
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                            decorationColor: AppTheme.cyberCyan.withOpacity(0.5),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  
                   const SizedBox(height: 32),
                   
                   // Epsilon Slider
@@ -241,29 +304,31 @@ class _PrivacyProtocolScreenState extends State<PrivacyProtocolScreen>
                               Checkbox(
                                 value: _hasReadTerms,
                                 activeColor: AppTheme.cyberCyan,
-                                onChanged: (value) {
+                                onChanged: _hasReachedBottom ? (value) {
                                   setState(() {
                                     _hasReadTerms = value ?? false;
                                     if (_hasReadTerms) {
                                       _hasAccepted = true;
                                     }
                                   });
-                                },
+                                } : null,
                               ),
                               Expanded(
                                 child: GestureDetector(
-                                  onTap: () {
+                                  onTap: _hasReachedBottom ? () {
                                     setState(() {
                                       _hasReadTerms = !_hasReadTerms;
                                       if (_hasReadTerms) {
                                         _hasAccepted = true;
                                       }
                                     });
-                                  },
+                                  } : null,
                                   child: Text(
                                     'I understand and agree to the PrivFed Privacy Policy and Participating Bank Terms (ε = ${_epsilonValue.toStringAsFixed(1)})',
                                     style: TextStyle(
-                                      color: Colors.white.withOpacity(0.9),
+                                      color: _hasReachedBottom 
+                                          ? Colors.white.withOpacity(0.9)
+                                          : Colors.white.withOpacity(0.3),
                                       fontSize: 14,
                                       height: 1.4,
                                     ),
@@ -272,6 +337,18 @@ class _PrivacyProtocolScreenState extends State<PrivacyProtocolScreen>
                               ),
                             ],
                           ),
+                          if (!_hasReachedBottom)
+                            Padding(
+                              padding: const EdgeInsets.only(left: 48, top: 4),
+                              child: Text(
+                                'Please scroll to the bottom to enable acceptance',
+                                style: TextStyle(
+                                  color: AppTheme.cyberCyan.withOpacity(0.5),
+                                  fontSize: 11,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                            ),
                           const SizedBox(height: 16),
 
                           // Keep text "walkthrough-friendly": short headings + short paragraphs.
@@ -374,8 +451,15 @@ class _PrivacyProtocolScreenState extends State<PrivacyProtocolScreen>
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            // Pass epsilon value to next screen
-                            context.go('/onboarding/scan?nodeId=${widget.nodeId}&epsilon=$_epsilonValue');
+                            // Explicitly move to Step 3: Hardware Scan
+                            final uri = Uri(
+                              path: '/onboarding/scan',
+                              queryParameters: {
+                                if (widget.nodeId != null) 'nodeId': widget.nodeId!,
+                                'epsilon': _epsilonValue.toStringAsFixed(1),
+                              },
+                            );
+                            context.go(uri.toString());
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
@@ -473,20 +557,23 @@ class _PrivacyProtocolScreenState extends State<PrivacyProtocolScreen>
 }
 
 class ParticleBackgroundPainter extends CustomPainter {
+  final Animation<double> animation;
+  ParticleBackgroundPainter({required this.animation}) : super(repaint: animation);
+
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = AppTheme.cyberCyan.withOpacity(0.1);
+    final paint = Paint()..color = AppTheme.cyberCyan.withOpacity(0.1);
     final random = math.Random(42);
     
     for (int i = 0; i < 50; i++) {
       final x = random.nextDouble() * size.width;
-      final y = random.nextDouble() * size.height;
+      // Vertical drift to match Step 1 aesthetic
+      final yOffset = (animation.value * 150 * (random.nextDouble() + 0.5)) % size.height;
+      final y = (random.nextDouble() * size.height + yOffset) % size.height;
       canvas.drawCircle(Offset(x, y), random.nextDouble() * 2, paint);
     }
   }
 
   @override
-  bool shouldRepaint(ParticleBackgroundPainter oldDelegate) => false;
+  bool shouldRepaint(ParticleBackgroundPainter oldDelegate) => true;
 }
-

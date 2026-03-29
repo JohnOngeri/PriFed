@@ -130,6 +130,11 @@ class _TrainingDashboardCinematicState extends State<TrainingDashboardCinematic>
             ],
           ),
           const Spacer(),
+          IconButton(
+            icon: const Icon(Icons.shield_outlined, color: cyanGlow),
+            tooltip: 'Privacy Shield Lab',
+            onPressed: () => context.push('/privacy-shield'),
+          ),
           _buildLiveStatusBadge(),
         ],
       ),
@@ -183,12 +188,15 @@ class _TrainingDashboardCinematicState extends State<TrainingDashboardCinematic>
   }
 
   Widget _manifestMetric(String label, String val, Color color) {
-    return Column(
-      children: [
-        Text(val, style: TextStyle(color: color, fontSize: 22, fontWeight: FontWeight.w900)),
-        const SizedBox(height: 4),
-        Text(label, style: const TextStyle(color: Colors.white38, fontSize: 8, fontWeight: FontWeight.bold)),
-      ],
+    return InkWell(
+      onTap: label.contains("DP") ? () => context.push('/privacy-shield') : null,
+      child: Column(
+        children: [
+          Text(val, style: TextStyle(color: color, fontSize: 22, fontWeight: FontWeight.w900)),
+          const SizedBox(height: 4),
+          Text(label, style: const TextStyle(color: Colors.white38, fontSize: 8, fontWeight: FontWeight.bold)),
+        ],
+      ),
     );
   }
 
