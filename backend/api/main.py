@@ -9,6 +9,7 @@ from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.openapi.utils import get_openapi
+from fastapi.staticfiles import StaticFiles
 import uvicorn
 import logging
 import time
@@ -65,10 +66,14 @@ async def lifespan(app: FastAPI):
     logger.info("Starting PrivFed API server...")
     
     try:
+        # Define absolute paths relative to this file
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        plots_path = os.path.join(base_dir, "results", "plots")
+
         # Create necessary directories
-        os.makedirs("logs", exist_ok=True)
-        os.makedirs("results", exist_ok=True)
-        os.makedirs("models", exist_ok=True)
+        os.makedirs(os.path.join(base_dir, "logs"), exist_ok=True)
+        os.makedirs(plots_path, exist_ok=True)
+        os.makedirs(os.path.join(base_dir, "models"), exist_ok=True)
 
         # [DEMO-CRITICAL] Preload all four benchmark models once (feature alignment + four-model Lab).
         # Avoids degraded status and slow first request; model_cache reused for /predict and /fraud/benchmark.
@@ -168,6 +173,9 @@ async def general_exception_handler(request: Request, exc: Exception):
 
 # Include API routes
 app.include_router(router)
+
+# Mount static files so they are reachable via URL /api/plots/
+app.mount("/api/plots", StaticFiles(directory=plots_path), name="plots")
 
 # Root endpoint
 @app.get("/")

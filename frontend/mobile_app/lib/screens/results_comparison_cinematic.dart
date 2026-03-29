@@ -88,6 +88,7 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
         _loadAuditData();
       });
     } else {
+      debugPrint("🚀 CINEMATIC: Initializing on Mobile. AI Base: ${ApiConfig.aiBaseUrl}");
       _webContentReady = true;
       WidgetsBinding.instance.addPostFrameCallback((_) => _loadAuditData());
     }
@@ -321,14 +322,27 @@ class _ResultsComparisonCinematicState extends State<ResultsComparisonCinematic>
                   );
                 },
                 errorBuilder: (context, error, stackTrace) {
+                  debugPrint("❌ PLOT LOAD FAILURE: $plotUrl | ERROR: $error");
                   return Stack(
                     alignment: Alignment.center,
                     children: [
                       const Icon(Icons.insert_chart_outlined, color: Colors.white10, size: 48),
+                      Container(
+                        color: Colors.black26,
+                        child: const Center(
+                          child: Icon(Icons.broken_image_outlined, color: Colors.redAccent, size: 32),
+                        ),
+                      ),
                       Positioned(
                         bottom: 10,
                         child: Text(item['file']!,
                             style: const TextStyle(color: Color(0xFF00F5FF), fontSize: 9)),
+                        child: Column(
+                          children: [
+                            Text("UNREACHABLE", style: TextStyle(color: Colors.redAccent.withOpacity(0.8), fontSize: 8, fontWeight: FontWeight.bold)),
+                            Text(item['file']!, style: const TextStyle(color: Colors.white24, fontSize: 8)),
+                          ],
+                        ),
                       ),
                     ],
                   );

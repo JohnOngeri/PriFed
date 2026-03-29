@@ -53,7 +53,14 @@ models/*.h5
 models/*.pth
 models/*.pt
 
-results/
+# Whitelist only specific research artifacts for the Cinematic Dashboard
+**/results/*
+!results/plots/
+results/plots/*
+!results/plots/final_thesis_comparison.png
+!results/plots/local_baseline_auc_by_bank.png
+!results/plots/privacy_utility_tradeoff_HD.png
+!results/plots/fairness_std_comparison.png
 experiments/
 logs/*.log
 

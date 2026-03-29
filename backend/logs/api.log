@@ -2889,3 +2889,27 @@ TypeError: Object of type datetime is not JSON serializable
 2026-03-27 17:09:57,839 - api.services - INFO - Preloaded model: local_baseline
 2026-03-27 17:09:57,839 - api.main - INFO - PrivFed API server started successfully
 2026-03-27 17:43:02,456 - api.main - INFO - Shutting down PrivFed API server...
+2026-03-27 18:30:31,000 - utils.data_utils - INFO - Configuration loaded successfully from configs/config.yaml
+2026-03-27 18:30:31,015 - api.main - INFO - Starting PrivFed API server...
+2026-03-27 18:30:31,081 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-27 18:30:31,082 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-27 18:30:31,086 - utils.model_utils - INFO - Model loaded from models\global_champion.pth (state_dict only, input_dim=50)
+2026-03-27 18:30:31,087 - api.services - INFO - Model Router: loaded config_5_global_champion from global_champion.pth (key=config_5_global)
+2026-03-27 18:30:31,088 - api.services - INFO - Preloaded model: config_5_global
+2026-03-27 18:30:31,108 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-27 18:30:31,109 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-27 18:30:31,110 - utils.model_utils - INFO - Model loaded from models\private_dp_champion.pth (state_dict only, input_dim=50)
+2026-03-27 18:30:31,110 - api.services - INFO - Model Router: loaded config_4_dp from private_dp_champion.pth (key=config_4_private)
+2026-03-27 18:30:31,111 - api.services - INFO - Preloaded model: config_4_private
+2026-03-27 18:30:31,126 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-27 18:30:31,128 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-27 18:30:31,128 - utils.model_utils - INFO - Model loaded from models\bank_c_specialist.pth (state_dict only, input_dim=50)
+2026-03-27 18:30:31,128 - api.services - INFO - Model Router: loaded config_8_bank_c_specialist from bank_c_specialist.pth (key=config_8_specialist)
+2026-03-27 18:30:31,128 - api.services - INFO - Preloaded model: config_8_specialist
+2026-03-27 18:30:31,148 - utils.model_utils - INFO - Created FraudDetectionMLP with 55169 parameters
+2026-03-27 18:30:31,148 - utils.model_utils - INFO - Architecture: 50 -> 256 -> 128 -> 64 -> 1
+2026-03-27 18:30:31,149 - utils.model_utils - INFO - Model loaded from models\local_baseline_bank_A.pth (state_dict only, input_dim=50)
+2026-03-27 18:30:31,149 - api.services - INFO - Model Router: loaded local_baseline from local_baseline_bank_A.pth (key=local_baseline)
+2026-03-27 18:30:31,150 - api.services - INFO - Preloaded model: local_baseline
+2026-03-27 18:30:31,150 - api.main - INFO - PrivFed API server started successfully
+2026-03-27 18:33:01,291 - api.main - INFO - Shutting down PrivFed API server...

@@ -1024,3 +1024,7 @@
 {"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-03-27 17:41:25"}
 {"level":"info","message":"📡 LAN URL: http://10.110.11.178:3000/api","service":"privfed-backend","timestamp":"2026-03-27 17:41:25"}
 {"level":"info","message":"SIGINT signal received: closing HTTP server","service":"privfed-backend","timestamp":"2026-03-27 17:42:55"}
+{"level":"info","message":"🚀 PrivFed API Server running on port 3000","service":"privfed-backend","timestamp":"2026-03-27 18:28:57"}
+{"level":"info","message":"📱 Environment: development","service":"privfed-backend","timestamp":"2026-03-27 18:28:57"}
+{"level":"info","message":"🔗 API Base URL: http://localhost:3000/api","service":"privfed-backend","timestamp":"2026-03-27 18:28:57"}
+{"level":"info","message":"📡 LAN URL: http://10.110.11.178:3000/api","service":"privfed-backend","timestamp":"2026-03-27 18:28:57"}
