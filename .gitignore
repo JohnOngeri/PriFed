@@ -54,9 +54,18 @@ models/*.pth
 models/*.pt
 
 # Whitelist only specific research artifacts for the Cinematic Dashboard
+# 1. Ignore the results directory and everything inside it
+results/*
 **/results/*
+
+# 2. Open the results folder so Git can look inside
+!results/
+
+# 3. Open the plots subfolder
 !results/plots/
-results/plots/*
+
+# 4. Whitelist ONLY your 4 specific research artifacts
+# (Everything else in results/plots/ remains ignored)
 !results/plots/final_thesis_comparison.png
 !results/plots/local_baseline_auc_by_bank.png
 !results/plots/privacy_utility_tradeoff_HD.png
